@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Claude is an AI assistant created by Anthropic, built on a Large Language Model.",
+    "startMs": 100,
+    "endMs": 5875,
+    "startSec": 0.1,
+    "endSec": 5.875
+  },
+  {
+    "text": "It comes in different model versions: smaller models are faster and cheaper for simple tasks, while larger models handle complex reasoning.",
+    "startMs": 5825,
+    "endMs": 14450,
+    "startSec": 5.825,
+    "endSec": 14.45
+  },
+  {
+    "text": "You can access Claude through web, desktop, and mobile apps, through Claude Code inside technical projects, or via an API.",
+    "startMs": 14450,
+    "endMs": 23362,
+    "startSec": 14.45,
+    "endSec": 23.363
+  },
+  {
+    "text": "In a chat, you ask questions and Claude answers.",
+    "startMs": 23362,
+    "endMs": 27238,
+    "startSec": 23.363,
+    "endSec": 27.238
+  },
+  {
+    "text": "As an agent, Claude can take action using tools across multi-step tasks.",
+    "startMs": 27238,
+    "endMs": 32675,
+    "startSec": 27.238,
+    "endSec": 32.675
+  },
+  {
+    "text": "To get great results, practice three habits: give the context, state your clear goal, and specify the exact format\u2014such as a short email or a table.",
+    "startMs": 32675,
+    "endMs": 43125,
+    "startSec": 32.675,
+    "endSec": 43.125
+  }
+]

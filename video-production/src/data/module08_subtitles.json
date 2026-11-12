@@ -1,0 +1,37 @@
+[
+  {
+    "text": "A prompt is simply what you type to Claude.",
+    "startMs": 100,
+    "endMs": 3162,
+    "startSec": 0.1,
+    "endSec": 3.163
+  },
+  {
+    "text": "To get great results, ask clearly, just as you would with a new colleague.",
+    "startMs": 3112,
+    "endMs": 8062,
+    "startSec": 3.112,
+    "endSec": 8.062
+  },
+  {
+    "text": "Every effective request includes four parts: Situation, explaining who you are; Goal, stating exactly what you want produced; Background, providing the facts and files Claude needs; and Format, specifying structure, length, and tone.",
+    "startMs": 8062,
+    "endMs": 24100,
+    "startSec": 8.062,
+    "endSec": 24.1
+  },
+  {
+    "text": "You can also paste an example to imitate, set boundaries like avoiding jargon, and break big jobs into steps.",
+    "startMs": 24100,
+    "endMs": 31550,
+    "startSec": 24.1,
+    "endSec": 31.55
+  },
+  {
+    "text": "Treat the first reply as a working draft: a quick follow-up correction saves time and guides Claude to the exact answer you need.",
+    "startMs": 31550,
+    "endMs": 39350,
+    "startSec": 31.55,
+    "endSec": 39.35
+  }
+]

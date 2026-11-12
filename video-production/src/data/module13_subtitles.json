@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Claude can only do what its harness allows.",
+    "startMs": 100,
+    "endMs": 3350,
+    "startSec": 0.1,
+    "endSec": 3.35
+  },
+  {
+    "text": "Permissions are the rules you set about what Claude may read, change, or send.",
+    "startMs": 3300,
+    "endMs": 8750,
+    "startSec": 3.3,
+    "endSec": 8.75
+  },
+  {
+    "text": "We apply the principle of least access\u2014just like giving a colleague keys only to the rooms they need.",
+    "startMs": 8750,
+    "endMs": 15112,
+    "startSec": 8.75,
+    "endSec": 15.113
+  },
+  {
+    "text": "Permissions use three settings: Allow, for actions Claude can do freely, like reading project files; Ask, where Claude must stop and wait for your approval before changing files or sending messages; and Deny, which completely blocks sensitive files like passwords, personal data, and environment files.",
+    "startMs": 15112,
+    "endMs": 34425,
+    "startSec": 15.113,
+    "endSec": 34.425
+  },
+  {
+    "text": "Stricter rules always win: Deny beats Ask, and Ask beats Allow.",
+    "startMs": 34425,
+    "endMs": 39838,
+    "startSec": 34.425,
+    "endSec": 39.837
+  },
+  {
+    "text": "You stay in control.",
+    "startMs": 39838,
+    "endMs": 42100,
+    "startSec": 39.837,
+    "endSec": 42.1
+  }
+]

@@ -1,0 +1,124 @@
+site_name: AI MASTERCLASS
+site_description: Internal AI Learning Documentation Portal — AI Fundamentals & Systems Concepts
+site_author: Tactive AI Team
+site_url: https://ai-masterclass.internal
+
+repo_name: AI MASTERCLASS
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  icon:
+    logo: material/school
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/d3.v7.min.js
+  - assets/javascripts/map.js
+  - assets/javascripts/video-config.js
+  - assets/javascripts/video-player.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+
+exclude_docs: |
+  01-start-here/**
+  02-getting-started/**
+  03-models-and-selection/**
+  04-writing-and-communication/**
+  05-learning-and-research/**
+  06-documents-and-files/**
+  07-data-analysis/**
+  08-visual-and-interactive-artifacts/**
+  09-projects-and-knowledge-bases/**
+  10-prompt-engineering/**
+  11-workplace-and-industry-playbooks/**
+  12-claude-code-and-developers/**
+  13-model-context-protocol-mcp/**
+  14-building-with-claude-api/**
+  15-real-world-projects/**
+  16-reference-and-troubleshooting/**
+  map.md
+  foundations/index.md
+
+nav:
+  - Home: index.md
+  - Part A — AI Fundamentals:
+      - Overview: foundations/part-a/index.md
+      - Module 1 - What Is AI?: foundations/part-a/module-01-what-is-ai.md
+      - Module 2 - What Is an LLM?: foundations/part-a/module-02-what-is-an-llm.md
+      - Module 3 - How Does an LLM Work?: foundations/part-a/module-03-how-llms-work.md
+      - Module 4 - Strengths, Limits & Trust: foundations/part-a/module-04-strengths-limits-trust.md
+      - Module 5 - Meet Claude: foundations/part-a/module-05-meet-claude.md
+      - Glossary (Plain English): foundations/part-a/glossary.md
+      - Commonly Asked Questions: foundations/part-a/faq.md
+      - What You Should Be Able to Do: foundations/part-a/learning-checklist.md
+  - Part B — AI Concepts for Systems:
+      - Overview: foundations/part-b/index.md
+      - Module 6 - Types of Models: foundations/part-b/module-06-types-of-models.md
+      - Module 7 - Context: foundations/part-b/module-07-context.md
+      - Module 8 - Prompting & Instructions: foundations/part-b/module-08-prompting.md
+      - Module 9 - Memory: foundations/part-b/module-09-memory.md
+      - Module 10 - Skills: foundations/part-b/module-10-skills.md
+      - Module 11 - Tools & The Harness: foundations/part-b/module-11-tools-and-harness.md
+      - Module 12 - Agents: foundations/part-b/module-12-agents.md
+      - Module 13 - Permissions & Safety: foundations/part-b/module-13-permissions-and-safety.md
+      - Putting It All Together (Worked Example): foundations/part-b/worked-example.md
+      - Glossary (Plain English): foundations/part-b/glossary.md
+      - Commonly Asked Questions: foundations/part-b/faq.md
+      - What You Should Be Able to Do: foundations/part-b/learning-checklist.md

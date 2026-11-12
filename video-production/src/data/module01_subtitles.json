@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Artificial Intelligence is the big umbrella: computer programs performing smart tasks that normally require human thinking.",
+    "startMs": 100,
+    "endMs": 7712,
+    "startSec": 0.1,
+    "endSec": 7.713
+  },
+  {
+    "text": "Inside AI sits Machine Learning, where computers learn from vast examples rather than step-by-step rules.",
+    "startMs": 7662,
+    "endMs": 14775,
+    "startSec": 7.662,
+    "endSec": 14.775
+  },
+  {
+    "text": "Inside Machine Learning are Large Language Models, or LLMs, built specifically to understand and write human language.",
+    "startMs": 14775,
+    "endMs": 22612,
+    "startSec": 14.775,
+    "endSec": 22.613
+  },
+  {
+    "text": "Claude is an example of an LLM.",
+    "startMs": 22612,
+    "endMs": 25538,
+    "startSec": 22.613,
+    "endSec": 25.538
+  },
+  {
+    "text": "Unlike narrow tools that only filter spam or suggest the next word, Claude is a general-purpose assistant for writing, summarizing, explaining, and analyzing.",
+    "startMs": 25538,
+    "endMs": 35900,
+    "startSec": 25.538,
+    "endSec": 35.9
+  },
+  {
+    "text": "Think of Claude like a brilliant new colleague who knows nothing about your company until you explain it: provide clear context, and always verify their work.",
+    "startMs": 35900,
+    "endMs": 45138,
+    "startSec": 35.9,
+    "endSec": 45.138
+  }
+]

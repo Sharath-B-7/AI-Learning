@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# MkDocs generated files
+site/
+
+# Node.js
+node_modules/
+**/node_modules/
+
+# Build and cache
+.cache/
+dist/
+build/
+.DS_Store
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+

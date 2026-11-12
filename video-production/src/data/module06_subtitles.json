@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Claude is not one single model, but a family of models.",
+    "startMs": 100,
+    "endMs": 4375,
+    "startSec": 0.1,
+    "endSec": 4.375
+  },
+  {
+    "text": "Like hiring help, you match the tier to the task.",
+    "startMs": 4325,
+    "endMs": 8212,
+    "startSec": 4.325,
+    "endSec": 8.213
+  },
+  {
+    "text": "Small, fast models like Haiku handle quick edits, sorting, and short summaries.",
+    "startMs": 8212,
+    "endMs": 14575,
+    "startSec": 8.213,
+    "endSec": 14.575
+  },
+  {
+    "text": "Balanced models like Sonnet manage everyday drafting and analysis.",
+    "startMs": 14575,
+    "endMs": 19388,
+    "startSec": 14.575,
+    "endSec": 19.387
+  },
+  {
+    "text": "Most capable models like Opus tackle hard, multi-step, high-stakes problems.",
+    "startMs": 19388,
+    "endMs": 25250,
+    "startSec": 19.387,
+    "endSec": 25.25
+  },
+  {
+    "text": "Furthermore, thinking models work through complex problems step by step before answering\u2014like working it out on paper.",
+    "startMs": 25250,
+    "endMs": 32700,
+    "startSec": 25.25,
+    "endSec": 32.7
+  },
+  {
+    "text": "Claude is also multimodal, allowing you to share charts, PDFs, and whiteboard photos.",
+    "startMs": 32700,
+    "endMs": 39288,
+    "startSec": 32.7,
+    "endSec": 39.288
+  },
+  {
+    "text": "Always match the model to the job: start balanced, and remember that bigger is not always better.",
+    "startMs": 39288,
+    "endMs": 45488,
+    "startSec": 39.288,
+    "endSec": 45.487
+  }
+]

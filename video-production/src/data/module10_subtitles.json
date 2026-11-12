@@ -1,0 +1,37 @@
+[
+  {
+    "text": "Think about a recipe card: once you have a good recipe, you don't reinvent the steps every time you cook.",
+    "startMs": 100,
+    "endMs": 6588,
+    "startSec": 0.1,
+    "endSec": 6.588
+  },
+  {
+    "text": "A skill is a recipe card for Claude.",
+    "startMs": 6538,
+    "endMs": 9662,
+    "startSec": 6.537,
+    "endSec": 9.662
+  },
+  {
+    "text": "While a prompt is typed for a one-time request, a skill is a saved, reusable method that defines steps, templates, tone, and a final checklist.",
+    "startMs": 9662,
+    "endMs": 19450,
+    "startSec": 9.662,
+    "endSec": 19.45
+  },
+  {
+    "text": "Skills also keep your context desk clean: Claude sees only a short summary of each skill, loading the full instructions only when needed for the task.",
+    "startMs": 19450,
+    "endMs": 28862,
+    "startSec": 19.45,
+    "endSec": 28.863
+  },
+  {
+    "text": "Whenever you find yourself repeating instructions, or when a workflow needs a consistent team standard, turn that method into a reusable skill.",
+    "startMs": 28862,
+    "endMs": 37362,
+    "startSec": 28.863,
+    "endSec": 37.362
+  }
+]

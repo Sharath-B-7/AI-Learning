@@ -1,0 +1,51 @@
+[
+  {
+    "text": "Tools let Claude act; an agent is what you get when Claude uses those tools on its own to finish a whole job.",
+    "startMs": 100,
+    "endMs": 6800,
+    "startSec": 0.1,
+    "endSec": 6.8
+  },
+  {
+    "text": "In a chat, you ask questions and guide every step.",
+    "startMs": 6750,
+    "endMs": 10812,
+    "startSec": 6.75,
+    "endSec": 10.812
+  },
+  {
+    "text": "With an agent, you give a goal, and Claude decides the steps, using tools in a loop: think, act, check the result, and repeat until the job is done.",
+    "startMs": 10812,
+    "endMs": 21050,
+    "startSec": 10.812,
+    "endSec": 21.05
+  },
+  {
+    "text": "Agents excel at multi-step tasks across multiple files.",
+    "startMs": 21050,
+    "endMs": 25525,
+    "startSec": 21.05,
+    "endSec": 25.525
+  },
+  {
+    "text": "For big jobs, Claude can even launch subagents\u2014helpers that work in parallel on fresh desks.",
+    "startMs": 25525,
+    "endMs": 32438,
+    "startSec": 25.525,
+    "endSec": 32.438
+  },
+  {
+    "text": "Always give an agent a clear goal, designated files, strict limits, and required check-ins.",
+    "startMs": 32438,
+    "endMs": 39225,
+    "startSec": 32.438,
+    "endSec": 39.225
+  },
+  {
+    "text": "You remain in control.",
+    "startMs": 39225,
+    "endMs": 41475,
+    "startSec": 39.225,
+    "endSec": 41.475
+  }
+]

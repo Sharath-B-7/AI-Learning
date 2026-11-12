@@ -1,0 +1,51 @@
+[
+  {
+    "text": "A model on its own is like a clever person in a locked room, only able to pass notes under the door.",
+    "startMs": 100,
+    "endMs": 6325,
+    "startSec": 0.1,
+    "endSec": 6.325
+  },
+  {
+    "text": "Tools are the model's hands: they allow Claude to read spreadsheets, search the web, run calculations, and create documents.",
+    "startMs": 6275,
+    "endMs": 14825,
+    "startSec": 6.275,
+    "endSec": 14.825
+  },
+  {
+    "text": "The harness is the software wrapped around the model\u2014the complete workshop.",
+    "startMs": 14825,
+    "endMs": 19650,
+    "startSec": 14.825,
+    "endSec": 19.65
+  },
+  {
+    "text": "It provides the tools, runs the working loop, and enforces the rules about what Claude may do.",
+    "startMs": 19650,
+    "endMs": 25900,
+    "startSec": 19.65,
+    "endSec": 25.9
+  },
+  {
+    "text": "The Claude app is one harness; Claude Code is another.",
+    "startMs": 25900,
+    "endMs": 29962,
+    "startSec": 25.9,
+    "endSec": 29.962
+  },
+  {
+    "text": "In short: the model thinks, tools let it act, and the harness provides the tools and rules.",
+    "startMs": 29962,
+    "endMs": 36438,
+    "startSec": 29.962,
+    "endSec": 36.438
+  },
+  {
+    "text": "You decide what Claude is allowed to do.",
+    "startMs": 36438,
+    "endMs": 39500,
+    "startSec": 36.438,
+    "endSec": 39.5
+  }
+]

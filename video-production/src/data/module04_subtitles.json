@@ -1,0 +1,58 @@
+[
+  {
+    "text": "AI excels at drafting messages, rewriting text for clarity, summarizing long documents, explaining difficult concepts, and organizing messy tables.",
+    "startMs": 100,
+    "endMs": 10450,
+    "startSec": 0.1,
+    "endSec": 10.45
+  },
+  {
+    "text": "But it requires care with exact figures, mental calculations, recent events, and anything not shared with it.",
+    "startMs": 10400,
+    "endMs": 17788,
+    "startSec": 10.4,
+    "endSec": 17.788
+  },
+  {
+    "text": "AI skill is uneven: success on one task does not guarantee success on another.",
+    "startMs": 17788,
+    "endMs": 24012,
+    "startSec": 17.788,
+    "endSec": 24.012
+  },
+  {
+    "text": "Follow the trust rule: check in proportion to the stakes.",
+    "startMs": 24012,
+    "endMs": 28188,
+    "startSec": 24.012,
+    "endSec": 28.188
+  },
+  {
+    "text": "For low-stakes brainstorming, a quick read is enough.",
+    "startMs": 28188,
+    "endMs": 32200,
+    "startSec": 28.188,
+    "endSec": 32.2
+  },
+  {
+    "text": "For shared internal reports, verify key facts.",
+    "startMs": 32200,
+    "endMs": 36362,
+    "startSec": 32.2,
+    "endSec": 36.362
+  },
+  {
+    "text": "For legal, financial, or customer-facing work, conduct a full review with an expert.",
+    "startMs": 36362,
+    "endMs": 42675,
+    "startSec": 36.362,
+    "endSec": 42.675
+  },
+  {
+    "text": "Finally, protect privacy: never paste passwords, customer personal data, or confidential company information.",
+    "startMs": 42675,
+    "endMs": 50750,
+    "startSec": 42.675,
+    "endSec": 50.75
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "text": "A Large Language Model, or LLM, is trained on vast amounts of text\u2014books, articles, and websites\u2014learning how language works and ideas connect.",
+    "startMs": 100,
+    "endMs": 10762,
+    "startSec": 0.1,
+    "endSec": 10.762
+  },
+  {
+    "text": "Its core mechanism is simple: given some text, it predicts what text should come next, one small piece at a time.",
+    "startMs": 10712,
+    "endMs": 18500,
+    "startSec": 10.713,
+    "endSec": 18.5
+  },
+  {
+    "text": "The model does not read whole words like we do.",
+    "startMs": 18500,
+    "endMs": 21900,
+    "startSec": 18.5,
+    "endSec": 21.9
+  },
+  {
+    "text": "It processes tokens\u2014small pieces of text that can be a word, part of a word, or punctuation.",
+    "startMs": 21900,
+    "endMs": 28888,
+    "startSec": 21.9,
+    "endSec": 28.887
+  },
+  {
+    "text": "When generating a response, the LLM weighs several likely options and picks one.",
+    "startMs": 28888,
+    "endMs": 34662,
+    "startSec": 28.887,
+    "endSec": 34.663
+  },
+  {
+    "text": "Because it chooses among likely options rather than following rigid formulas, asking the same question twice can produce two different, equally reasonable answers.",
+    "startMs": 34662,
+    "endMs": 44325,
+    "startSec": 34.663,
+    "endSec": 44.325
+  },
+  {
+    "text": "Always read and judge the output.",
+    "startMs": 44325,
+    "endMs": 47162,
+    "startSec": 44.325,
+    "endSec": 47.163
+  }
+]

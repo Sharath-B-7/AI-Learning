@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Imagine a colleague who wakes up every morning with no memory of yesterday.",
+    "startMs": 100,
+    "endMs": 4812,
+    "startSec": 0.1,
+    "endSec": 4.812
+  },
+  {
+    "text": "That is how Claude works: each conversation starts fresh, with no carry-over from earlier chats.",
+    "startMs": 4762,
+    "endMs": 11338,
+    "startSec": 4.763,
+    "endSec": 11.338
+  },
+  {
+    "text": "Short-term memory lives only in your current conversation.",
+    "startMs": 11338,
+    "endMs": 15250,
+    "startSec": 11.338,
+    "endSec": 15.25
+  },
+  {
+    "text": "Saved, or persistent memory, consists of notes stored for Claude to read at the start of future chats\u2014such as project instructions or team conventions.",
+    "startMs": 15250,
+    "endMs": 24925,
+    "startSec": 15.25,
+    "endSec": 24.925
+  },
+  {
+    "text": "Memory is not Claude learning on its own; it is a notebook of saved notes that you control.",
+    "startMs": 24925,
+    "endMs": 30725,
+    "startSec": 24.925,
+    "endSec": 30.725
+  },
+  {
+    "text": "Store your role, guidelines, and formatting preferences.",
+    "startMs": 30725,
+    "endMs": 35262,
+    "startSec": 30.725,
+    "endSec": 35.263
+  },
+  {
+    "text": "Never store passwords, customer personal data, or confidential material.",
+    "startMs": 35262,
+    "endMs": 40712,
+    "startSec": 35.263,
+    "endSec": 40.712
+  },
+  {
+    "text": "Keep your notes tidy and updated.",
+    "startMs": 40712,
+    "endMs": 43425,
+    "startSec": 40.712,
+    "endSec": 43.425
+  }
+]

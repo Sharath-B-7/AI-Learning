@@ -1,0 +1,37 @@
+[
+  {
+    "text": "An LLM works in four steps.",
+    "startMs": 100,
+    "endMs": 3162,
+    "startSec": 0.1,
+    "endSec": 3.163
+  },
+  {
+    "text": "The first two happen before you use it: pre-training, where the model reads vast text collections to learn general language patterns and facts; and fine-tuning with human feedback, which trains it to be a helpful, polite assistant that follows instructions.",
+    "startMs": 3112,
+    "endMs": 17438,
+    "startSec": 3.112,
+    "endSec": 17.438
+  },
+  {
+    "text": "When you send a message, step three turns your text into tokens.",
+    "startMs": 17438,
+    "endMs": 22038,
+    "startSec": 17.438,
+    "endSec": 22.038
+  },
+  {
+    "text": "Step four predicts the reply piece by piece, token by token.",
+    "startMs": 22038,
+    "endMs": 26838,
+    "startSec": 22.038,
+    "endSec": 26.837
+  },
+  {
+    "text": "Always keep three essentials in mind: the model has a fixed knowledge cutoff date, it does not look things up by default, and it can invent false details with complete confidence\u2014known as a hallucination.",
+    "startMs": 26838,
+    "endMs": 39050,
+    "startSec": 26.837,
+    "endSec": 39.05
+  }
+]
