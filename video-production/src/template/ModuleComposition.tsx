@@ -44,7 +44,7 @@ export const ModuleComposition: React.FC<ModuleCompositionProps> = ({
       <Audio src={staticFile(`audio/${audioFileName}`)} />
 
       {/* Top Branding Header */}
-      <Branding />
+      <Branding moduleBadge={moduleBadge} />
 
       {/* Synchronized Scenes */}
       {scenes.map((scene, idx) => {

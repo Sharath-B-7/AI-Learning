@@ -5,30 +5,34 @@ import {
   Module11Scene01,
   Module11Scene02,
   Module11Scene03,
+  Module11Scene04,
 } from './scenes/Module11Scenes';
 
 export const Module11Video: React.FC = () => {
   return (
     <ModuleComposition
       partTitle="Part B: AI Concepts for Working with Systems"
-      moduleBadge="PART B · MODULE 11"
+      moduleBadge="Part B • Module 11"
       audioFileName="module-11.mp3"
       subtitles={MODULE_11_SUBTITLES}
       scenes={[
         {
           component: <Module11Scene01 />,
-          durationInFrames: 445, // 0.00s -> 14.82s (Locked room & tools)
+          durationInFrames: 972,  // 0.00s -> 32.40s (The Brain in a Locked Room & Harness)
         },
         {
           component: <Module11Scene02 />,
-          durationInFrames: 455, // 14.82s -> 30.00s (Figure 11: Harness workshop)
+          durationInFrames: 968,  // 32.40s -> 64.67s (Built-In Tools Grid)
         },
         {
           component: <Module11Scene03 />,
-          durationInFrames: 311, // 30.00s -> 40.37s (Triad summary)
+          durationInFrames: 806,  // 64.67s -> 91.53s (Direct Shell Bypass with !)
+        },
+        {
+          component: <Module11Scene04 />,
+          durationInFrames: 1022, // 91.53s -> 125.62s (MCP Connectors & Harness Formula)
         },
       ]}
     />
   );
 };
-

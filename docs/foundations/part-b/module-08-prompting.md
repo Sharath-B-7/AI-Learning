@@ -26,77 +26,136 @@
   </div>
 </div>
 
-A **prompt** is simply the text you type to Claude. Prompting is the craft of asking clearly so you get the result you want without endless back-and-forth.
+---
 
-You do not need secret coding tricks or complex syntax. You only need to give Claude the same clear context you would give a smart new colleague who has just joined your team.
+<a id="the-four-parts-of-a-good-request"></a>
+## Prompting and Instructions in Claude Code
+
+In Claude Code you prompt in plain English at the `>` prompt, exactly as you would in the web interface. The primary difference is that Claude Code is connected directly to your local file system, tools, and execution environment.
+
+A reliable request contains four core building blocks: **Situation**, **Goal**, **Background**, and **Format**. For in-depth prompt strategies, see [Part A, Module 5: Three Habits for Good Results](../part-a/module-05-meet-claude.md#three-habits-for-good-results).
+
+### The 4-Part Request Framework
+
+| Part | What to Include | In Claude Code |
+| :--- | :--- | :--- |
+| **Situation** | Who you are and what the current scenario is | One line at the top of your prompt |
+| **Goal** | Exactly what you want created, edited, or checked | Name the output file if you want one created |
+| **Background** | Specific facts, input files, constraints, or decisions | Use `@file` mentions instead of copy-pasting text |
+| **Format** | Desired structure, length, tone, and audience | Specify in prompt, or set permanently in `CLAUDE.md` |
 
 ---
 
-## The Four Parts of a Good Request
+## Comparison: Weak vs. Strong Requests
 
-A complete, high-leverage prompt typically contains four elements:
+**❌ Weak Request:**
+```text
+> summarize this
+```
+*Why it fails:* Claude does not know which file you mean, who the summary is for, how long it should be, or where to save it.
 
-| Part | What to Include |
-| :--- | :--- |
-| **1. Situation** | Who you are, the scenario, and who the intended reader is |
-| **2. Goal** | Exactly what you want Claude to create or accomplish |
-| **3. Background** | The core facts, constraints, files, or numbers needed to answer |
-| **4. Format** | The desired length, layout (bullet list, table, memo), and tone |
-
-![Figure 8: The four parts of a good request](../../assets/images/foundations/figure-08-four-parts-request.png)
-*Figure 8: The four parts of a good request*
-
-### Comparing Requests
-
-> **Weak Request:**
-> *"Summarize this."*
-
-> **Better Request:**
-> *"I'm preparing for a client meeting tomorrow morning. Summarize the attached vendor report in five concise bullet points, focusing strictly on risks and cost increases. Keep each bullet point under 20 words."*
+**✅ Strong Request:**
+```text
+> I'm preparing for a client meeting tomorrow. Summarize @Q3-report.pdf
+  in five bullet points, focusing on risks and costs. Keep each point
+  under 20 words. Save it as meeting-prep.md.
+```
+*Why it succeeds:* Contains clear situation (client meeting tomorrow), goal (summarize and save as `meeting-prep.md`), background (`@Q3-report.pdf`), and constraints (5 bullets, risks and costs focus, under 20 words per point). See this in action in the [Worked Example](worked-example.md#step-5-execute-the-reusable-skill-with-specific-context).
 
 ---
 
-## Five Practical Prompting Techniques
-
-### 1. Show an Example ([Few-Shot Prompting](glossary.md#few-shot-examples))
-> *"Draft this announcement in the exact tone and style of the sample email pasted below: [paste sample]."*
-A single concrete example teaches Claude formatting and voice faster than a paragraph of adjectives.
-
-### 2. Set Explicit Negative Boundaries
-> *"Do not use corporate buzzwords like 'synergy' or 'leverage'. If a numerical value is not explicitly in the attached document, state that it is missing rather than estimating."*
-
-### 3. Break Complex Work into Sequential Steps
-Do not ask for a 20-page document in one turn. Ask for an outline first:
-> *"Propose a 4-part outline for this whitepaper. Stop and wait for my approval before drafting the sections."*
-
-### 4. Let Claude Interview You
-> *"Before you begin drafting the project charter, ask me up to three clarifying questions about the project constraints."*
-
-### 5. Refine and Iterate in Follow-Up Turns
-The first response is rarely final. Treat it as a first draft:
-> *"Cut this in half, make the deadline bold, and soften the second paragraph."*
+## Everyday Scenario: Asha's Reminder Email
 
 > [!NOTE]
-> **Example (Asha's Iteration):**
-> Asha asks Claude for a deadline reminder email. The initial draft is three paragraphs long. She replies: *"Cut this down to three sentences and make the Friday 3 PM deadline stand out."* Claude updates it immediately.
+> **Asha's Iterative Prompting:**
+> Asha needs to send a vendor payment reminder.
+>
+> Her first prompt:
+> ```text
+> > draft a payment reminder email to NorthStar Supplies
+> ```
+> Claude generates a polite, four-paragraph email. It is well-written, but far too long for a quick workplace reminder.
+>
+> Instead of starting over, Asha refines it directly in the follow-up:
+> ```text
+> > cut this to three sentences, make the invoice number bold, and state that payment is due this Friday by 5 PM
+> ```
+> Claude updates the draft immediately. The second version is crisp, professional, and ready to send.
+
+---
+
+## Try It in Claude Code: Input Shortcuts & Workflow Keys
+
+Inside your interactive terminal session, these keyboard shortcuts streamline typing and managing complex prompts, as summarized in the [Command Cheat Sheet](index.md#inside-claude-code-session-commands):
+
+| Key or Command | What It Does | Documentation Link |
+| :--- | :--- | :--- |
+| **`Shift + Enter`** | Creates a new line without sending the message (works in Windows Terminal). In standard CMD, type `\` then press `Enter`. | [Command Cheat Sheet](index.md#inside-claude-code-session-commands) |
+| **`Ctrl + G`** | Opens your current prompt in an external text editor (like Notepad or VS Code) for crafting long, structured requests. | [Set up Claude Code on Windows](setup-windows.md#7-starting-your-first-session) |
+| **`Alt + V`** | Pastes a screenshot or image directly from your Windows clipboard into the prompt. | [Module 6: Multimodal Inputs](module-06-types-of-models.md#multimodal-models-models-that-can-see) |
+| **`Up / Down Arrows`** | Cycles through your earlier prompt history so you can re-run or adjust previous commands. | [Command Cheat Sheet](index.md#inside-claude-code-session-commands) |
+| **`/plan <task>`** | Tells Claude to research the problem, produce a step-by-step plan, and wait for your approval before making changes. | [Module 12: Plan Mode](module-12-agents.md#try-it-in-claude-code-agent-controls-safeguards) |
+| **`Esc`** | Immediately pauses or interrupts Claude mid-generation if you notice it heading in the wrong direction. | [FAQ Question 8](faq.md#8-how-do-i-stop-claude-immediately-if-it-starts-making-unexpected-changes) |
+
+---
+
+## Useful Prompting Techniques for the Terminal
+
+- **Provide Style Examples:** Rather than describing a tone abstractly, point to an existing file:
+  ```text
+  > write this update in the same style and tone as @emails\sample-reminder.txt
+  ```
+- **Establish Strict Boundaries:** Explicitly tell Claude what *not* to do:
+  ```text
+  > do not use corporate jargon; if a financial figure is missing from @budget.csv, say so rather than estimating
+  ```
+- **Plan Complex Changes First:** For multi-step tasks, use plan mode:
+  ```text
+  > /plan outline how we will reorganize the @docs\ folder, list every move, and wait for my OK
+  ```
+- **Invite Clarifying Questions:** Prevent misunderstandings before work begins:
+  ```text
+  > before you start, ask me up to three clarifying questions if anything about the requirements is unclear
+  ```
 
 ---
 
 > [!TIP]
-> **Remember:** Always provide **Situation, Goal, Background, and Format**. Spending an extra 30 seconds giving clear instructions up front saves ten minutes of follow-up corrections.
+> **Remember:** State the situation, goal, background, and format. Mention background files with `@` and always use `/plan` before allowing Claude to modify files. Explore more in [Module 12: Agents](module-12-agents.md#the-agent-loop-on-screen).
+
+---
+
+## Practical Exercises
+
+1. **Multi-Line Input:** Open Claude Code in Windows Terminal and use `Shift + Enter` to write a 3-paragraph structured request with headings and bullet points.
+2. **External Editor with `Ctrl + G`:** Type a partial prompt at the `>` prompt, press `Ctrl + G`, watch Notepad open, finish editing your prompt, save and close Notepad, and see the full text appear at the Claude prompt.
+3. **Plan Before Action:** Run `/plan reorganize the files in @drafts\ into subfolders by year` and examine the proposed execution steps before approving.
+
+---
+
+## Knowledge Check
+
+??? question "Which shortcut allows you to insert a line break without accidentally submitting your prompt in Windows Terminal?"
+    **Answer:** `Shift + Enter` (or typing `\` followed by `Enter` in traditional command consoles).
+
+??? question "Why is using `@notes.txt` better than copy-pasting the text of `notes.txt` into the prompt?"
+    **Answer:** Using `@notes.txt` puts the file directly on the desk cleanly, avoids cluttering your terminal screen, handles large files efficiently, and preserves exact formatting.
+
+??? question "What should you press if you notice Claude starting to rewrite a file you did not want changed?"
+    **Answer:** Press `Esc` to immediately stop generation.
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part A, Module 5: Three Habits for Good Results](../part-a/module-05-meet-claude.md#three-habits-for-good-results)** — Context, Goal, and Format fundamentals.
-- **[Part B, Module 7: Context](module-07-context.md)** — Managing the active desk to ensure prompts have clear references.
-- **[Part B, Module 10: Skills](module-10-skills.md)** — Turning recurring high-performing prompts into saved, reusable skills.
-- **[Part B Glossary: Prompting & Few-Shot](glossary.md#prompting)** — Plain-English definitions of prompt engineering techniques.
+- **[Part A, Module 3: How LLMs Work](../part-a/module-03-how-llms-work.md)** — Prompt anatomy.
+- **[Part B, Module 7: Context](module-07-context.md)** — Putting files on the desk with `@`.
+- **[Part B, Module 9: Memory](module-09-memory.md)** — Saving permanent formatting rules in `CLAUDE.md`.
+- **[Part B, Module 12: Agents](module-12-agents.md)** — Using `/plan` and managing autonomous execution.
 
 ---
 
 <div class="hero-actions">
-  <a href="../module-07-context/" class="md-button">← Module 7: Context</a>
+  <a href="../module-07-context/" class="md-button">← Previous: Module 7 — Context</a>
   <a href="../module-09-memory/" class="md-button md-button--primary">Next: Module 9 — Memory →</a>
 </div>

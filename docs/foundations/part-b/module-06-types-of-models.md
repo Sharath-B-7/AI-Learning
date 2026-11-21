@@ -26,74 +26,115 @@
   </div>
 </div>
 
-In Part A you learned that a model is the trained "brain" behind an AI tool. Claude is not one single model. It is a family of models, and you can choose between them depending on the difficulty and speed requirements of your task.
+---
+
+## The Idea in Brief
+
+Claude is a family of foundation models developed by Anthropic. In [Set up Claude Code on Windows](setup-windows.md), you can seamlessly switch between different model tiers with a single slash command. Smaller models are faster and cheaper; larger models handle harder, multi-step analytical and architectural work.
+
+For a comprehensive comparison of model capabilities and benchmark scores, see the [Part A, Module 5: Meet Claude](../part-a/module-05-meet-claude.md#different-models) and the [Part B Glossary: Model Tier](glossary.md#model-tier).
+
+| Tier | Name in Claude Code | Good For | Trade-Off |
+| :--- | :--- | :--- | :--- |
+| **Smaller and faster** | `haiku` | Quick edits, renaming, simple questions | Less depth on complex multi-file problems |
+| **Balanced** | `sonnet` | Most everyday work: drafting, analysis, spreadsheets | Sensible middle ground for daily productivity |
+| **Most capable** | `opus` | Hard, multi-step, or high-stakes reasoning jobs | Slower and consumes more of your token allowance |
+
+A **thinking model** works the problem through step by step before generating an answer. In Claude Code, you control this behavior via the **effort level** setting: low effort responds quickly, while high effort engages deeper reasoning cycles. For more details on reasoning mechanisms, explore the [Glossary: Thinking Model](glossary.md#thinking-model-extended-thinking). Note that extended thinking helps solve intricate logic puzzles, but human verification is always required.
 
 ---
 
-## Model Tiers: Small, Medium, and Large
-
-Think of hiring help in an office. You would not ask a senior specialist to sort the incoming mail, and you would not ask a brand-new trainee to review a complex multi-million dollar vendor contract. AI models work the same way.
-
-| Tier | Good For | Trade-Off |
-| :--- | :--- | :--- |
-| **Smaller & Faster** | Quick edits, sorting, simple questions, short summaries | Less depth and nuance on complex problems |
-| **Balanced (Mid-Range)** | Most everyday work: drafting, analysis, spreadsheets | A sensible middle ground between speed and quality |
-| **Most Capable** | Hard, multi-step, high-stakes, or heavy analytical tasks | Slower and costs more to run |
-
-Claude's models are named by tier (for example, **Haiku** for fast tasks, **Sonnet** for balanced daily intelligence, and **Opus** for deep research and heavy writing).
+## Everyday Scenario: Asha's Operations Decisions
 
 > [!NOTE]
-> **Example (Asha's Task Choice):**
-> Asha wants to fix typos in a short team email. A smaller, faster model is perfect. Later, she needs to compare three complex vendor quotes for an offsite event and highlight hidden service fees. That is a job for a more capable model.
+> **Asha's Model Selection Strategy:**
+> - When Asha needs to fix minor typos or format text across a single document, she switches to **`haiku`** for near-instant turnaround and minimal cost.
+> - For her day-to-day operations—drafting meeting summaries, compiling status updates, and analyzing team deliverables—she keeps Claude on **`sonnet`**.
+> - When comparing three competing supplier quotes with conflicting terms, varying discount structures, and complex SLAs, she switches to **`opus`** and sets `/effort high` to let the model cross-examine the numbers thoroughly.
 
 ---
 
-## Standard Models vs. Thinking (Reasoning) Models
+## Try It in Claude Code
 
-A **standard model** answers right away, like answering a question off the top of your head.
+Inside an active interactive session, you switch models and configure thinking effort dynamically using [slash commands](index.md#inside-claude-code-session-commands):
 
-A **reasoning or thinking model** works through the problem step by step first, like working it out on scratch paper before giving the final answer. It takes longer and uses more computational allowance, but it performs dramatically better on difficult problems such as complex numerical analysis, system architecture, and tricky logic.
+```text
+> /model                 # open the interactive model picker (arrow keys, Enter)
+> /model sonnet          # switch straight to the balanced model
+> /model opus            # switch to the most capable model
+> /effort high           # think longer on hard problems
+> /effort low            # answer fast on easy ones
+> /effort status         # show the current effort level
+> /status                # see which model and account you are currently using
+```
 
-Many Claude models can be instructed to think before answering. In the Claude app, this is often a setting you can switch on when a task requires deep reflection.
+You can also specify your model directly when launching Claude Code from Windows PowerShell using the `--model` flag documented in the [Set up Claude Code on Windows guide](setup-windows.md#8-starting-resuming-and-leaving-sessions):
 
-> [!NOTE]
-> **Example (When to Think):**
-> - *"Which supplier quote is cheaper once volume discounts, shipping surcharges, and tax are included?"* A thinking model calculates each sub-total carefully on scratch paper and is far less likely to slip.
-> - *"Rewrite this sentence to sound friendlier."* This does not need extended thinking at all.
+```powershell
+PS C:\Work\TeamOps> claude --model sonnet
+```
 
-![Figure 6: A simple way to choose a model](../../assets/images/foundations/figure-06-model-choice-tree.png)
-*Figure 6: A simple way to choose a model*
+### Key Behaviors to Keep in Mind
 
-> [!WARNING]
-> Thinking does not guarantee a 100% correct answer every time. Always continue checking important results using the **Trust Rule** from Part A.
+- **Default Persistence:** Running `/model` saves your selection as the project default for future sessions. In the interactive picker, use the left and right arrow keys to adjust thinking effort for supported models.
+- **Checking Your Quota:** Run `/usage` to inspect how much of your plan or token allowance you have consumed. This helps you gauge when a lighter model like `haiku` is sufficient.
+- **Dynamic Model Availability:** Model names and capabilities evolve. The interactive `/model` picker dynamically queries and displays the exact models enabled for your account tier.
 
 ---
 
-## Multimodal Models: Models That Can See
+<a id="multimodal-models-models-that-can-see"></a>
+## Multimodal: Giving Claude a Picture or Document
 
-Multimodal models work with more than plain text. You can share a photo of a whiteboard diagram, a scanned PDF invoice, an architectural sketch, or a financial chart, and ask Claude to inspect and explain it.
+Claude Code supports multimodal reasoning, allowing it to inspect and extract information from screenshots, diagrams, and PDFs as detailed in [Module 7: Context](module-07-context.md#the-desk-in-claude-code):
 
-> [!NOTE]
-> **Example (Asha's Whiteboard):**
-> After a quarterly planning session, Asha photographs the physical whiteboard and asks Claude to transcribe it into a typed action list grouped by owner and due date.
+- **Windows Clipboard Shortcut:** Capture a screenshot (e.g., with `Win + Shift + S`), click into the Claude Code prompt, and press **`Alt + V`** to paste the image directly from your clipboard.
+- **File Mentions with `@`:** You can also reference an image or PDF file stored in your workspace:
+
+```text
+> @whiteboard.png turn this photo into a typed action list with owners and due dates
+```
+
+Claude reads the image pixels, transcribes handwritten notes, identifies action items, and generates a structured table.
 
 ---
 
 > [!TIP]
-> **Remember:** Match the model to the task. Start with a balanced model (like Sonnet), move to a smaller one (like Haiku) for simple jobs, and use a more capable one or turn on extended thinking when the task is difficult. Bigger is not always better.
+> **Core Rule of Thumb:** Start with **`sonnet`** for everyday work. Drop to **`haiku`** for simple, repetitive tasks. Switch to **`opus`** or raise to **`/effort high`** when solving complex, high-stakes puzzles. Learn more in the [Worked Example: Asha\'s Weekly Report](worked-example.md#step-4-verify-model-selection).
+
+---
+
+## Practical Exercises
+
+1. **Test the Model Picker:** Launch Claude Code and type `/model`. Use the arrow keys to inspect the available models and adjust the effort level, then select `sonnet`.
+2. **Observe Speed Differences:** Ask `haiku` and `opus` the same question: `Explain the difference between CAPEX and OPEX in 30 words.` Notice the response speed and depth.
+3. **Inspect Active Status:** Run `/status` and verify your active model, authentication identity, and current directory as detailed in [FAQ Question 4](faq.md#4-how-do-i-see-every-available-slash-command-inside-a-session).
+
+---
+
+## Knowledge Check
+
+??? question "Which model tier should Asha choose if she wants to rename 20 report files quickly and economically?"
+    **Answer:** `haiku`. It is the fastest and least expensive model tier, perfectly suited for straightforward edits and repetitive administrative tasks.
+
+??? question "How can you give Claude a screenshot of an error message on Windows without saving it as an image file first?"
+    **Answer:** Copy the screenshot to your Windows clipboard (`Win + Shift + S`), navigate to the Claude Code prompt, and press `Alt + V`.
+
+??? question "Does setting `/effort high` guarantee that Claude's answer will be 100% correct?"
+    **Answer:** No. While extended thinking allows the model to reason through multi-step logic and catch edge cases, human verification is always required.
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part A, Module 2: What Is an LLM?](../part-a/module-02-what-is-an-llm.md)** — Understanding how models predict tokens and why output variation occurs.
-- **[Part A, Module 5: Meet Claude](../part-a/module-05-meet-claude.md#different-models)** — Introduction to smaller vs. larger models.
-- **[Part B, Module 7: Context](module-07-context.md)** — How your choice of model impacts context capacity and speed.
-- **[Part B Glossary: Model Tiers](glossary.md#model-tier)** — Plain-English definition of model sizes and reasoning models.
+- **[Part A, Module 2: What Is an LLM?](../part-a/module-02-what-is-an-llm.md)** — Understanding how models predict tokens.
+- **[Part A, Module 5: Meet Claude](../part-a/module-05-meet-claude.md)** — Overview of Claude's architecture.
+- **[Set up Claude Code on Windows](setup-windows.md)** — Installation and launch commands.
+- **[Part B, Module 7: Context](module-07-context.md)** — How model context limits impact available desk space.
+- **[Part B Glossary: Model Tiers](glossary.md#model-tier)** — Plain-English reference for model tiers.
 
 ---
 
 <div class="hero-actions">
-  <a href="../" class="md-button">← Part B Overview</a>
+  <a href="../setup-windows/" class="md-button">← Set up Claude Code on Windows</a>
   <a href="../module-07-context/" class="md-button md-button--primary">Next: Module 7 — Context →</a>
 </div>

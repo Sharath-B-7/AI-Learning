@@ -37,7 +37,7 @@ Claude does not come in a single fixed version. It is offered in different **mod
 - **Smaller models:** Faster and lower cost; ideal for quick edits, classification, and straightforward questions.
 - **Larger models:** Deeply capable and sophisticated; ideal for complex multi-step reasoning, nuanced drafting, and coding.
 
-*(You will learn how to select between models in [Part B, Module 6: Types of Models](../part-b/module-06-types-of-models.md).)*
+*(You will learn how to select between models in [Part B, Module 6: Types of Models](../part-b/module-06-types-of-models.md#the-idea-in-brief).)*
 
 ---
 
@@ -46,7 +46,7 @@ Claude does not come in a single fixed version. It is offered in different **mod
 | Way to Use | What It Is | Who It's For |
 | :--- | :--- | :--- |
 | **Claude App** *(Web, Desktop, Mobile)* | Chat with Claude, attach files, generate visual artifacts, and get help with everyday work | Everyone in the company |
-| **Claude Code** | Claude working directly inside a local software project, able to edit files and run commands | Developers and technical teams ([Part B, Module 11](../part-b/module-11-tools-and-harness.md)) |
+| **Claude Code** | Claude working directly inside a local software project, able to edit files and run commands | Developers and technical teams ([Set up Claude Code on Windows](../part-b/setup-windows.md) & [Module 11](../part-b/module-11-tools-and-harness.md#the-harness-giving-tools-to-the-brain)) |
 | **API** | Direct programmatic interface connecting external software systems to Claude | Developers building custom applications |
 
 ---
@@ -56,7 +56,7 @@ Claude does not come in a single fixed version. It is offered in different **mod
 Understanding this distinction is critical as you advance:
 
 - **In a Chat:** You ask a question, Claude writes an answer, and you decide what happens next.
-- **With an Agent:** You give a high-level goal, and Claude works through multiple steps on its own—opening files, running calculations, using tools, and reviewing its own results (explored in depth in [Part B, Module 12: Agents](../part-b/module-12-agents.md)).
+- **With an Agent:** You give a high-level goal, and Claude works through multiple steps on its own—opening files, running calculations, using tools, and reviewing its own results (explored in depth in [Part B, Module 12: Agents](../part-b/module-12-agents.md#chat-vs-agent-the-shift-from-conversation-to-delegation)).
 
 ![Figure 5: Chat compared with an agent](../../assets/images/foundations/figure-05-chat-vs-agent.png)
 *Figure 5: Chat compared with an agent*
@@ -87,7 +87,7 @@ Whenever you prompt Claude, build these three habits into your request (expanded
 > **Hands-On Exercise:** Pick one of the three everyday work tasks you wrote down during Module 1.
 > 
 > 1. Formulate a prompt using the **Three Habits** (Context, Goal, Format).
-> 2. Submit it to Claude at [claude.ai](https://claude.ai).
+> 2. Submit it to Claude (see [Ways to Use Claude](#ways-to-use-claude)).
 > 3. Review the result using the **Trust Rule** (check in proportion to stakes).
 > 4. Note down: What worked well? What required a follow-up correction?
 

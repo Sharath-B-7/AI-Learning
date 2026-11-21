@@ -1,51 +1,104 @@
 [
   {
-    "text": "Context is everything Claude can see at the moment it answers you.",
+    "text": "Welcome to Module 7: Context in Claude Code.",
     "startMs": 100,
-    "endMs": 4338,
-    "startSec": 0.1,
-    "endSec": 4.338
+    "endMs": 4250,
+    "durationMs": 4150
   },
   {
-    "text": "Picture Claude sitting at a desk.",
-    "startMs": 4288,
-    "endMs": 6950,
-    "startSec": 4.287,
-    "endSec": 6.95
+    "text": "To understand how Claude Code thinks, picture Claude sitting at a physical working desk.",
+    "startMs": 4200,
+    "endMs": 9900,
+    "durationMs": 5700
   },
   {
-    "text": "Only what is on that desk is available to work with: your instructions, the conversation history, files you shared, and tool results.",
-    "startMs": 6950,
-    "endMs": 15850,
-    "startSec": 6.95,
-    "endSec": 15.85
+    "text": "Everything Claude can see and remember at this exact moment is what sits on that desk: your initial prompt, previous conversation messages, file contents you have shared, and the outputs returned by tools.",
+    "startMs": 9900,
+    "endMs": 22412,
+    "durationMs": 12512
   },
   {
-    "text": "Anything not on the desk simply does not exist for Claude.",
-    "startMs": 15850,
-    "endMs": 19775,
-    "startSec": 15.85,
-    "endSec": 19.775
+    "text": "Anything not physically placed on the desk simply does not exist for Claude.",
+    "startMs": 22412,
+    "endMs": 27175,
+    "durationMs": 4762
   },
   {
-    "text": "But the desk has a size limit called the context window.",
-    "startMs": 19775,
-    "endMs": 23688,
-    "startSec": 19.775,
-    "endSec": 23.688
+    "text": "However, this desk has a finite physical surface area known as the context window.",
+    "startMs": 27175,
+    "endMs": 32950,
+    "durationMs": 5775
   },
   {
-    "text": "When a chat grows too long or files too large, the desk clutters, causing Claude to lose track of details.",
-    "startMs": 23688,
-    "endMs": 31150,
-    "startSec": 23.688,
-    "endSec": 31.15
+    "text": "Claude features an industry-leading context window of 200,000 tokens, which equals roughly 150,000 words.",
+    "startMs": 32950,
+    "endMs": 41275,
+    "durationMs": 8325
   },
   {
-    "text": "Keep your context clean: start a fresh chat for each new task, and share only the specific pages and files that matter.",
-    "startMs": 31150,
-    "endMs": 39138,
-    "startSec": 31.15,
-    "endSec": 39.138
+    "text": "But when you load dozens of unnecessary files or let a conversation run for hours, the desk becomes cluttered.",
+    "startMs": 41275,
+    "endMs": 48425,
+    "durationMs": 7150
+  },
+  {
+    "text": "Context clutter causes Claude to lose track of key constraints, misinterpret guidelines, and hallucinate details.",
+    "startMs": 48425,
+    "endMs": 56138,
+    "durationMs": 7712
+  },
+  {
+    "text": "In artificial intelligence engineering, quality matters much more than quantity.",
+    "startMs": 56138,
+    "endMs": 61362,
+    "durationMs": 5225
+  },
+  {
+    "text": "Claude Code gives you powerful commands to keep your desk organized.",
+    "startMs": 61362,
+    "endMs": 65750,
+    "durationMs": 4388
+  },
+  {
+    "text": "Use the at symbol followed by a file path to place only the specific file Claude needs onto the desk.",
+    "startMs": 65750,
+    "endMs": 72300,
+    "durationMs": 6550
+  },
+  {
+    "text": "Run the slash context command to inspect your active token usage and see exactly which files are occupying space.",
+    "startMs": 72300,
+    "endMs": 79725,
+    "durationMs": 7425
+  },
+  {
+    "text": "When a session grows large, use slash compact to summarize older discussion while preserving vital architectural decisions, significantly reducing context load.",
+    "startMs": 79725,
+    "endMs": 89800,
+    "durationMs": 10075
+  },
+  {
+    "text": "When starting a completely new feature or investigation, run slash clear to completely wipe the desk clean.",
+    "startMs": 89800,
+    "endMs": 96638,
+    "durationMs": 6838
+  },
+  {
+    "text": "Remember the golden rules: never dump entire codebases at once, share only targeted files, and start fresh for each new task.",
+    "startMs": 96638,
+    "endMs": 105825,
+    "durationMs": 9188
+  },
+  {
+    "text": "Regularly compacting your session keeps token consumption low and ensures sharp responses.",
+    "startMs": 105825,
+    "endMs": 111762,
+    "durationMs": 5938
+  },
+  {
+    "text": "A clean, organized desk guarantees that Claude provides reliable, high-precision results throughout your project.",
+    "startMs": 111762,
+    "endMs": 119075,
+    "durationMs": 7312
   }
 ]

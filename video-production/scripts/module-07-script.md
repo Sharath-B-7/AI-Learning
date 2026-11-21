@@ -1,0 +1,133 @@
+# Video Production Script: Module 7 – Context
+
+**Module Number:** Module 7
+**Module Title:** Context
+**Top-Left Label:** `Part B • Module 7`
+**Course Section:** Part B: AI Concepts for Working with Systems
+**Audio Duration:** 1m 59.1s (119.14s)
+**Total Frames (30fps):** 3574
+**Word Count:** 275 words
+**Narration Voice:** `en-US-ChristopherNeural` (Rate: `+0%` - Natural Part A Pace)
+**Speaking Pace:** 138.5 WPM (Normalized to match Part A)
+
+---
+
+## Production Blueprint & Scene Breakdown
+
+### Scene 1: The Physical Desk Analogy
+- **Duration:** 815 frames (27.17s)
+
+### Scene 2: The Context Window & Clutter
+- **Duration:** 1026 frames (34.20s)
+
+### Scene 3: Commands: @file, /context, /compact
+- **Duration:** 853 frames (28.43s)
+
+### Scene 4: /clear & Clean Desk Checklist
+- **Duration:** 880 frames (29.33s)
+
+## Full Narration Script
+[
+  {
+    "text": "Welcome to Module 7: Context in Claude Code.",
+    "startMs": 100,
+    "endMs": 4250,
+    "durationMs": 4150
+  },
+  {
+    "text": "To understand how Claude Code thinks, picture Claude sitting at a physical working desk.",
+    "startMs": 4200,
+    "endMs": 9900,
+    "durationMs": 5700
+  },
+  {
+    "text": "Everything Claude can see and remember at this exact moment is what sits on that desk: your initial prompt, previous conversation messages, file contents you have shared, and the outputs returned by tools.",
+    "startMs": 9900,
+    "endMs": 22412,
+    "durationMs": 12512
+  },
+  {
+    "text": "Anything not physically placed on the desk simply does not exist for Claude.",
+    "startMs": 22412,
+    "endMs": 27175,
+    "durationMs": 4762
+  },
+  {
+    "text": "However, this desk has a finite physical surface area known as the context window.",
+    "startMs": 27175,
+    "endMs": 32950,
+    "durationMs": 5775
+  },
+  {
+    "text": "Claude features an industry-leading context window of 200,000 tokens, which equals roughly 150,000 words.",
+    "startMs": 32950,
+    "endMs": 41275,
+    "durationMs": 8325
+  },
+  {
+    "text": "But when you load dozens of unnecessary files or let a conversation run for hours, the desk becomes cluttered.",
+    "startMs": 41275,
+    "endMs": 48425,
+    "durationMs": 7150
+  },
+  {
+    "text": "Context clutter causes Claude to lose track of key constraints, misinterpret guidelines, and hallucinate details.",
+    "startMs": 48425,
+    "endMs": 56138,
+    "durationMs": 7712
+  },
+  {
+    "text": "In artificial intelligence engineering, quality matters much more than quantity.",
+    "startMs": 56138,
+    "endMs": 61362,
+    "durationMs": 5225
+  },
+  {
+    "text": "Claude Code gives you powerful commands to keep your desk organized.",
+    "startMs": 61362,
+    "endMs": 65750,
+    "durationMs": 4388
+  },
+  {
+    "text": "Use the at symbol followed by a file path to place only the specific file Claude needs onto the desk.",
+    "startMs": 65750,
+    "endMs": 72300,
+    "durationMs": 6550
+  },
+  {
+    "text": "Run the slash context command to inspect your active token usage and see exactly which files are occupying space.",
+    "startMs": 72300,
+    "endMs": 79725,
+    "durationMs": 7425
+  },
+  {
+    "text": "When a session grows large, use slash compact to summarize older discussion while preserving vital architectural decisions, significantly reducing context load.",
+    "startMs": 79725,
+    "endMs": 89800,
+    "durationMs": 10075
+  },
+  {
+    "text": "When starting a completely new feature or investigation, run slash clear to completely wipe the desk clean.",
+    "startMs": 89800,
+    "endMs": 96638,
+    "durationMs": 6838
+  },
+  {
+    "text": "Remember the golden rules: never dump entire codebases at once, share only targeted files, and start fresh for each new task.",
+    "startMs": 96638,
+    "endMs": 105825,
+    "durationMs": 9188
+  },
+  {
+    "text": "Regularly compacting your session keeps token consumption low and ensures sharp responses.",
+    "startMs": 105825,
+    "endMs": 111762,
+    "durationMs": 5938
+  },
+  {
+    "text": "A clean, organized desk guarantees that Claude provides reliable, high-precision results throughout your project.",
+    "startMs": 111762,
+    "endMs": 119075,
+    "durationMs": 7312
+  }
+]

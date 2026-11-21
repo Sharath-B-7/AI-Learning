@@ -1116,3 +1116,768 @@
   }
 }
 
+/* ==========================================================================
+   TAVI — Intelligent Document-Grounded AI Assistant
+   Automatic Light / Dark Theme Synchronization
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Light Theme CSS Variables
+   -------------------------------------------------------------------------- */
+.chat-widget-wrapper,
+.chat-widget-wrapper[data-tavi-theme="light"],
+body:not([data-md-color-scheme="slate"]) .chat-widget-wrapper {
+  --tavi-main-bg: #FFFFFF;
+  --tavi-panel-bg: #FFFFFF;
+  --tavi-header-bg: #4054B2;
+  --tavi-header-text: #FFFFFF;
+  --tavi-header-sub: #EEF3FF;
+  --tavi-header-avatar-bg: rgba(255, 255, 255, 0.2);
+  --tavi-header-badge-bg: rgba(255, 255, 255, 0.2);
+  --tavi-header-badge-text: #FFFFFF;
+  --tavi-header-badge-border: rgba(255, 255, 255, 0.3);
+  --tavi-header-btn-hover: rgba(255, 255, 255, 0.2);
+  --tavi-primary: #4054B2;
+  --tavi-primary-hover: #34469D;
+  --tavi-soft-blue: #EEF3FF;
+  --tavi-main-text: #26345B;
+  --tavi-secondary-text: #64748B;
+  --tavi-border: #DCE5F7;
+  --tavi-panel-shadow: 0 12px 36px rgba(38, 52, 91, 0.16), 0 4px 12px rgba(64, 84, 178, 0.08);
+
+  --tavi-launcher-bg: #4054B2;
+  --tavi-launcher-hover: #34469D;
+  --tavi-launcher-text: #FFFFFF;
+  --tavi-launcher-icon: #FFFFFF;
+  --tavi-launcher-border: rgba(255, 255, 255, 0.25);
+  --tavi-launcher-shadow: 0 4px 16px rgba(64, 84, 178, 0.35), 0 2px 6px rgba(38, 52, 91, 0.12);
+
+  --tavi-user-bubble-bg: #EEF3FF;
+  --tavi-user-bubble-text: #26345B;
+  --tavi-user-bubble-border: #DCE5F7;
+
+  --tavi-asst-bubble-bg: #FFFFFF;
+  --tavi-asst-bubble-text: #26345B;
+  --tavi-asst-bubble-border: #DCE5F7;
+
+  --tavi-welcome-bg: #EEF3FF;
+  --tavi-welcome-title: #26345B;
+  --tavi-welcome-text: #64748B;
+  --tavi-welcome-icon-bg: #FFFFFF;
+  --tavi-welcome-icon-color: #4054B2;
+
+  --tavi-input-area-bg: #FFFFFF;
+  --tavi-input-wrapper-bg: #FFFFFF;
+  --tavi-input-text: #26345B;
+  --tavi-input-placeholder: #64748B;
+  --tavi-send-btn-bg: #4054B2;
+  --tavi-send-btn-color: #FFFFFF;
+  --tavi-send-btn-hover: #34469D;
+  --tavi-send-btn-disabled-bg: #EEF3FF;
+  --tavi-send-btn-disabled-color: #94A3B8;
+
+  --tavi-code-bg: #EEF3FF;
+  --tavi-code-border: #DCE5F7;
+  --tavi-code-color: #4054B2;
+
+  --tavi-scrollbar-thumb: #DCE5F7;
+  --tavi-scrollbar-hover: #CBD5E1;
+
+  --tavi-refusal-bg: #FFFBEB;
+  --tavi-refusal-border: #FDE68A;
+  --tavi-refusal-text: #92400E;
+
+  --tavi-error-bg: #FEF2F2;
+  --tavi-error-border: #FECACA;
+  --tavi-error-text: #991B1B;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Theme CSS Variables
+   -------------------------------------------------------------------------- */
+.chat-widget-wrapper[data-tavi-theme="dark"],
+body[data-md-color-scheme="slate"] .chat-widget-wrapper {
+  --tavi-main-bg: #24262D;
+  --tavi-panel-bg: #2B303B;
+  --tavi-header-bg: #24262D;
+  --tavi-header-text: #E6EAF2;
+  --tavi-header-sub: #AAB4C5;
+  --tavi-header-avatar-bg: rgba(121, 137, 232, 0.2);
+  --tavi-header-badge-bg: rgba(121, 137, 232, 0.2);
+  --tavi-header-badge-text: #7989E8;
+  --tavi-header-badge-border: rgba(121, 137, 232, 0.35);
+  --tavi-header-btn-hover: rgba(255, 255, 255, 0.12);
+  --tavi-primary: #7989E8;
+  --tavi-primary-hover: #6877D9;
+  --tavi-soft-blue: #303747;
+  --tavi-main-text: #E6EAF2;
+  --tavi-secondary-text: #AAB4C5;
+  --tavi-border: #414B5D;
+  --tavi-panel-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  --tavi-launcher-bg: #2B303B;
+  --tavi-launcher-hover: #303747;
+  --tavi-launcher-text: #E6EAF2;
+  --tavi-launcher-icon: #7989E8;
+  --tavi-launcher-border: #414B5D;
+  --tavi-launcher-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  --tavi-user-bubble-bg: #353D4F;
+  --tavi-user-bubble-text: #E6EAF2;
+  --tavi-user-bubble-border: #4A566E;
+
+  --tavi-asst-bubble-bg: #24262D;
+  --tavi-asst-bubble-text: #E6EAF2;
+  --tavi-asst-bubble-border: #414B5D;
+
+  --tavi-welcome-bg: #303747;
+  --tavi-welcome-title: #E6EAF2;
+  --tavi-welcome-text: #AAB4C5;
+  --tavi-welcome-icon-bg: #24262D;
+  --tavi-welcome-icon-color: #7989E8;
+
+  --tavi-input-area-bg: #2B303B;
+  --tavi-input-wrapper-bg: #303747;
+  --tavi-input-text: #FFFFFF;
+  --tavi-input-placeholder: #AAB4C5;
+  --tavi-send-btn-bg: #7989E8;
+  --tavi-send-btn-color: #FFFFFF;
+  --tavi-send-btn-hover: #6877D9;
+  --tavi-send-btn-disabled-bg: #24262D;
+  --tavi-send-btn-disabled-color: #64748B;
+
+  --tavi-code-bg: #24262D;
+  --tavi-code-border: #414B5D;
+  --tavi-code-color: #7989E8;
+
+  --tavi-scrollbar-thumb: #414B5D;
+  --tavi-scrollbar-hover: #55627A;
+
+  --tavi-refusal-bg: rgba(245, 158, 11, 0.12);
+  --tavi-refusal-border: rgba(245, 158, 11, 0.3);
+  --tavi-refusal-text: #FCD34D;
+
+  --tavi-error-bg: rgba(239, 68, 68, 0.15);
+  --tavi-error-border: rgba(239, 68, 68, 0.35);
+  --tavi-error-text: #FCA5A5;
+}
+
+.chat-widget-wrapper {
+  position: relative;
+  z-index: 999;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Floating "Ask Tavi" Launcher Button
+   -------------------------------------------------------------------------- */
+.chat-launcher-pill,
+.chat-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--tavi-launcher-bg) !important;
+  color: var(--tavi-launcher-text) !important;
+  border: 1px solid var(--tavi-launcher-border);
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: var(--tavi-launcher-shadow);
+  z-index: 999;
+  outline: none;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: taviSubtleFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes taviSubtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.chat-launcher-pill:hover,
+.chat-floating-btn:hover {
+  background: var(--tavi-launcher-hover) !important;
+  color: var(--tavi-launcher-text) !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  animation-play-state: paused;
+}
+
+.chat-launcher-pill:focus-visible,
+.chat-floating-btn:focus-visible {
+  outline: 2px solid var(--tavi-primary);
+  outline-offset: 3px;
+}
+
+/* Hide launcher when chat panel is open */
+.chat-launcher-pill.chat-panel-open,
+.chat-floating-btn.chat-panel-open,
+.chat-floating-btn.active {
+  display: none !important;
+}
+
+.chat-launcher-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tavi-launcher-icon);
+  transition: color 0.25s ease;
+}
+
+.chat-launcher-text {
+  color: var(--tavi-launcher-text) !important;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Chat Panel
+   -------------------------------------------------------------------------- */
+.chat-panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 410px;
+  max-width: calc(100vw - 32px);
+  height: 590px;
+  max-height: calc(100vh - 48px);
+  background: var(--tavi-panel-bg) !important;
+  border: 1px solid var(--tavi-border) !important;
+  border-radius: 16px;
+  box-shadow: var(--tavi-panel-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  animation: taviFadeUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@keyframes taviFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.chat-header {
+  padding: 12px 16px;
+  background: var(--tavi-header-bg) !important;
+  color: var(--tavi-header-text);
+  border-bottom: 1px solid var(--tavi-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.chat-header-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-header-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: var(--tavi-header-avatar-bg);
+  border-radius: 6px;
+  color: var(--tavi-header-text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.chat-header-title {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--tavi-header-text) !important;
+  transition: color 0.25s ease;
+}
+
+.chat-header-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: var(--tavi-header-badge-bg);
+  color: var(--tavi-header-badge-text);
+  border: 1px solid var(--tavi-header-badge-border);
+  transition: all 0.25s ease;
+}
+
+.chat-header-sub {
+  font-size: 0.72rem;
+  color: var(--tavi-header-sub);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.92;
+  transition: color 0.25s ease;
+}
+
+.chat-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--tavi-header-avatar-bg);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--tavi-header-badge-border);
+  transition: all 0.25s ease;
+}
+
+.chat-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.chat-status-dot.online {
+  background-color: #10B981 !important;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.chat-status-dot.offline {
+  background-color: #EF4444 !important;
+  box-shadow: 0 0 6px #EF4444;
+}
+
+.chat-status-dot.checking {
+  background-color: #F59E0B !important;
+  box-shadow: 0 0 6px #F59E0B;
+}
+
+.chat-status-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--tavi-header-text) !important;
+}
+
+.chat-header-btn {
+  background: transparent;
+  border: none;
+  color: var(--tavi-header-text) !important;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0.88;
+}
+
+.chat-header-btn:hover {
+  background: var(--tavi-header-btn-hover);
+  color: var(--tavi-header-text) !important;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Messages Area
+   -------------------------------------------------------------------------- */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--tavi-main-bg) !important;
+  transition: background-color 0.25s ease;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--tavi-scrollbar-thumb);
+  border-radius: 3px;
+  transition: background-color 0.25s ease;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--tavi-scrollbar-hover);
+}
+
+.chat-message-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.chat-message-row.user {
+  align-items: flex-end;
+}
+
+.chat-message-row.assistant {
+  align-items: flex-start;
+}
+
+.chat-bubble {
+  max-width: 88%;
+  padding: 11px 15px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  word-break: break-word;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* User Messages */
+.chat-bubble.user {
+  background: var(--tavi-user-bubble-bg) !important;
+  color: var(--tavi-user-bubble-text) !important;
+  border: 1px solid var(--tavi-user-bubble-border) !important;
+  border-radius: 14px 14px 2px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+}
+
+/* Assistant Messages */
+.chat-bubble.assistant {
+  background: var(--tavi-asst-bubble-bg) !important;
+  color: var(--tavi-asst-bubble-text) !important;
+  border: 1px solid var(--tavi-asst-bubble-border) !important;
+  border-radius: 14px 14px 14px 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.chat-bubble.assistant.refusal {
+  background: var(--tavi-refusal-bg) !important;
+  border-color: var(--tavi-refusal-border) !important;
+  color: var(--tavi-refusal-text) !important;
+}
+
+.chat-bubble.assistant.error {
+  background: var(--tavi-error-bg) !important;
+  border: 1px solid var(--tavi-error-border) !important;
+  color: var(--tavi-error-text) !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+.chat-bubble.assistant.error.quota-error {
+  border-color: rgba(217, 119, 6, 0.4) !important;
+}
+
+.chat-error-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #DC2626 !important;
+}
+
+.chat-error-title.quota-title {
+  color: #D97706 !important;
+}
+
+[data-tavi-theme="dark"] .chat-bubble.assistant.error.quota-error {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+[data-tavi-theme="dark"] .chat-error-title.quota-title {
+  color: #FBBF24 !important;
+}
+
+.chat-error-body {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--tavi-error-text) !important;
+}
+
+/* Markdown formatting inside assistant bubble */
+.chat-text-body p.chat-paragraph {
+  margin: 0 0 8px 0;
+  color: var(--tavi-asst-bubble-text) !important;
+}
+
+.chat-text-body p.chat-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.chat-text-body strong {
+  color: var(--tavi-asst-bubble-text) !important;
+  font-weight: 700;
+}
+
+.chat-text-body em {
+  font-style: italic;
+  color: var(--tavi-secondary-text) !important;
+}
+
+.chat-inline-code {
+  background: var(--tavi-code-bg) !important;
+  border: 1px solid var(--tavi-code-border) !important;
+  color: var(--tavi-code-color) !important;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.84em;
+  font-weight: 500;
+}
+
+.chat-list {
+  margin: 4px 0 8px 0;
+  padding-left: 18px;
+  color: var(--tavi-asst-bubble-text) !important;
+}
+
+.chat-list li {
+  margin-bottom: 4px;
+  line-height: 1.45;
+  color: var(--tavi-asst-bubble-text) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Welcome Screen
+   -------------------------------------------------------------------------- */
+.chat-welcome-card {
+  background: var(--tavi-welcome-bg) !important;
+  border: 1px solid var(--tavi-border) !important;
+  border-radius: 14px;
+  padding: 16px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.welcome-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.welcome-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background: var(--tavi-welcome-icon-bg) !important;
+  border: 1px solid var(--tavi-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tavi-welcome-icon-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.welcome-content {
+  flex: 1;
+}
+
+.welcome-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--tavi-welcome-title) !important;
+  margin-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+.welcome-text {
+  font-size: 0.82rem;
+  color: var(--tavi-welcome-text) !important;
+  line-height: 1.45;
+  transition: color 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Typing Indicator
+   -------------------------------------------------------------------------- */
+.chat-bubble.assistant.typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 16px;
+  background: var(--tavi-asst-bubble-bg) !important;
+  border: 1px solid var(--tavi-border) !important;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tavi-primary) !important;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.35;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Input Area
+   -------------------------------------------------------------------------- */
+.chat-input-area {
+  padding: 12px 14px;
+  background: var(--tavi-input-area-bg) !important;
+  border-top: 1px solid var(--tavi-border) !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  background: var(--tavi-input-wrapper-bg) !important;
+  border: 1px solid var(--tavi-border) !important;
+  border-radius: 12px;
+  padding: 6px 10px;
+  transition: all 0.2s ease;
+}
+
+.chat-input-wrapper:focus-within {
+  border-color: var(--tavi-primary) !important;
+  box-shadow: 0 0 0 2px rgba(121, 137, 232, 0.25) !important;
+}
+
+.chat-input-field {
+  flex: 1;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: var(--tavi-input-text) !important;
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  resize: none;
+  max-height: 110px;
+  padding: 5px 0;
+  transition: color 0.25s ease;
+}
+
+.chat-input-field::placeholder {
+  color: var(--tavi-input-placeholder) !important;
+  opacity: 1;
+  transition: color 0.25s ease;
+}
+
+.chat-send-btn {
+  background: var(--tavi-send-btn-bg) !important;
+  color: var(--tavi-send-btn-color) !important;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  background: var(--tavi-send-btn-hover) !important;
+  transform: scale(1.05);
+}
+
+.chat-send-btn:disabled {
+  background: var(--tavi-send-btn-disabled-bg) !important;
+  color: var(--tavi-send-btn-disabled-color) !important;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.85;
+}
+
+/* Suppress all unwanted UI elements */
+.chat-sources-block,
+.chat-source-card,
+.chat-sources-header,
+.chat-sources-list,
+.chat-input-hint,
+.source-tag,
+.welcome-chips,
+.welcome-chip,
+.welcome-prompt-label {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsiveness
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .chat-panel {
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .chat-launcher-pill,
+  .chat-floating-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .chat-launcher-pill.chat-panel-open,
+  .chat-floating-btn.chat-panel-open,
+  .chat-floating-btn.active {
+    display: none !important;
+  }
+}

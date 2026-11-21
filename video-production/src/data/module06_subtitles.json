@@ -1,58 +1,98 @@
 [
   {
-    "text": "Claude is not one single model, but a family of models.",
+    "text": "Welcome to Module 6: Types of Models in Claude Code.",
     "startMs": 100,
-    "endMs": 4375,
-    "startSec": 0.1,
-    "endSec": 4.375
+    "endMs": 4612,
+    "durationMs": 4512
   },
   {
-    "text": "Like hiring help, you match the tier to the task.",
-    "startMs": 4325,
-    "endMs": 8212,
-    "startSec": 4.325,
-    "endSec": 8.213
+    "text": "Claude is not just a single artificial intelligence model.",
+    "startMs": 4562,
+    "endMs": 8538,
+    "durationMs": 3975
   },
   {
-    "text": "Small, fast models like Haiku handle quick edits, sorting, and short summaries.",
-    "startMs": 8212,
-    "endMs": 14575,
-    "startSec": 8.213,
-    "endSec": 14.575
+    "text": "It is a family of state-of-the-art foundation models developed by Anthropic, each purposefully engineered with distinct tradeoffs between execution speed, token cost, and analytical depth.",
+    "startMs": 8538,
+    "endMs": 19975,
+    "durationMs": 11438
   },
   {
-    "text": "Balanced models like Sonnet manage everyday drafting and analysis.",
-    "startMs": 14575,
-    "endMs": 19388,
-    "startSec": 14.575,
-    "endSec": 19.387
+    "text": "In Claude Code on Windows, you can select the exact model tier that matches your development workflow, from rapid file exploration to complex architectural redesigns.",
+    "startMs": 19975,
+    "endMs": 30400,
+    "durationMs": 10425
   },
   {
-    "text": "Most capable models like Opus tackle hard, multi-step, high-stakes problems.",
-    "startMs": 19388,
-    "endMs": 25250,
-    "startSec": 19.387,
-    "endSec": 25.25
+    "text": "Haiku is the smallest and fastest model tier.",
+    "startMs": 30400,
+    "endMs": 34125,
+    "durationMs": 3725
   },
   {
-    "text": "Furthermore, thinking models work through complex problems step by step before answering\u2014like working it out on paper.",
-    "startMs": 25250,
-    "endMs": 32700,
-    "startSec": 25.25,
-    "endSec": 32.7
+    "text": "It excels at rapid file sorting, basic text editing, and quick classification tasks where turnaround speed is your highest priority.",
+    "startMs": 34125,
+    "endMs": 42812,
+    "durationMs": 8688
   },
   {
-    "text": "Claude is also multimodal, allowing you to share charts, PDFs, and whiteboard photos.",
-    "startMs": 32700,
-    "endMs": 39288,
-    "startSec": 32.7,
-    "endSec": 39.288
+    "text": "Sonnet is the balanced powerhouse.",
+    "startMs": 42812,
+    "endMs": 45775,
+    "durationMs": 2962
   },
   {
-    "text": "Always match the model to the job: start balanced, and remember that bigger is not always better.",
-    "startMs": 39288,
-    "endMs": 45488,
-    "startSec": 39.288,
-    "endSec": 45.487
+    "text": "It handles everyday coding, architectural planning, and complex bug fixes, offering the ideal balance between speed and intelligence for professional software engineering.",
+    "startMs": 45775,
+    "endMs": 56338,
+    "durationMs": 10562
+  },
+  {
+    "text": "Opus is the flagship reasoning engine.",
+    "startMs": 56338,
+    "endMs": 59438,
+    "durationMs": 3100
+  },
+  {
+    "text": "It tackles challenging, high-stakes problems, deep architectural reviews, and intricate multi-step reasoning across large codebases.",
+    "startMs": 59438,
+    "endMs": 68225,
+    "durationMs": 8788
+  },
+  {
+    "text": "When working on complex algorithms or system debugging, you can enable Extended Thinking using the slash effort command.",
+    "startMs": 68225,
+    "endMs": 75688,
+    "durationMs": 7462
+  },
+  {
+    "text": "This grants Claude dedicated scratchpad space to reason through difficult edge cases step by step before generating a single line of code.",
+    "startMs": 75688,
+    "endMs": 84038,
+    "durationMs": 8350
+  },
+  {
+    "text": "Furthermore, Claude is multimodal, allowing you to drag in user interface wireframes, workflow charts, or system architecture diagrams directly into your terminal session to guide the implementation.",
+    "startMs": 84038,
+    "endMs": 96162,
+    "durationMs": 12125
+  },
+  {
+    "text": "You can launch Claude Code from Windows PowerShell specifying your preferred model with the model flag, or switch dynamically inside an active session using the slash model command.",
+    "startMs": 96162,
+    "endMs": 106700,
+    "durationMs": 10538
+  },
+  {
+    "text": "Always match the model tier to your specific task: start with Sonnet for everyday work, switch to Haiku for quick chores, and bring in Opus for your most demanding challenges.",
+    "startMs": 106700,
+    "endMs": 117700,
+    "durationMs": 11000
+  },
+  {
+    "text": "Choosing the right model maximizes speed while keeping your token budget under control.",
+    "startMs": 117700,
+    "endMs": 122988,
+    "durationMs": 5288
   }
 ]

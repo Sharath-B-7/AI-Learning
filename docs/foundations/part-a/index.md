@@ -1,5 +1,5 @@
 # Part A: AI Fundamentals
-## A Beginner's Guide to Learning AI and Bringing It Into Your Daily Work
+<p class="hero-lead">A Beginner's Guide to Learning AI and Bringing It Into Your Daily Work</p>
 
 <div class="doc-header-badges">
   <span class="badge badge-surface">Curriculum: Company AI Training</span>

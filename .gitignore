@@ -22,3 +22,7 @@ build/
 .env.*
 !.env.example
 
+# Logs and generated reports
+*.log
+assistant/data/ingestion_report.json
+assistant/data/retrieval_test_report.json

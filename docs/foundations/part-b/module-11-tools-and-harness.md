@@ -26,70 +26,131 @@
   </div>
 </div>
 
-In Modules 1 through 10, Claude has primarily been writing text. But modern AI systems can also **take actions**—such as reading a file on your disk, querying a live database, executing code, or checking an arithmetic calculation.
+---
 
-This module explains the two components that make this possible: **tools** and the **harness**.
+## The Harness: Giving Tools to the Brain
+
+An AI model by itself is purely a text predictor: it cannot open a file on your hard drive, list directory contents, or check a webpage.
+
+Claude Code acts as a **harness**: specialized software built around the model that provides it with **tools** and enforces **safety rules**. When Claude decides it needs to inspect a document or run a calculation, it asks the harness to execute the appropriate tool on your local Windows system and return the result. For architectural insights, see the [Glossary: Harness](glossary.md#harness).
+
+Every time Claude uses a tool, you see an execution line on your screen, such as `Read(report.md)` or `PowerShell(dir)`.
 
 ---
 
-## Tools: The Model's Hands
+<a id="tools-the-models-hands"></a>
+## The Tools You Will See on Screen
 
-A raw AI model on its own is like a brilliant researcher sitting in a locked room with no windows, who can only pass handwritten notes out through a slit under the door.
+The harness exposes built-in tools described in the [Command Cheat Sheet: Tools](index.md#inside-claude-code-session-commands):
 
-- It can reason, synthesize, and write beautiful essays.
-- But it cannot open your files, browse the web, or check a calculation on its own.
+| Tool Name on Screen | What It Does | Everyday Workplace Example | Official Reference |
+| :--- | :--- | :--- | :--- |
+| **`Read`** | Opens and reads a local file | Inspecting this week's task list spreadsheet or markdown notes | [The Tools You Will See on Screen](#tools-the-models-hands) |
+| **`Edit` / `Write`** | Modifies an existing file or creates a new one | Saving an updated quarterly report or applying edits | [Module 12: Diff Review](module-12-agents.md#try-it-in-claude-code-agent-controls-safeguards) |
+| **`Bash` or `PowerShell`** | Executes a terminal command | Listing directory files (`dir`), running Git commands | [Running Shell Commands with !](#running-shell-commands-directly-with) |
+| **`Grep` / `Glob`** | Searches text inside files / finds files by pattern | Locating all files containing the word "budget" | [The Tools You Will See on Screen](#tools-the-models-hands) |
+| **`WebSearch` / `WebFetch`** | Searches the web / loads a specific webpage URL | Checking public holiday schedules or API documentation | [The Tools You Will See on Screen](#tools-the-models-hands) |
+| **`MCP Tools`** | Custom tools from connected enterprise apps | Fetching a Jira ticket, querying a database, or posting to Slack | [Connectors: MCP Servers](#connectors-model-context-protocol-mcp-servers) |
 
-**[Tools](glossary.md#tool) are the model's hands.** A tool is a specific software capability given to the model, such as:
-- A file reader (to open spreadsheets, code, or PDFs).
-- A calculator or code execution sandbox (to calculate exact numbers).
-- A web search tool (to fetch real-time news).
-- An application connector (to read calendar events or query Jira tickets).
-
----
-
-## The Harness: The Complete Workshop
-
-The **[harness](glossary.md#harness)** is the software system wrapped around the model. It:
-1. Feeds the prompt into the model.
-2. Provides the model with its menu of available tools.
-3. Manages the execution loop (running tool requests and passing results back to the model).
-4. Strictly enforces security and [permission rules](module-13-permissions-and-safety.md) on what the model may touch.
-
-![Figure 11: The model works inside a harness that gives it tools and rules](../../assets/images/foundations/figure-11-harness-model-tools.png)
-*Figure 11: The model works inside a harness that gives it tools and rules*
-
-### Why the Same Model Behaves Differently in Different Places
-
-You might notice that the exact same Claude model behaves differently inside the **Claude web app** compared to **Claude Code** in the terminal:
-
-- The underlying "brain" (e.g., Claude 3.5 Sonnet) is identical.
-- But the **harness** is different:
-  - The Claude Web harness provides web search and interactive React Artifacts.
-  - The Claude Code harness provides terminal commands, bash execution, and local file editing tools.
+On Windows, Claude Code runs shell commands through **Git Bash** if Git for Windows (see [Set up Claude Code on Windows: Shells](setup-windows.md#5-git-for-windows-and-terminal-shells)) is installed, and through **PowerShell** if not.
 
 ---
 
-## Connectors
+## Everyday Scenario: Asha Observes the Harness in Action
 
-A **connector** is a specialized bridge provided by the harness that securely links Claude to external workplace applications (such as Google Drive, Slack, GitHub, or Microsoft 365). Connectors operate under strict permissions (Module 13).
+> [!NOTE]
+> **Asha's Transparency View:**
+> When Asha asks Claude: *"Find all draft reports in the Q3 folder that mention supplier discounts,"* she watches the harness display its actions in sequence:
+> 1. `Glob(Q3\*.md)` → Claude finds 4 matching files.
+> 2. `Grep("supplier discount", Q3\*.md)` → Claude locates mentions in two files.
+> 3. `Read(Q3\draft-october.md)` → Claude inspects the specific paragraphs.
+>
+> Because the harness displays every tool call transparently, Asha knows exactly which files Claude opened and can trust that no other files were touched.
+
+---
+
+## Try It in Claude Code
+
+### Running Shell Commands Directly with `!`
+You can execute terminal commands yourself without asking Claude to interpret them. Prefix the command with `!`, and the command output lands directly on Claude's desk using standard terminal syntax (see [Command Cheat Sheet](index.md#inside-claude-code-session-commands)):
+
+```text
+> !dir                  # run Windows dir command and put listing on the desk
+> !git status           # inspect git status directly
+```
+
+### Inspecting and Diagnosing the Harness
+
+```text
+> /status      # view active version, model tier, account, and connection health
+> /doctor      # diagnose setup, environment variables, and CLAUDE.md issues
+> /tasks       # view background tasks, subagents, and long-running processes
+> /config      # inspect and modify harness settings (theme, editor mode, defaults)
+```
+For command syntax and parameters, review the [Windows Command Cheat Sheet](index.md#inside-claude-code-session-commands).
+
+---
+
+## Connectors: Model Context Protocol (MCP) Servers
+
+In Claude Code, external software connectors are called **MCP servers** ([Glossary: MCP Server](glossary.md#mcp-server-model-context-protocol)). MCP connects Claude to tools beyond your local hard drive, such as Jira, GitHub, Notion, PostgreSQL databases, or custom internal company APIs. MCP is an open standard connecting AI tools across platforms.
+
+You manage MCP connectors from PowerShell before starting a session, or inside a session using slash commands before starting a session, or inside a session using slash commands:
+
+```powershell
+# In PowerShell: Add, list, and remove an HTTP-based MCP connector
+claude mcp add --transport http notion https://mcp.notion.com/mcp
+claude mcp list
+claude mcp remove notion
+```
+
+Inside an active Claude Code session:
+
+```text
+> /mcp         # view active connectors, check authentication, and reconnect
+```
+
+> [!IMPORTANT]
+> **The Same Brain, Different Capabilities:** This is why Claude in Claude Code feels so much more capable than Claude on the web. The underlying model is identical; the harness and tools surrounding it make the difference.
 
 ---
 
 > [!TIP]
-> **Remember:** The model thinks. Tools let it act. The harness provides the tools and enforces the safety rules. You remain in control of what Claude is permitted to do.
+> **Harness Rule:** The model thinks, tools let it act, and the harness enforces the rules. Watch the tool lines on your screen to monitor exactly what Claude is doing. See this in practice in the [Worked Example](worked-example.md#step-6-the-autonomous-agent-loop-in-action).
+
+---
+
+## Practical Exercises
+
+1. **Execute Shell Command with `!`:** In Claude Code, run `!dir`. Notice how the directory listing is returned immediately and becomes part of the conversation context.
+2. **Run System Diagnostics:** Execute `/doctor`. Read through the diagnostic report to verify that your Node/executable environment and file permissions are properly configured. See [FAQ: Diagnostics](faq.md#3-windows-displays-an-error-claude-is-not-recognized-as-an-internal-or-external-command-how-do-i-fix-it).
+3. **Inspect Active Status:** Type `/status` to confirm your active connection, current model, and project root path.
+
+---
+
+## Knowledge Check
+
+??? question "What is the difference between the AI model and the harness?"
+    **Answer:** The model is the neural network that predicts and reasons over text. The harness is the software wrapper that gives the model tools (file reading, editing, terminal commands) and enforces safety permissions.
+
+??? question "How can you execute a Windows command like `dir` directly from the Claude Code prompt?"
+    **Answer:** Prefix the command with an exclamation mark: `!dir`.
+
+??? question "What protocol does Claude Code use to connect to external systems like Jira, Notion, or databases?"
+    **Answer:** Model Context Protocol (MCP).
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part A, Module 5: Ways to Use Claude](../part-a/module-05-meet-claude.md#ways-to-use-claude)** — How different harness environments (App, CLI, API) provide different tool sets.
-- **[Part B, Module 12: Agents](module-12-agents.md)** — How agents use tools inside the harness to carry out multi-step jobs.
-- **[Part B, Module 13: Permissions & Safety](module-13-permissions-and-safety.md)** — Enforcing Allow, Ask, and Deny rules on tools and connectors.
-- **[Part B Glossary: Tool, Harness & Connector](glossary.md#tool)** — Plain-English definitions of tools and execution environments.
+- **[Part B, Module 10: Skills](module-10-skills.md)** — How skills orchestrate tool calls.
+- **[Part B, Module 12: Agents](module-12-agents.md)** — How agents use tools in autonomous iterative loops.
+- **[Part B, Module 13: Permissions & Safety](module-13-permissions-and-safety.md)** — Controlling which tools Claude may run.
+- **[Part B Glossary: Harness](glossary.md#harness)** — Plain-English definition.
 
 ---
 
 <div class="hero-actions">
-  <a href="../module-10-skills/" class="md-button">← Module 10: Skills</a>
+  <a href="../module-10-skills/" class="md-button">← Previous: Module 10 — Skills</a>
   <a href="../module-12-agents/" class="md-button md-button--primary">Next: Module 12 — Agents →</a>
 </div>

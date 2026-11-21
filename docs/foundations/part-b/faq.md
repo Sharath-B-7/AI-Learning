@@ -1,89 +1,92 @@
-# Commonly Asked Questions: Part B
+# Commonly Asked Questions: Part B & Windows CLI
+<p class="hero-lead">Practical Answers to Real-World Questions About Claude Code</p>
 
 <div class="doc-header-badges">
-  <span class="badge badge-surface">Part B: AI Concepts</span>
-  <span class="badge badge-level">Frequently Asked Questions</span>
+  <span class="badge badge-surface">Curriculum: Company AI Training</span>
+  <span class="badge badge-level">Reference & Support</span>
   <span class="badge badge-verified">Attribution: Tactive AI Team</span>
 </div>
 
----
-
-## Models
-
-### 1. Is the biggest model always the best choice?
-No. Larger models take longer to respond and consume more computing budget. For simple tasks (such as fixing grammar or sorting bullet points), smaller models like Haiku are just as effective and significantly faster (see [Module 6: Model Tiers](module-06-types-of-models.md#model-tiers-small-medium-and-large)).
-
-### 2. What does "thinking" actually do?
-The model generates internal reasoning tokens before writing its visible response. It systematically works through intermediate calculations, checks for logical traps, and tests edge cases. This dramatically improves performance on hard analytical problems, but is unnecessary for straightforward drafting (see [Module 6: Reasoning Models](module-06-types-of-models.md#standard-models-vs-thinking-reasoning-models)).
-
-### 3. If thinking is on, can I trust the answer without checking?
-No. While extended thinking substantially increases accuracy, it does not make the model infallible. You must continue to verify high-stakes numbers and factual claims using the **Trust Rule** (see [Part A, Module 4: The Trust Rule](../part-a/module-04-strengths-limits-trust.md#the-trust-rule-check-in-proportion-to-the-stakes)).
-
-### 4. Can Claude read images and PDFs?
-Yes. Modern Claude models are multimodal, allowing you to upload PNG/JPEG screenshots, whiteboard photos, scanned PDF reports, and spreadsheets alongside your prompt (see [Module 6: Multimodal Models](module-06-types-of-models.md#multimodal-models-models-that-can-see)).
+> [!NOTE]
+> Here are direct, verified answers to the 10 most common questions asked by team members transitioning to Claude Code on Windows. For additional technical help, check the [Set up Claude Code on Windows guide](setup-windows.md).
 
 ---
 
-## Context and Prompts
-
-### 5. Why does Claude seem to forget things in a long chat?
-The context desk has a finite limit (the context window). In very long, meandering chats, earlier messages may get pushed out of view or dilute the model's attention. Start a fresh chat for new tasks, or ask Claude to summarize the conversation before continuing (see [Module 7: Context Desk Limit](module-07-context.md#the-desk-has-a-size-limit-the-context-window)).
-
-### 6. Is a longer prompt always a better prompt?
-No. High-quality, focused context is what matters. Pasting an unedited 100-page document full of irrelevant data makes it harder for Claude to isolate the critical facts (see [Module 7: Quality Over Quantity](module-07-context.md#quality-matters-more-than-quantity)).
-
-### 7. Do I have to repeat my background in every new chat?
-Not if you store it. By configuring **Project Instructions** or saved **Memory notes** ([Module 9: Memory](module-09-memory.md)), Claude automatically reads your role, preferences, and formatting standards at the start of every session.
+### 1. Do I need WSL or Linux installed on my Windows PC to use Claude Code?
+**No.** Claude Code runs natively on Windows 10 (version 1809+) and Windows 11 inside standard PowerShell or Command Prompt (CMD). WSL (Windows Subsystem for Linux) is completely optional and only needed if your specific project relies on native Linux build toolchains. See the [Windows Setup Guide](setup-windows.md) .
 
 ---
 
-## Memory and Skills
-
-### 8. Does memory mean Claude is learning from me?
-No. The underlying neural network weights are static and do not retrain during your chats. "Memory" simply means saving a file or preference note that is prepended to the context desk at the start of future conversations (see [Module 9: Claude Does Not Remember by Default](module-09-memory.md#claude-does-not-remember-by-default)).
-
-### 9. What should I never save in memory?
-Never save passwords, API keys, customer personal identifiable information (PII), or confidential corporate secrets. Store preferences and role guidelines, not credentials (see [Module 9: What to Store](module-09-memory.md#what-to-store-vs-what-never-to-store) and [Part A, Module 4: Privacy Basics](../part-a/module-04-strengths-limits-trust.md#privacy-basics)).
-
-### 10. Is a skill the same as a prompt?
-A prompt is a one-time instruction. A **skill** is a saved, repeatable recipe containing templates, steps, and quality checklists that anyone on your team can invoke repeatedly (see [Module 10: Skill vs. Prompt](module-10-skills.md#skill-vs-prompt)).
+### 2. Do I need Windows Administrator privileges to install Claude Code?
+**No.** The standard installation command (`irm https://claude.ai/install.ps1 | iex`) installs Claude Code into your personal user profile directory (`%LOCALAPPDATA%` or `%USERPROFILE%`). It requires no administrative elevation.
 
 ---
 
-## Tools, Agents, and Permissions
+### 3. Windows displays an error: `'claude' is not recognized as an internal or external command. How do I fix it?
+This occurs when your terminal window was opened before the installer finished adding the Claude Code directory to your Windows user `PATH` environment variable.
+- **Fix 1:** Close all open PowerShell/CMD windows and open a fresh terminal window.
+- **Fix 2:** If it still fails, log out of Windows and log back in, or run `claude doctor` to inspect PATH configuration. See [Set up Claude Code on Windows: Verifying Installation](setup-windows.md#6-verifying-the-installation).
 
-### 11. What is the difference between the Claude app and Claude Code?
-Both use the same Claude model family, but they operate inside different **harnesses**. The Claude web/desktop app is designed for conversational drafting and visual artifacts. Claude Code is a terminal-based harness built for software development, with tools to read directories, edit files, and run test suites (see [Module 11: The Harness Workshop](module-11-tools-and-harness.md#the-harness-the-complete-workshop) and [Part A, Module 5: Ways to Use Claude](../part-a/module-05-meet-claude.md#ways-to-use-claude)).
+---
 
-### 12. Can Claude open my files or email by itself?
-Only if you explicitly connect the application or place the files inside an approved workspace directory. The harness enforces strict boundaries—Claude cannot scan your computer uninvited (see [Module 11: Connectors](module-11-tools-and-harness.md#connectors)).
+### 4. How do I see every available slash command inside a session?
+Type **`/`** alone at the prompt and press `Enter`, or run **`/help`**. This opens an interactive, searchable menu of all available built-in commands, tools, and custom project skills. See the full list in the [Command Cheat Sheet](index.md#inside-claude-code-session-commands).
 
-### 13. Who is responsible if Claude makes a mistake while acting?
-**You are.** An AI assistant is a tool operating under your direction. That is why permissions exist and why you must review all proposed changes before they are saved, executed, or emailed (see [Module 13: Permissions & Safety](module-13-permissions-and-safety.md)).
+---
 
-### 14. What is the difference between a chatbot and an agent?
-In a chat, you ask and Claude answers. An agent is handed an overarching goal and autonomously loops through **Think, Act, and Check**—using tools until the job is completed (see [Module 12: Chat vs. Agent](module-12-agents.md#chat-vs-agent)).
+### 5. What is the practical difference between `/clear` and `/compact`?
+- **`/clear`** completely wipes the current context desk clean. Use it when you are transitioning to an entirely new, unrelated task. (Your previous conversation is still saved and can be reopened with `claude -r`).
+- **`/compact [focus]`** summarizes earlier conversation history into a concise briefing, freeing up token capacity on the desk while keeping you in the same ongoing workflow. Read more in [Module 7: Context](module-07-context.md#try-it-in-claude-code) and the [Glossary: Compact](glossary.md#compact-compact).
 
-### 15. When should I use an agent instead of a normal chat?
-Use an agent for multi-step jobs involving multiple files, iterative calculations, or complex audits. Use a normal chat for quick questions, ideation, and single-pass text rewrites (see [Module 12: When to Use an Agent](module-12-agents.md#when-to-use-an-agent-vs-a-normal-chat)).
+---
 
-### 16. Can an agent make mistakes along the way?
-Yes. An early incorrect assumption can compound across subsequent steps. Prevent this by providing clear constraints and instructing the agent to pause for mandatory check-ins at key milestones (see [Module 12: Giving an Agent a Good Goal](module-12-agents.md#giving-an-agent-a-good-goal)).
+### 6. Does Claude Code automatically remember my past session from last week?
+**Not automatically.** Each new session starts with a fresh desk. Persistent memory across sessions is handled by **`CLAUDE.md`**, which loads every time ([Module 9: Memory](module-09-memory.md#persistent-memory-in-claude-code-claudemd)). If you specifically want to resume a previous conversation, launch Claude using **`claude -c`** (continue last) or **`claude -r`** (pick from history) as explained in [Set up Claude Code on Windows: Sessions](setup-windows.md#8-starting-resuming-and-leaving-sessions).
 
-### 17. Can I stop Claude from reading a particular file, such as a `.env` file?
-Yes. In Claude Code, you can add a **Deny rule** inside `.claude/settings.json` (e.g., `"deny": ["Read(./.env)"]`). Claude is then permanently blocked from opening that file (see [Module 13: Sensitive Files](module-13-permissions-and-safety.md#keeping-claude-away-from-sensitive-files)).
+---
 
-### 18. What is the difference between "Ask" and "Deny"?
-- **Ask:** Claude pauses execution and presents a prompt waiting for your manual OK before proceeding.
-- **Deny:** Claude is strictly and permanently blocked from attempting the action under any circumstances.
-*(See [Module 13: Three Settings: Allow, Ask, Deny](module-13-permissions-and-safety.md#the-three-permission-settings-allow-ask-deny)).*
+### 7. Is a skill the same thing as a slash command?
+Every skill you create in `.claude\skills\<name>\SKILL.md` automatically registers as a custom slash command (`/<name>`). However, skills are more powerful: Claude Code can also autonomously discover and invoke the skill when you ask for something in plain English that matches the skill's description. Read [Module 10: Skills](module-10-skills.md#what-is-a-skill-in-claude-code).
 
-### 19. If I deny a file, is it completely safe?
-A deny rule is a powerful operational guardrail, but true defense-in-depth requires keeping production secrets out of shared workspace repositories entirely. Follow your company's information security standards at all times (see [Module 13: Security Habits](module-13-permissions-and-safety.md#good-security-habits)).
+---
+
+### 8. How do I stop Claude immediately if it starts making unexpected changes?
+Press **`Esc`** once to immediately pause execution. The work completed so far is preserved, and you can redirect Claude. If you want to undo file modifications made during that turn, press **`Esc` twice** or run **`/rewind`** to revert to an earlier checkpoint. Documented in [Module 12: Agents](module-12-agents.md#try-it-in-claude-code-agent-controls-safeguards).
+
+---
+
+### 9. Can I prevent Claude from reading my private `.env` or passwords file?
+**Yes.** Add a deny rule to `.claude\settings.json`:
+```json
+{
+  "permissions": {
+    "deny": ["Read(./.env)", "Read(./secrets/**)"]
+  }
+}
+```
+You can also set this interactively by typing `/permissions` or asking `> /update-config deny reading the .env file`. Review [Module 13: Permissions & Safety](module-13-permissions-and-safety.md#keeping-claude-away-from-sensitive-files-settingsjson).
+
+---
+
+### 10. Who is legally and professionally responsible if Claude makes a mistake?
+**You are.** AI tools like Claude Code are assistants that execute instructions under your supervision. Always use **Plan mode** for complex work, read confirmation prompts before approving actions, and inspect modifications with **`/diff`** before sharing or deploying deliverables. Review [Part A, Module 4: The Trust Rule](../part-a/module-04-strengths-limits-trust.md#the-trust-rule-check-in-proportion-to-the-stakes) and [Module 13: Good Habits](module-13-permissions-and-safety.md#good-habits-for-safe-ai-terminal-work).
+
+---
+
+## Additional Windows CLI Tips
+
+??? question "How do I update Claude Code to the latest version?"
+    Run `claude update` from your PowerShell terminal. If you installed via the official installer script, Claude Code also checks for updates automatically in the background. See [Set up Claude Code on Windows: Updating](setup-windows.md#8-starting-resuming-and-leaving-sessions).
+
+??? question "Can I use Claude Code behind a corporate proxy?"
+    Yes. Claude Code respects standard Windows environment variables: `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY`. Set these in PowerShell or your Windows System Environment settings. Set these in PowerShell or your Windows System Environment settings.
+
+??? question "How do I switch which Anthropic account I am signed into?"
+    Run `claude /doctor` or delete the authentication credentials using `claude auth logout`, then run `claude` to trigger a new browser sign-in.
 
 ---
 
 <div class="hero-actions">
-  <a href="../glossary/" class="md-button">← Part B Glossary</a>
-  <a href="../learning-checklist/" class="md-button md-button--primary">Next: Part B Learning Checklist →</a>
+  <a href="../glossary/" class="md-button">← Previous: Glossary</a>
+  <a href="../learning-checklist/" class="md-button md-button--primary">Next: Learning Checklist →</a>
 </div>

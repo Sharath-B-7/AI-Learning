@@ -1,0 +1,856 @@
+[
+  {
+    "mod": "06",
+    "title": "Types of Models",
+    "words": 283,
+    "duration_s": 123.048,
+    "total_frames": 3691,
+    "wpm": 137.99492880826995,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 6: Types of Models in Claude Code.",
+        "startMs": 100,
+        "endMs": 4612,
+        "durationMs": 4512
+      },
+      {
+        "text": "Claude is not just a single artificial intelligence model.",
+        "startMs": 4562,
+        "endMs": 8538,
+        "durationMs": 3975
+      },
+      {
+        "text": "It is a family of state-of-the-art foundation models developed by Anthropic, each purposefully engineered with distinct tradeoffs between execution speed, token cost, and analytical depth.",
+        "startMs": 8538,
+        "endMs": 19975,
+        "durationMs": 11438
+      },
+      {
+        "text": "In Claude Code on Windows, you can select the exact model tier that matches your development workflow, from rapid file exploration to complex architectural redesigns.",
+        "startMs": 19975,
+        "endMs": 30400,
+        "durationMs": 10425
+      },
+      {
+        "text": "Haiku is the smallest and fastest model tier.",
+        "startMs": 30400,
+        "endMs": 34125,
+        "durationMs": 3725
+      },
+      {
+        "text": "It excels at rapid file sorting, basic text editing, and quick classification tasks where turnaround speed is your highest priority.",
+        "startMs": 34125,
+        "endMs": 42812,
+        "durationMs": 8688
+      },
+      {
+        "text": "Sonnet is the balanced powerhouse.",
+        "startMs": 42812,
+        "endMs": 45775,
+        "durationMs": 2962
+      },
+      {
+        "text": "It handles everyday coding, architectural planning, and complex bug fixes, offering the ideal balance between speed and intelligence for professional software engineering.",
+        "startMs": 45775,
+        "endMs": 56338,
+        "durationMs": 10562
+      },
+      {
+        "text": "Opus is the flagship reasoning engine.",
+        "startMs": 56338,
+        "endMs": 59438,
+        "durationMs": 3100
+      },
+      {
+        "text": "It tackles challenging, high-stakes problems, deep architectural reviews, and intricate multi-step reasoning across large codebases.",
+        "startMs": 59438,
+        "endMs": 68225,
+        "durationMs": 8788
+      },
+      {
+        "text": "When working on complex algorithms or system debugging, you can enable Extended Thinking using the slash effort command.",
+        "startMs": 68225,
+        "endMs": 75688,
+        "durationMs": 7462
+      },
+      {
+        "text": "This grants Claude dedicated scratchpad space to reason through difficult edge cases step by step before generating a single line of code.",
+        "startMs": 75688,
+        "endMs": 84038,
+        "durationMs": 8350
+      },
+      {
+        "text": "Furthermore, Claude is multimodal, allowing you to drag in user interface wireframes, workflow charts, or system architecture diagrams directly into your terminal session to guide the implementation.",
+        "startMs": 84038,
+        "endMs": 96162,
+        "durationMs": 12125
+      },
+      {
+        "text": "You can launch Claude Code from Windows PowerShell specifying your preferred model with the model flag, or switch dynamically inside an active session using the slash model command.",
+        "startMs": 96162,
+        "endMs": 106700,
+        "durationMs": 10538
+      },
+      {
+        "text": "Always match the model tier to your specific task: start with Sonnet for everyday work, switch to Haiku for quick chores, and bring in Opus for your most demanding challenges.",
+        "startMs": 106700,
+        "endMs": 117700,
+        "durationMs": 11000
+      },
+      {
+        "text": "Choosing the right model maximizes speed while keeping your token budget under control.",
+        "startMs": 117700,
+        "endMs": 122988,
+        "durationMs": 5288
+      }
+    ]
+  },
+  {
+    "mod": "07",
+    "title": "Context",
+    "words": 275,
+    "duration_s": 119.136,
+    "total_frames": 3574,
+    "wpm": 138.49717969379532,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 7: Context in Claude Code.",
+        "startMs": 100,
+        "endMs": 4250,
+        "durationMs": 4150
+      },
+      {
+        "text": "To understand how Claude Code thinks, picture Claude sitting at a physical working desk.",
+        "startMs": 4200,
+        "endMs": 9900,
+        "durationMs": 5700
+      },
+      {
+        "text": "Everything Claude can see and remember at this exact moment is what sits on that desk: your initial prompt, previous conversation messages, file contents you have shared, and the outputs returned by tools.",
+        "startMs": 9900,
+        "endMs": 22412,
+        "durationMs": 12512
+      },
+      {
+        "text": "Anything not physically placed on the desk simply does not exist for Claude.",
+        "startMs": 22412,
+        "endMs": 27175,
+        "durationMs": 4762
+      },
+      {
+        "text": "However, this desk has a finite physical surface area known as the context window.",
+        "startMs": 27175,
+        "endMs": 32950,
+        "durationMs": 5775
+      },
+      {
+        "text": "Claude features an industry-leading context window of 200,000 tokens, which equals roughly 150,000 words.",
+        "startMs": 32950,
+        "endMs": 41275,
+        "durationMs": 8325
+      },
+      {
+        "text": "But when you load dozens of unnecessary files or let a conversation run for hours, the desk becomes cluttered.",
+        "startMs": 41275,
+        "endMs": 48425,
+        "durationMs": 7150
+      },
+      {
+        "text": "Context clutter causes Claude to lose track of key constraints, misinterpret guidelines, and hallucinate details.",
+        "startMs": 48425,
+        "endMs": 56138,
+        "durationMs": 7712
+      },
+      {
+        "text": "In artificial intelligence engineering, quality matters much more than quantity.",
+        "startMs": 56138,
+        "endMs": 61362,
+        "durationMs": 5225
+      },
+      {
+        "text": "Claude Code gives you powerful commands to keep your desk organized.",
+        "startMs": 61362,
+        "endMs": 65750,
+        "durationMs": 4388
+      },
+      {
+        "text": "Use the at symbol followed by a file path to place only the specific file Claude needs onto the desk.",
+        "startMs": 65750,
+        "endMs": 72300,
+        "durationMs": 6550
+      },
+      {
+        "text": "Run the slash context command to inspect your active token usage and see exactly which files are occupying space.",
+        "startMs": 72300,
+        "endMs": 79725,
+        "durationMs": 7425
+      },
+      {
+        "text": "When a session grows large, use slash compact to summarize older discussion while preserving vital architectural decisions, significantly reducing context load.",
+        "startMs": 79725,
+        "endMs": 89800,
+        "durationMs": 10075
+      },
+      {
+        "text": "When starting a completely new feature or investigation, run slash clear to completely wipe the desk clean.",
+        "startMs": 89800,
+        "endMs": 96638,
+        "durationMs": 6838
+      },
+      {
+        "text": "Remember the golden rules: never dump entire codebases at once, share only targeted files, and start fresh for each new task.",
+        "startMs": 96638,
+        "endMs": 105825,
+        "durationMs": 9188
+      },
+      {
+        "text": "Regularly compacting your session keeps token consumption low and ensures sharp responses.",
+        "startMs": 105825,
+        "endMs": 111762,
+        "durationMs": 5938
+      },
+      {
+        "text": "A clean, organized desk guarantees that Claude provides reliable, high-precision results throughout your project.",
+        "startMs": 111762,
+        "endMs": 119075,
+        "durationMs": 7312
+      }
+    ]
+  },
+  {
+    "mod": "08",
+    "title": "Prompting and Instructions",
+    "words": 271,
+    "duration_s": 118.968,
+    "total_frames": 3569,
+    "wpm": 136.67540851321363,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 8: Prompting and Instructions in Claude Code.",
+        "startMs": 100,
+        "endMs": 4850,
+        "durationMs": 4750
+      },
+      {
+        "text": "In conversational AI, prompting often feels like casual chat.",
+        "startMs": 4800,
+        "endMs": 9800,
+        "durationMs": 5000
+      },
+      {
+        "text": "But in Claude Code, you are directing an autonomous assistant with direct access to your local files and terminal tools.",
+        "startMs": 9800,
+        "endMs": 17175,
+        "durationMs": 7375
+      },
+      {
+        "text": "A vague command leads to wasted time and mistaken edits, while a structured instruction delivers precise code and automated solutions on the first attempt.",
+        "startMs": 17175,
+        "endMs": 26288,
+        "durationMs": 9112
+      },
+      {
+        "text": "Every effective request in Claude Code should incorporate four core elements: Situation, explaining your project role and context; Goal, stating the exact deliverable and what finished looks like; Background, pointing Claude to relevant files using the at symbol; and Format, specifying constraints such as file formats, bullet limits, or coding standards.",
+        "startMs": 26288,
+        "endMs": 48300,
+        "durationMs": 22012
+      },
+      {
+        "text": "Providing these four elements gives Claude the full picture needed to act accurately without making flawed assumptions.",
+        "startMs": 48300,
+        "endMs": 54975,
+        "durationMs": 6675
+      },
+      {
+        "text": "Consider this comparison.",
+        "startMs": 54975,
+        "endMs": 57338,
+        "durationMs": 2362
+      },
+      {
+        "text": "A weak request says: summarize this.",
+        "startMs": 57338,
+        "endMs": 60788,
+        "durationMs": 3450
+      },
+      {
+        "text": "Claude does not know which file you mean, who the audience is, or where to save it.",
+        "startMs": 60788,
+        "endMs": 66312,
+        "durationMs": 5525
+      },
+      {
+        "text": "In contrast, a strong request states: I am preparing for a client meeting.",
+        "startMs": 66312,
+        "endMs": 71762,
+        "durationMs": 5450
+      },
+      {
+        "text": "Summarize at Q3-report.pdf in five bullet points focusing on risks and costs.",
+        "startMs": 71762,
+        "endMs": 78638,
+        "durationMs": 6875
+      },
+      {
+        "text": "Keep each point under twenty words, and save the result as meeting-prep.md.",
+        "startMs": 78638,
+        "endMs": 84425,
+        "durationMs": 5788
+      },
+      {
+        "text": "The strong prompt is clear, bounded, and immediately actionable.",
+        "startMs": 84425,
+        "endMs": 89150,
+        "durationMs": 4725
+      },
+      {
+        "text": "Inside Claude Code, use Shift plus Enter or Control plus J to write formatted multiline requests with clear structure.",
+        "startMs": 89150,
+        "endMs": 97212,
+        "durationMs": 8062
+      },
+      {
+        "text": "For complex multi-file tasks, always prefix your request with slash plan, telling Claude to research the problem and propose a detailed implementation plan before touching a single file.",
+        "startMs": 97212,
+        "endMs": 108512,
+        "durationMs": 11300
+      },
+      {
+        "text": "Review the plan carefully before execution.",
+        "startMs": 108512,
+        "endMs": 111975,
+        "durationMs": 3462
+      },
+      {
+        "text": "Clear instructions combined with thoughtful planning ensure total control and dependable results across your codebase.",
+        "startMs": 111975,
+        "endMs": 118912,
+        "durationMs": 6938
+      }
+    ]
+  },
+  {
+    "mod": "09",
+    "title": "Memory",
+    "words": 269,
+    "duration_s": 121.152,
+    "total_frames": 3635,
+    "wpm": 133.22107765451665,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 9: Memory in Claude Code.",
+        "startMs": 100,
+        "endMs": 3975,
+        "durationMs": 3875
+      },
+      {
+        "text": "By default, every time you open Windows PowerShell and start a new Claude Code session, Claude begins with a completely blank slate.",
+        "startMs": 3925,
+        "endMs": 12162,
+        "durationMs": 8238
+      },
+      {
+        "text": "It has no memory of past conversations, previous bug fixes, or your team's coding conventions.",
+        "startMs": 12162,
+        "endMs": 19112,
+        "durationMs": 6950
+      },
+      {
+        "text": "While this guarantees clean context, constantly repeating your build commands and stylistic rules wastes valuable engineering time.",
+        "startMs": 19112,
+        "endMs": 27300,
+        "durationMs": 8188
+      },
+      {
+        "text": "To solve this, Claude Code introduces persistent memory through a markdown file named CLAUDE.md.",
+        "startMs": 27300,
+        "endMs": 34188,
+        "durationMs": 6888
+      },
+      {
+        "text": "Think of CLAUDE.md as an onboarding handbook for your project.",
+        "startMs": 34188,
+        "endMs": 38725,
+        "durationMs": 4538
+      },
+      {
+        "text": "Whenever Claude Code starts, it automatically reads this file and keeps its instructions active in memory.",
+        "startMs": 38725,
+        "endMs": 45488,
+        "durationMs": 6762
+      },
+      {
+        "text": "Claude Code supports a three-level memory hierarchy: Global memory in your user profile for machine-wide settings; Project memory in the repository root for team standards; and Directory memory inside subfolders for localized rules.",
+        "startMs": 45488,
+        "endMs": 59762,
+        "durationMs": 14275
+      },
+      {
+        "text": "Your project CLAUDE.md should document essential engineering workflows: exact test commands, linting rules, formatting requirements, and architectural boundaries.",
+        "startMs": 59762,
+        "endMs": 70538,
+        "durationMs": 10775
+      },
+      {
+        "text": "Explicitly state forbidden practices, such as libraries not to install or directories that must never be edited.",
+        "startMs": 70538,
+        "endMs": 77762,
+        "durationMs": 7225
+      },
+      {
+        "text": "Use clear bullet points and code snippets rather than lengthy narrative explanations.",
+        "startMs": 77762,
+        "endMs": 83325,
+        "durationMs": 5562
+      },
+      {
+        "text": "Every line in CLAUDE.md consumes context window space, so focus exclusively on high-value instructions that prevent recurring mistakes.",
+        "startMs": 83325,
+        "endMs": 92338,
+        "durationMs": 9012
+      },
+      {
+        "text": "Treat CLAUDE.md as living documentation that evolves alongside your software repository.",
+        "startMs": 92338,
+        "endMs": 98450,
+        "durationMs": 6112
+      },
+      {
+        "text": "When you correct Claude during a session, capture that lesson and add it to CLAUDE.md so the mistake is never repeated.",
+        "startMs": 98450,
+        "endMs": 105775,
+        "durationMs": 7325
+      },
+      {
+        "text": "Share the file with your team through version control so every engineer benefits from consistent AI behavior.",
+        "startMs": 105775,
+        "endMs": 112462,
+        "durationMs": 6688
+      },
+      {
+        "text": "Maintaining a concise, well-structured memory file ensures that Claude delivers production-grade results aligned with your team's standards from day one.",
+        "startMs": 112462,
+        "endMs": 121100,
+        "durationMs": 8638
+      }
+    ]
+  },
+  {
+    "mod": "10",
+    "title": "Skills",
+    "words": 262,
+    "duration_s": 120.24,
+    "total_frames": 3607,
+    "wpm": 130.73852295409182,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 10: Skills in Claude Code.",
+        "startMs": 100,
+        "endMs": 3962,
+        "durationMs": 3862
+      },
+      {
+        "text": "Skills are modular packages of domain knowledge, specialized instructions, and reusable workflows that teach Claude Code how to perform specialized engineering tasks.",
+        "startMs": 3912,
+        "endMs": 14538,
+        "durationMs": 10625
+      },
+      {
+        "text": "While standard prompts provide broad guidance, skills act like dedicated playbooks for specific technical challenges.",
+        "startMs": 14538,
+        "endMs": 22025,
+        "durationMs": 7488
+      },
+      {
+        "text": "When a skill is enabled, Claude Code activates relevant instructions only when needed, preserving context window space while delivering expert results.",
+        "startMs": 22025,
+        "endMs": 31375,
+        "durationMs": 9350
+      },
+      {
+        "text": "Every skill lives inside a dedicated directory containing a SKILL.md file.",
+        "startMs": 31375,
+        "endMs": 36925,
+        "durationMs": 5550
+      },
+      {
+        "text": "The YAML frontmatter at the top defines the skill name, description, and exact trigger conditions that tell Claude when to activate it.",
+        "startMs": 36925,
+        "endMs": 44825,
+        "durationMs": 7900
+      },
+      {
+        "text": "The markdown body provides step-by-step procedures, validation rules, and error recovery strategies.",
+        "startMs": 44825,
+        "endMs": 52062,
+        "durationMs": 7238
+      },
+      {
+        "text": "Skills can also include executable helper scripts, example templates, and reference documentation that Claude can consult and run dynamically during execution.",
+        "startMs": 52062,
+        "endMs": 61925,
+        "durationMs": 9862
+      },
+      {
+        "text": "You can create custom skills for your team's proprietary frameworks, code review checklists, or automated database migrations.",
+        "startMs": 61925,
+        "endMs": 70288,
+        "durationMs": 8362
+      },
+      {
+        "text": "Place custom skills in the dot-claude skills folder within your project or your user home directory.",
+        "startMs": 70288,
+        "endMs": 76288,
+        "durationMs": 6000
+      },
+      {
+        "text": "In addition, you can discover and install community skills from the marketplace to quickly add support for popular cloud providers, testing frameworks, and API integrations.",
+        "startMs": 76288,
+        "endMs": 86925,
+        "durationMs": 10638
+      },
+      {
+        "text": "Claude Code automatically scans these directories upon startup.",
+        "startMs": 86925,
+        "endMs": 91312,
+        "durationMs": 4388
+      },
+      {
+        "text": "Claude Code automatically discovers installed skills and activates them when your request matches their description.",
+        "startMs": 91312,
+        "endMs": 97912,
+        "durationMs": 6600
+      },
+      {
+        "text": "You can also invoke skills directly using slash commands to enforce standard operating procedures.",
+        "startMs": 97912,
+        "endMs": 104162,
+        "durationMs": 6250
+      },
+      {
+        "text": "Before deploying a skill team-wide, test it thoroughly across different edge cases and refine the instructions based on actual usage.",
+        "startMs": 104162,
+        "endMs": 112512,
+        "durationMs": 8350
+      },
+      {
+        "text": "Packaging repeatable workflows into reusable skills standardizes best practices and empowers your entire development team.",
+        "startMs": 112512,
+        "endMs": 120175,
+        "durationMs": 7662
+      }
+    ]
+  },
+  {
+    "mod": "11",
+    "title": "MCP",
+    "words": 268,
+    "duration_s": 125.616,
+    "total_frames": 3768,
+    "wpm": 128.0091708062667,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 11: Model Context Protocol, or MCP, in Claude Code.",
+        "startMs": 100,
+        "endMs": 6512,
+        "durationMs": 6412
+      },
+      {
+        "text": "The Model Context Protocol is an open standard that connects Claude Code to external data sources, developer tools, and enterprise services.",
+        "startMs": 6462,
+        "endMs": 15600,
+        "durationMs": 9138
+      },
+      {
+        "text": "Without MCP, Claude is confined strictly to your local workspace files.",
+        "startMs": 15600,
+        "endMs": 20975,
+        "durationMs": 5375
+      },
+      {
+        "text": "With MCP, Claude can query production databases, create Jira tickets, inspect GitHub repositories, and fetch real-time documentation without leaving your terminal.",
+        "startMs": 20975,
+        "endMs": 32412,
+        "durationMs": 11438
+      },
+      {
+        "text": "MCP operates on a clean client-host-server architecture.",
+        "startMs": 32412,
+        "endMs": 36862,
+        "durationMs": 4450
+      },
+      {
+        "text": "Claude Code acts as the MCP client, while MCP servers expose specialized tools, resources, and prompt templates that Claude can invoke dynamically.",
+        "startMs": 36862,
+        "endMs": 47450,
+        "durationMs": 10588
+      },
+      {
+        "text": "Connections run over local standard input and output streams for installed command-line utilities, or over secure HTTP and Server-Sent Events for remote cloud services.",
+        "startMs": 47450,
+        "endMs": 58600,
+        "durationMs": 11150
+      },
+      {
+        "text": "This modular architecture allows you to plug in tools without modifying your core codebase.",
+        "startMs": 58600,
+        "endMs": 64650,
+        "durationMs": 6050
+      },
+      {
+        "text": "On Windows, you can add MCP servers using the claude mcp add command or by editing your project settings dot json file.",
+        "startMs": 64650,
+        "endMs": 73450,
+        "durationMs": 8800
+      },
+      {
+        "text": "For example, you can connect a PostgreSQL server to inspect database schemas, a GitHub server to manage pull requests and issues, or a web search server to fetch the latest API documentation.",
+        "startMs": 73450,
+        "endMs": 86075,
+        "durationMs": 12625
+      },
+      {
+        "text": "Claude discovers the available tools automatically and calls them when relevant to your prompt.",
+        "startMs": 86075,
+        "endMs": 91538,
+        "durationMs": 5462
+      },
+      {
+        "text": "Because MCP servers grant access to external systems, security and authorization are critical.",
+        "startMs": 91538,
+        "endMs": 98650,
+        "durationMs": 7112
+      },
+      {
+        "text": "Always review the specific permissions requested by each server before installation.",
+        "startMs": 98650,
+        "endMs": 103975,
+        "durationMs": 5325
+      },
+      {
+        "text": "Configure sensitive connections in read-only mode whenever possible, especially when connecting to production databases.",
+        "startMs": 103975,
+        "endMs": 111238,
+        "durationMs": 7262
+      },
+      {
+        "text": "Never expose plain-text credentials or API secrets in configuration files.",
+        "startMs": 111238,
+        "endMs": 117012,
+        "durationMs": 5775
+      },
+      {
+        "text": "MCP transforms Claude Code into a fully integrated engineering hub that securely bridges your code with the modern developer ecosystem.",
+        "startMs": 117012,
+        "endMs": 125550,
+        "durationMs": 8538
+      }
+    ]
+  },
+  {
+    "mod": "12",
+    "title": "Agents",
+    "words": 259,
+    "duration_s": 118.368,
+    "total_frames": 3551,
+    "wpm": 131.28548256285484,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 12: Agents in Claude Code.",
+        "startMs": 100,
+        "endMs": 3975,
+        "durationMs": 3875
+      },
+      {
+        "text": "An AI agent is fundamentally different from a conversational chatbot that simply answers questions.",
+        "startMs": 3925,
+        "endMs": 10338,
+        "durationMs": 6412
+      },
+      {
+        "text": "An agent is an autonomous system capable of reasoning, planning, executing actions, and evaluating results to accomplish a defined objective.",
+        "startMs": 10338,
+        "endMs": 19612,
+        "durationMs": 9275
+      },
+      {
+        "text": "In Claude Code, the agent has direct access to tools, allowing it to inspect files, edit code, run tests, and fix bugs independently.",
+        "startMs": 19612,
+        "endMs": 29462,
+        "durationMs": 9850
+      },
+      {
+        "text": "At the core of every agent is an iterative reasoning loop: Think, Act, and Observe.",
+        "startMs": 29462,
+        "endMs": 35312,
+        "durationMs": 5850
+      },
+      {
+        "text": "First, Claude analyzes the request and devises a step-by-step plan.",
+        "startMs": 35312,
+        "endMs": 40538,
+        "durationMs": 5225
+      },
+      {
+        "text": "Next, it acts by reading files or running shell commands.",
+        "startMs": 40538,
+        "endMs": 45050,
+        "durationMs": 4512
+      },
+      {
+        "text": "Then, it observes the environment's response.",
+        "startMs": 45050,
+        "endMs": 48600,
+        "durationMs": 3550
+      },
+      {
+        "text": "When a command fails or a compiler produces errors, the agent diagnoses the issue, refines its approach, and applies a targeted fix without human intervention.",
+        "startMs": 48600,
+        "endMs": 58850,
+        "durationMs": 10250
+      },
+      {
+        "text": "For complex engineering projects, Claude Code can coordinate multiple specialized subagents to tackle challenges in parallel.",
+        "startMs": 58850,
+        "endMs": 66788,
+        "durationMs": 7938
+      },
+      {
+        "text": "For instance, an architect agent can analyze system requirements and design the interface, while a researcher agent searches the codebase for relevant patterns, and an author agent writes the code.",
+        "startMs": 66788,
+        "endMs": 78488,
+        "durationMs": 11700
+      },
+      {
+        "text": "Delegating tasks to specialized subagents keeps individual context windows clean and significantly accelerates project delivery across large codebases.",
+        "startMs": 78488,
+        "endMs": 88062,
+        "durationMs": 9575
+      },
+      {
+        "text": "While agents provide extraordinary automation, human oversight remains essential for safety.",
+        "startMs": 88062,
+        "endMs": 94200,
+        "durationMs": 6138
+      },
+      {
+        "text": "Always establish clear acceptance criteria and verify unit test suites before launching agentic workflows.",
+        "startMs": 94200,
+        "endMs": 101425,
+        "durationMs": 7225
+      },
+      {
+        "text": "Use slash plan mode to review proposed modifications before granting write permissions.",
+        "startMs": 101425,
+        "endMs": 107212,
+        "durationMs": 5788
+      },
+      {
+        "text": "By combining autonomous reasoning loops with active human guidance, you unlock the transformative power of agentic development while maintaining full governance and confidence over your production software.",
+        "startMs": 107212,
+        "endMs": 118300,
+        "durationMs": 11088
+      }
+    ]
+  },
+  {
+    "mod": "13",
+    "title": "Permissions and Security",
+    "words": 257,
+    "duration_s": 117.624,
+    "total_frames": 3529,
+    "wpm": 131.0956947561722,
+    "subtitles": [
+      {
+        "text": "Welcome to Module 13: Permissions and Security in Claude Code.",
+        "startMs": 100,
+        "endMs": 5075,
+        "durationMs": 4975
+      },
+      {
+        "text": "Because Claude Code has direct access to your local filesystem, Windows terminal, and development toolchain, understanding permissions and security is essential for safe operation.",
+        "startMs": 5025,
+        "endMs": 15788,
+        "durationMs": 10762
+      },
+      {
+        "text": "Without proper safeguards, an autonomous agent could accidentally overwrite critical files, execute dangerous shell commands, or expose sensitive secrets.",
+        "startMs": 15788,
+        "endMs": 25775,
+        "durationMs": 9988
+      },
+      {
+        "text": "Security is not an afterthought; it is the foundation of dependable AI collaboration.",
+        "startMs": 25775,
+        "endMs": 31588,
+        "durationMs": 5812
+      },
+      {
+        "text": "Every action in Claude Code falls under one of three permission tiers.",
+        "startMs": 31588,
+        "endMs": 36300,
+        "durationMs": 4712
+      },
+      {
+        "text": "Allow permits safe actions, such as reading public files or inspecting directory trees without asking.",
+        "startMs": 36300,
+        "endMs": 43138,
+        "durationMs": 6838
+      },
+      {
+        "text": "Ask requires Claude to pause and request your explicit approval before modifying code or executing commands.",
+        "startMs": 43138,
+        "endMs": 50188,
+        "durationMs": 7050
+      },
+      {
+        "text": "Deny completely blocks access to forbidden files or destructive operations.",
+        "startMs": 50188,
+        "endMs": 55638,
+        "durationMs": 5450
+      },
+      {
+        "text": "Crucially, stricter rules always win: Deny beats Ask, and Ask beats Allow.",
+        "startMs": 55638,
+        "endMs": 61838,
+        "durationMs": 6200
+      },
+      {
+        "text": "On Windows, project permissions are configured inside dot claude settings dot json.",
+        "startMs": 61838,
+        "endMs": 67775,
+        "durationMs": 5938
+      },
+      {
+        "text": "Use deny rules to lock down sensitive dot env files, API tokens, database credentials, and SSH keys.",
+        "startMs": 67775,
+        "endMs": 76712,
+        "durationMs": 8938
+      },
+      {
+        "text": "During an active terminal session, you can quickly cycle through permission modes by pressing Shift plus Tab, switching seamlessly between Normal mode, Accept Edits mode, and Plan mode where no files can be altered.",
+        "startMs": 76712,
+        "endMs": 89475,
+        "durationMs": 12762
+      },
+      {
+        "text": "Always treat approval prompts with vigilance: inspect the exact shell command, verify the target file path, and read before you approve.",
+        "startMs": 89475,
+        "endMs": 98488,
+        "durationMs": 9012
+      },
+      {
+        "text": "By combining strict settings dot json boundaries with interactive permission modes, you maintain an airtight, safe terminal workspace.",
+        "startMs": 98488,
+        "endMs": 107212,
+        "durationMs": 8725
+      },
+      {
+        "text": "You now have the complete educational foundation to build safely, efficiently, and effectively with Claude Code across all thirteen modules of the AI Masterclass.",
+        "startMs": 107212,
+        "endMs": 117562,
+        "durationMs": 10350
+      }
+    ]
+  }
+]

@@ -11,7 +11,7 @@ export const Module05Video: React.FC = () => {
   return (
     <ModuleComposition
       partTitle="Part A: AI Fundamentals"
-      moduleBadge="PART A · MODULE 05"
+      moduleBadge="Part A • Module 5"
       audioFileName="module-05.mp3"
       subtitles={MODULE_05_SUBTITLES}
       scenes={[

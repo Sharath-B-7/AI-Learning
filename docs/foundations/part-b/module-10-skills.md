@@ -26,79 +26,138 @@
   </div>
 </div>
 
-Think about cooking from a favorite recipe card. Once you have a proven recipe that works every time, you don't reinvent the ingredients and cooking times from scratch every time you prepare dinner.
+---
 
-A **skill** is a recipe card for Claude.
+## What Is a Skill in Claude Code?
+
+In Claude Code, a **skill** is a packaged, reusable multi-step capability stored in a folder containing a **`SKILL.md`** file. For official specifications, visit the [Glossary: Progressive Disclosure](glossary.md#progressive-disclosure).
+
+Once saved, a skill automatically becomes a custom slash command (such as `/weekly-report`) that you can invoke on demand. Furthermore, Claude Code can automatically discover and use the skill whenever you make a plain-English request that matches the skill's description.
 
 ---
 
-## What a Skill Is
+## Where Skills Live on Windows
 
-A skill is a saved, reusable package of instructions designed for one specific type of repeatable task. It typically contains:
+Skills can be scoped locally to a single project or globally across all projects on your machine, as detailed in [FAQ Question 7](faq.md#7-is-a-skill-the-same-thing-as-a-slash-command):
 
-- The exact sequence of steps Claude should follow.
-- A required document template or output layout.
-- The tone and style rules to enforce.
-- A completion checklist to verify quality before Claude returns the output.
+| Skill Scope | Folder Location | Who Can Use It | Documentation |
+| :--- | :--- | :--- | :--- |
+| **Project Skill** | `.claude\skills\<skill-name>\SKILL.md` in the project folder | Everyone working in this project. Shared via Git. | [Glossary: Progressive Disclosure](glossary.md#progressive-disclosure) |
+| **Personal Skill** | `C:\Users\<you>\.claude\skills\<skill-name>\SKILL.md` | Only you, across every project on your Windows computer. | [Set up Claude Code on Windows](setup-windows.md) |
 
-> [!NOTE]
-> **Example (Asha's Weekly Report Skill):**
-> Every Friday, Asha writes a weekly status report for senior management. She creates a "Weekly Status Report" skill that contains her four-section template, standard headings, bullet guidelines, and a rule to highlight blocked tasks in bold red text.
-> 
-> Now, Asha only needs to say: *"Write this week's report using my raw notes,"* and Claude executes the saved method flawlessly.
+A skill folder can also contain companion assets, such as Markdown templates (`template.md`), schema examples, or helper scripts that the skill references.
 
 ---
 
-## Skill vs. Prompt
+## Step-by-Step: Building Asha's Weekly Report Skill
 
-| Aspect | One-Off Prompt | Saved Skill |
-| :--- | :--- | :--- |
-| **What It Is** | A single, ad-hoc request ([Module 8](module-08-prompting.md)) | A saved, reusable recipe ([glossary](glossary.md#skill)) |
-| **Effort** | You retype or copy-paste instructions every time | You write and test it once |
-| **Consistency** | Varies depending on how much you type that day | Identical structure and quality every time |
-| **Team Sharing** | Difficult to standardize across team members | Easy to share across an entire department |
+Follow along as Asha creates a standardized skill for her team's weekly status report:
 
-![Figure 10: A prompt is typed each time, a skill is saved once](../../assets/images/foundations/figure-10-prompt-vs-skill.png)
-*Figure 10: A prompt is typed each time, a skill is saved once*
+### Step 1: Create the Skill Directory
+In PowerShell (from your project directory), create the skill folder and open `SKILL.md` in Notepad:
 
+```powershell
+mkdir .claude\skills\weekly-report
+notepad .claude\skills\weekly-report\SKILL.md
+```
+
+### Step 2: Author the `SKILL.md` File
+Add the following content. The YAML frontmatter at the top (`name` and `description`) is what Claude reads to understand when to invoke the skill:
+
+```markdown
+---
+name: weekly-report
+description: Write the team's weekly status report from this week's task list. Use when asked for the weekly or Friday report.
 ---
 
-## How Skills Stay Efficient (Context Conservation)
+# Weekly Report Workflow
 
-In advanced agentic environments (such as Claude Code or custom team harnesses), skills are designed to be context-efficient:
+1. Read the task list named by the user (default: tasks\this-week.xlsx).
+2. Follow template.md in this folder: Done, In Progress, Risks, Next Week.
+3. Maximum five short bullet points per section. No corporate jargon.
+4. Validation check: verify that every metric total matches the source task list.
+5. Format dates as Day Month Year (e.g., 20 November 2026).
+6. Save the output as reports\weekly-<date>.md and display a summary before sharing.
+```
 
-- Claude initially only sees a one-sentence summary of each available skill.
-- When you request a task that matches a skill's description, Claude loads the full instructions onto its desk.
-- This prevents your context desk (Module 7) from becoming cluttered with dozens of rules you aren't using right now.
+### Step 3: Run and Test the Skill
+Save and close Notepad, return to your Claude Code session, and execute:
 
----
-
-## When to Turn a Prompt into a Skill
-
-Create a skill whenever:
-
-1. **You repeat yourself:** You find yourself typing the same instructions or constraints more than three times.
-2. **Standardization matters:** The output must follow a strict corporate format, brand style, or compliance checklist.
-3. **Collaboration is required:** Multiple colleagues on your team need to produce the same deliverable with consistent quality.
-
----
+```text
+> /skills                       # list available skills; verify weekly-report appears
+> /reload-skills                # reload skill definitions without restarting Claude Code
+> /weekly-report                # execute the skill by its slash command name
+> /weekly-report use @tasks\week47.xlsx   # execute with a specific input file
+> write this week's report      # or ask in plain English; Claude auto-matches description
+```
 
 > [!TIP]
-> **Remember:** If you explain the same multi-step task to Claude more than a few times, turn it into a saved skill. A well-crafted skill written by one person can elevate the productivity of an entire team.
+> **Auto-Generating Skills:** You can also ask Claude to package a successful workflow into a skill for you:
+> ```text
+> > turn what we just did into a project skill called weekly-report
+> ```
+> See how this connects to autonomous agents in [Module 12: Agents](module-12-agents.md#subagents-specialized-helpers-for-big-jobs).
+
+---
+
+## Skill vs. Prompt Comparison
+
+| Aspect | One-Off Prompt | Saved Skill (`SKILL.md`) |
+| :--- | :--- | :--- |
+| **Definition** | A single request typed into the chat | A saved, version-controlled process in `.claude\skills\` |
+| **User Effort** | Must be retyped and refined each time | Type once, invoke with `/<skill-name>` anytime |
+| **Consistency** | Varies depending on phrasing and memory | Follows identical steps and checks every execution |
+| **Team Sharing** | Difficult to distribute reliably | Commit `.claude\skills\` to Git and the whole team has it |
+
+---
+
+## How Skills Stay Efficient (Progressive Disclosure)
+
+If Claude loaded the full text of 30 different skills into its context window at startup, your desk would immediately be cluttered with thousands of unnecessary tokens.
+
+Claude Code uses **progressive disclosure**:
+1. At session startup, Claude loads **only the short name and description** of each skill into memory.
+2. Only when you run the command or ask for a matching task does Claude load the full instructions and companion templates onto the desk.
+3. Run `/skill-doctor` inside a session to inspect how much context each skill consumes and how frequently each is used. Review [Module 7: Context Quality](module-07-context.md#the-desk-has-a-size-limit-the-context-window).
+
+---
+
+> [!NOTE]
+> **Rule of Thumb:** If you explain the same multi-step procedure to Claude more than three times, save it as a skill in `.claude\skills\`.
+
+---
+
+## Practical Exercises
+
+1. **Inspect Registered Skills:** Launch Claude Code and run `/skills`. Review the built-in and project-specific skills available in your workspace in the [Command Cheat Sheet](index.md#inside-claude-code-session-commands).
+2. **Build a Formatting Skill:** Create `.claude\skills\clean-notes\SKILL.md` that takes raw meeting transcripts and formats them into Action Items, Decisions, and Attendees.
+3. **Trigger via Natural Language:** Without typing `/clean-notes`, type `please clean up the meeting notes in @notes.txt` and verify that Claude autonomously invokes the skill.
+
+---
+
+## Knowledge Check
+
+??? question "Where should a skill be stored if it should be accessible across all projects on your Windows PC?"
+    **Answer:** In `C:\Users\<YourUsername>\.claude\skills\<skill-name>\SKILL.md`.
+
+??? question "How does Claude Code know which skill to trigger when you ask a question in plain English?"
+    **Answer:** It checks the `description:` field in each skill's YAML frontmatter to see if your request matches the stated purpose.
+
+??? question "What command should you run after modifying a `SKILL.md` file to apply the changes immediately?"
+    **Answer:** `/reload-skills`.
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part B, Module 8: Prompting & Instructions](module-08-prompting.md)** — Prompting is for one-off requests; skills are for reusable recipes.
-- **[Part B, Module 9: Memory](module-09-memory.md)** — Storing background context in memory vs. procedures in skills.
-- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — Combining skills with external tools for automated workflows.
-- **[Part B, Module 12: Agents](module-12-agents.md)** — How autonomous agents load skills to execute complex assignments.
-- **[Part B Glossary: Skill](glossary.md#skill)** — Plain-English definition and efficiency benefits of skills.
+- **[Part B, Module 8: Prompting & Instructions](module-08-prompting.md)** — Turning proven prompts into permanent skills.
+- **[Part B, Module 9: Memory](module-09-memory.md)** — How `CLAUDE.md` and skills complement each other.
+- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — How skills leverage tools to execute work.
+- **[Part B Glossary: Progressive Disclosure](glossary.md#progressive-disclosure)** — Plain-English explanation.
 
 ---
 
 <div class="hero-actions">
-  <a href="../module-09-memory/" class="md-button">← Module 9: Memory</a>
-  <a href="../module-11-tools-and-harness/" class="md-button md-button--primary">Next: Module 11 — Tools and the Harness →</a>
+  <a href="../module-09-memory/" class="md-button">← Previous: Module 9 — Memory</a>
+  <a href="../module-11-tools-and-harness/" class="md-button md-button--primary">Next: Module 11 — Tools & The Harness →</a>
 </div>

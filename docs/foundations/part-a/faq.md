@@ -36,7 +36,7 @@ It generates text that sounds coherent and plausible, not text that has been cro
 Not on its own. Its base training stops at a [knowledge cutoff](glossary.md#knowledge-cutoff) date. It can only discuss current news if you enable the **Web Search** tool or paste the relevant news article into the conversation (see [Module 3: Knowledge Cutoff](module-03-how-llms-work.md#1-it-has-a-knowledge-cutoff)).
 
 ### 7. Does it remember my earlier chats?
-By default, every new chat conversation starts with a completely blank slate. In [Part B, Module 9: Memory](../part-b/module-09-memory.md), you will learn how **Saved Memory** and **Project Instructions** allow you to preserve persistent background across conversations.
+By default, every new chat conversation starts with a completely blank slate. In [Part B, Module 9: Memory](../part-b/module-09-memory.md#persistent-memory-in-claude-code-claudemd), you will learn how **Saved Memory** and **Project Instructions** allow you to preserve persistent background across conversations.
 
 ### 8. Does it learn from what I type?
 It does not update its permanent model weights during your conversation. It only uses what you have typed within that specific active session. For how your enterprise handles conversation retention, follow your company's official AI policy (see [Module 4: Privacy Basics](module-04-strengths-limits-trust.md#privacy-basics)).
@@ -49,23 +49,23 @@ It does not update its permanent model weights during your conversation. It only
 Apply the **Trust Rule**: check in proportion to the stakes. A rough draft or brainstorm needs only a quick skim. Financial numbers, client emails, and executive reports require factual verification against original source files (see [Module 4: The Trust Rule](module-04-strengths-limits-trust.md#the-trust-rule-check-in-proportion-to-the-stakes)).
 
 ### 10. Why is it sometimes bad at math?
-Standard language models predict the next character or word; they do not calculate like a spreadsheet (see [Module 4: Uneven Skill](module-04-strengths-limits-trust.md#uneven-skill)). Claude is far more reliable at math when it invokes its built-in code execution tool (see [Part B, Module 11: Tools & The Harness](../part-b/module-11-tools-and-harness.md)) or when you ask it to show its work step by step.
+Standard language models predict the next character or word; they do not calculate like a spreadsheet (see [Module 4: Uneven Skill](module-04-strengths-limits-trust.md#uneven-skill)). Claude is far more reliable at math when it invokes its built-in code execution tool (see [Part B, Module 11: Tools & The Harness](../part-b/module-11-tools-and-harness.md#the-tools-you-will-see-on-screen)) or when you ask it to show its work step by step.
 
 ### 11. Do I need to write perfect prompts?
-No. Simply state your **Context**, your **Goal**, and your desired **Format** (see [Module 5: Three Habits for Good Results](module-05-meet-claude.md#three-habits-for-good-results) and [Part B, Module 8: Prompting](../part-b/module-08-prompting.md)). If the first answer is not quite right, reply and tell Claude what to adjust. Prompting is a dialogue, not a one-shot exam.
+No. Simply state your **Context**, your **Goal**, and your desired **Format** (see [Module 5: Three Habits for Good Results](module-05-meet-claude.md#three-habits-for-good-results) and [Part B, Module 8: Prompting](../part-b/module-08-prompting.md#the-4-part-request-framework)). If the first answer is not quite right, reply and tell Claude what to adjust. Prompting is a dialogue, not a one-shot exam.
 
 ### 12. What should I do if the answer isn't what I wanted?
 Do not start over from scratch. Reply in the same conversation with specific feedback, such as: *"Make this 50% shorter,"* *"Change the tone to formal,"* or *"You forgot to include the deadline from my original notes."*
 
 ### 13. Which model should I use?
-Smaller, faster models for simple classification and edits; balanced models for everyday writing; and the most capable models (or models with thinking enabled) for complex logic and analysis. [Part B, Module 6: Types of Models](../part-b/module-06-types-of-models.md) covers model selection in detail.
+Smaller, faster models for simple classification and edits; balanced models for everyday writing; and the most capable models (or models with thinking enabled) for complex logic and analysis. [Part B, Module 6: Types of Models](../part-b/module-06-types-of-models.md#the-idea-in-brief) covers model selection in detail.
 
 ---
 
 ## Safety
 
 ### 14. What can I paste into Claude?
-Always follow your company data policy. By default: **never** paste passwords, API secrets, customer personal identifiable information (PII), or unapproved confidential contracts (see [Module 4: Privacy Basics](module-04-strengths-limits-trust.md#privacy-basics) and [Part B, Module 13: Permissions & Safety](../part-b/module-13-permissions-and-safety.md)).
+Always follow your company data policy. By default: **never** paste passwords, API secrets, customer personal identifiable information (PII), or unapproved confidential contracts (see [Module 4: Privacy Basics](module-04-strengths-limits-trust.md#privacy-basics) and [Part B, Module 13: Permissions & Safety](../part-b/module-13-permissions-and-safety.md#keeping-claude-away-from-sensitive-files-settingsjson)).
 
 ### 15. Can it be wrong and still sound sure?
 Yes. Large language models frequently sound polite, authoritative, and completely confident even when generating factually incorrect details. Confidence is a style trait, not proof of correctness (see [Module 4: Uneven Skill](module-04-strengths-limits-trust.md#uneven-skill)).

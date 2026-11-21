@@ -3,6 +3,7 @@ import { interpolate, useCurrentFrame } from 'remotion';
 import { THEME } from '../styles/theme';
 
 interface BrandingProps {
+  moduleBadge?: string;
   currentScene?: number;
   totalScenes?: number;
   sceneTitle?: string;
@@ -10,6 +11,7 @@ interface BrandingProps {
 }
 
 export const Branding: React.FC<BrandingProps> = ({
+  moduleBadge = 'Part A • Module 1',
   currentScene = 1,
   totalScenes = 9,
   sceneTitle,
@@ -75,7 +77,7 @@ export const Branding: React.FC<BrandingProps> = ({
             letterSpacing: '0.04em',
           }}
         >
-          PART A · MODULE 01
+          {moduleBadge}
         </div>
       </div>
 

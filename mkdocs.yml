@@ -50,6 +50,7 @@ extra_javascript:
   - assets/javascripts/map.js
   - assets/javascripts/video-config.js
   - assets/javascripts/video-player.js
+  - assets/javascripts/chat-widget.js
 
 markdown_extensions:
   - admonition
@@ -76,26 +77,6 @@ markdown_extensions:
   - toc:
       permalink: true
 
-exclude_docs: |
-  01-start-here/**
-  02-getting-started/**
-  03-models-and-selection/**
-  04-writing-and-communication/**
-  05-learning-and-research/**
-  06-documents-and-files/**
-  07-data-analysis/**
-  08-visual-and-interactive-artifacts/**
-  09-projects-and-knowledge-bases/**
-  10-prompt-engineering/**
-  11-workplace-and-industry-playbooks/**
-  12-claude-code-and-developers/**
-  13-model-context-protocol-mcp/**
-  14-building-with-claude-api/**
-  15-real-world-projects/**
-  16-reference-and-troubleshooting/**
-  map.md
-  foundations/index.md
-
 nav:
   - Home: index.md
   - Part A — AI Fundamentals:
@@ -110,6 +91,7 @@ nav:
       - What You Should Be Able to Do: foundations/part-a/learning-checklist.md
   - Part B — AI Concepts for Systems:
       - Overview: foundations/part-b/index.md
+      - Set up Claude Code on Windows: foundations/part-b/setup-windows.md
       - Module 6 - Types of Models: foundations/part-b/module-06-types-of-models.md
       - Module 7 - Context: foundations/part-b/module-07-context.md
       - Module 8 - Prompting & Instructions: foundations/part-b/module-08-prompting.md

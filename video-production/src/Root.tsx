@@ -60,7 +60,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module06"
         component={Module06Video}
-        durationInFrames={1391} // 46.37s
+        durationInFrames={3691} // 123.05s (~2m 03s)
         fps={30}
         width={1920}
         height={1080}
@@ -68,7 +68,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module07"
         component={Module07Video}
-        durationInFrames={1200} // 40.00s
+        durationInFrames={3574} // 119.14s (~1m 59s)
         fps={30}
         width={1920}
         height={1080}
@@ -76,7 +76,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module08"
         component={Module08Video}
-        durationInFrames={1206} // 40.20s
+        durationInFrames={3569} // 118.97s (~1m 59s)
         fps={30}
         width={1920}
         height={1080}
@@ -84,7 +84,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module09"
         component={Module09Video}
-        durationInFrames={1329} // 44.30s
+        durationInFrames={3635} // 121.15s (~2m 01s)
         fps={30}
         width={1920}
         height={1080}
@@ -92,7 +92,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module10"
         component={Module10Video}
-        durationInFrames={1146} // 38.20s
+        durationInFrames={3607} // 120.24s (~2m 00s)
         fps={30}
         width={1920}
         height={1080}
@@ -100,7 +100,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module11"
         component={Module11Video}
-        durationInFrames={1211} // 40.37s
+        durationInFrames={3768} // 125.62s (~2m 06s)
         fps={30}
         width={1920}
         height={1080}
@@ -108,7 +108,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module12"
         component={Module12Video}
-        durationInFrames={1270} // 42.33s
+        durationInFrames={3551} // 118.37s (~1m 58s)
         fps={30}
         width={1920}
         height={1080}
@@ -116,7 +116,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Module13"
         component={Module13Video}
-        durationInFrames={1289} // 42.97s
+        durationInFrames={3529} // 117.62s (~1m 58s)
         fps={30}
         width={1920}
         height={1080}

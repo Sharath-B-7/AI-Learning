@@ -1,51 +1,98 @@
 [
   {
-    "text": "A model on its own is like a clever person in a locked room, only able to pass notes under the door.",
+    "text": "Welcome to Module 11: Model Context Protocol, or MCP, in Claude Code.",
     "startMs": 100,
-    "endMs": 6325,
-    "startSec": 0.1,
-    "endSec": 6.325
+    "endMs": 6512,
+    "durationMs": 6412
   },
   {
-    "text": "Tools are the model's hands: they allow Claude to read spreadsheets, search the web, run calculations, and create documents.",
-    "startMs": 6275,
-    "endMs": 14825,
-    "startSec": 6.275,
-    "endSec": 14.825
+    "text": "The Model Context Protocol is an open standard that connects Claude Code to external data sources, developer tools, and enterprise services.",
+    "startMs": 6462,
+    "endMs": 15600,
+    "durationMs": 9138
   },
   {
-    "text": "The harness is the software wrapped around the model\u2014the complete workshop.",
-    "startMs": 14825,
-    "endMs": 19650,
-    "startSec": 14.825,
-    "endSec": 19.65
+    "text": "Without MCP, Claude is confined strictly to your local workspace files.",
+    "startMs": 15600,
+    "endMs": 20975,
+    "durationMs": 5375
   },
   {
-    "text": "It provides the tools, runs the working loop, and enforces the rules about what Claude may do.",
-    "startMs": 19650,
-    "endMs": 25900,
-    "startSec": 19.65,
-    "endSec": 25.9
+    "text": "With MCP, Claude can query production databases, create Jira tickets, inspect GitHub repositories, and fetch real-time documentation without leaving your terminal.",
+    "startMs": 20975,
+    "endMs": 32412,
+    "durationMs": 11438
   },
   {
-    "text": "The Claude app is one harness; Claude Code is another.",
-    "startMs": 25900,
-    "endMs": 29962,
-    "startSec": 25.9,
-    "endSec": 29.962
+    "text": "MCP operates on a clean client-host-server architecture.",
+    "startMs": 32412,
+    "endMs": 36862,
+    "durationMs": 4450
   },
   {
-    "text": "In short: the model thinks, tools let it act, and the harness provides the tools and rules.",
-    "startMs": 29962,
-    "endMs": 36438,
-    "startSec": 29.962,
-    "endSec": 36.438
+    "text": "Claude Code acts as the MCP client, while MCP servers expose specialized tools, resources, and prompt templates that Claude can invoke dynamically.",
+    "startMs": 36862,
+    "endMs": 47450,
+    "durationMs": 10588
   },
   {
-    "text": "You decide what Claude is allowed to do.",
-    "startMs": 36438,
-    "endMs": 39500,
-    "startSec": 36.438,
-    "endSec": 39.5
+    "text": "Connections run over local standard input and output streams for installed command-line utilities, or over secure HTTP and Server-Sent Events for remote cloud services.",
+    "startMs": 47450,
+    "endMs": 58600,
+    "durationMs": 11150
+  },
+  {
+    "text": "This modular architecture allows you to plug in tools without modifying your core codebase.",
+    "startMs": 58600,
+    "endMs": 64650,
+    "durationMs": 6050
+  },
+  {
+    "text": "On Windows, you can add MCP servers using the claude mcp add command or by editing your project settings dot json file.",
+    "startMs": 64650,
+    "endMs": 73450,
+    "durationMs": 8800
+  },
+  {
+    "text": "For example, you can connect a PostgreSQL server to inspect database schemas, a GitHub server to manage pull requests and issues, or a web search server to fetch the latest API documentation.",
+    "startMs": 73450,
+    "endMs": 86075,
+    "durationMs": 12625
+  },
+  {
+    "text": "Claude discovers the available tools automatically and calls them when relevant to your prompt.",
+    "startMs": 86075,
+    "endMs": 91538,
+    "durationMs": 5462
+  },
+  {
+    "text": "Because MCP servers grant access to external systems, security and authorization are critical.",
+    "startMs": 91538,
+    "endMs": 98650,
+    "durationMs": 7112
+  },
+  {
+    "text": "Always review the specific permissions requested by each server before installation.",
+    "startMs": 98650,
+    "endMs": 103975,
+    "durationMs": 5325
+  },
+  {
+    "text": "Configure sensitive connections in read-only mode whenever possible, especially when connecting to production databases.",
+    "startMs": 103975,
+    "endMs": 111238,
+    "durationMs": 7262
+  },
+  {
+    "text": "Never expose plain-text credentials or API secrets in configuration files.",
+    "startMs": 111238,
+    "endMs": 117012,
+    "durationMs": 5775
+  },
+  {
+    "text": "MCP transforms Claude Code into a fully integrated engineering hub that securely bridges your code with the modern developer ecosystem.",
+    "startMs": 117012,
+    "endMs": 125550,
+    "durationMs": 8538
   }
 ]

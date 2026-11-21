@@ -26,113 +26,178 @@
   </div>
 </div>
 
-Claude can only take actions that its harness permits. **Permissions** are the strict rules you define regarding what Claude is allowed to read, modify, execute, or send.
-
-Permissions are what keep you safely in control when Claude operates as an autonomous agent.
-
 ---
 
-## Why Permissions Matter: The Principle of Least Access
+## Permissions and Safety: Least Access
 
-Think about handing keys to a newly hired contractor in an office building. You would give them a keycard that opens only the conference room and their assigned desk, never a master passkey that unlocks HR files, server rooms, and the executive suite.
+Claude Code is designed around the principle of **least access**: giving Claude only the exact permissions needed to accomplish the task, and nothing more. For detailed security policies, see [Part A, Module 4: Privacy Basics](../part-a/module-04-strengths-limits-trust.md#privacy-basics) and [Glossary: Least Access](glossary.md#least-access).
 
-In AI security, this is called the **Principle of Least Access**: granting an AI agent only the minimal permissions required to complete the specific job, and nothing more.
+Before executing any potentially impactful action (reading a sensitive folder, modifying a file, running a script, or reaching out to the network), Claude Code checks your **allow**, **ask**, and **deny** rules.
 
 ---
 
 ## The Three Permission Settings: Allow, Ask, Deny
 
-Every action an agent attempts is checked against your permission rules:
+| Setting | What It Means | Everyday Workplace Example | Official Reference |
+| :--- | :--- | :--- | :--- |
+| **Allow** | Claude may perform this action immediately without asking | Reading documentation files in `.\Reports\` | [The Three Permission Settings](#the-three-permission-settings-allow-ask-deny) |
+| **Ask** | Claude pauses and displays an approval prompt before proceeding | Modifying a file, deleting a draft, running a PowerShell script | [Approval Prompts](#approval-prompts-read-before-you-approve) |
+| **Deny** | Claude is strictly forbidden from performing this action under any circumstance | Reading `.env`, accessing `.\secrets\`, or opening `.\Payroll\` | [Keeping Claude Away from Sensitive Files](#keeping-claude-away-from-sensitive-files-settingsjson) |
 
-| Setting | What It Means | Everyday Example |
-| :--- | :--- | :--- |
-| **[Allow](glossary.md#allow-ask-deny)** | Claude may perform this action freely without asking you | Reading markdown documents inside your project folder |
-| **[Ask](glossary.md#allow-ask-deny)** | Claude must pause and wait for your explicit approval each time | Overwriting an existing file, running bash scripts, or sending an email |
-| **[Deny](glossary.md#deny-rule)** | Claude is strictly forbidden from ever performing this action | Opening a file containing passwords, or reading a customer PII directory |
+### Rule Precedence
+If two rules overlap or disagree, the stricter rule **always wins**:
+$$\text{Deny} > \text{Ask} > \text{Allow}$$
 
-> [!IMPORTANT]
-> **The Strictest Rule Always Wins:**
-> If two permission rules ever conflict, the safer, stricter rule takes precedence: **Deny overrides Ask, and Ask overrides Allow.**
-
-![Figure 13: Each action is checked against your rules: allow, ask, or deny](../../assets/images/foundations/figure-13-permissions-allow-ask-deny.png)
-*Figure 13: Each action is checked against your rules: allow, ask, or deny*
+By default, Claude Code allows safe read-only operations within the current project folder, but asks for explicit confirmation before editing files or executing terminal commands.
 
 ---
 
-## Keeping Claude Away from Sensitive Files
-
-Certain files should always remain strictly out of an AI agent's reach:
-
-- **[`.env` files](glossary.md#env-file):** Files used by software engineers to store database passwords, API keys, and production tokens. Claude virtually never needs to read them.
-- **Customer Personal Data:** Spreadsheets containing customer names, credit card numbers, or medical records.
-- **Payroll & HR Folders:** Personnel salary reviews, performance appraisals, and internal investigations.
-- **Master Contract Repositories:** Signed legal agreements and confidential patent disclosures.
+## Everyday Scenario: Asha's Safety Boundaries
 
 > [!NOTE]
-> **Example (Asha's Payroll Folder Deny Rule):**
-> Asha's workspace contains an internal folder called `/Payroll`. She configures a **Deny** rule for that folder. Later, she asks Claude: *"Summarize every document in this workspace."* Claude reads all project documents, skips `/Payroll`, and explicitly logs: *"Skipped /Payroll due to security denial rule."*
+> **Asha's Security Configuration:**
+> Asha's department repository contains operational reports alongside sensitive employee payroll data and database configuration files.
+>
+> Before running her first Claude Code session, Asha establishes safety boundaries:
+> - She sets `Read(./Reports/**)` to **Allow** so Claude can read weekly submissions freely.
+> - She sets `Edit(./Reports/**)` to **Ask** so she approves any file modification before it is saved.
+> - She sets `Read(./Payroll/**)` and `Read(./.env)` to **Deny**.
+>
+> When Asha asks Claude: *"Summarize all project files in this repository,"* Claude summarizes the reports, explicitly notifies her that `Payroll\` and `.env` were skipped due to security restrictions, and continues safely.
 
 ---
 
-## Configuring Permissions in Claude Code
+## Try It in Claude Code
 
-In developer environments like Claude Code, permissions are managed through a configuration file located at `.claude/settings.json`:
+### Managing Permissions Interactively
+```text
+> /permissions                 # open the interactive rule manager to view, add, or delete rules
+> /fewer-permission-prompts    # analyze recent prompts and suggest safe read-only rules to allow
+```
+
+### Permission Modes (Cycle with `Shift + Tab`)
+Review the full specification in [Glossary: Permission Mode](glossary.md#permission-mode):
+
+| Mode | What Claude May Do Without Asking | Recommended Use Case |
+| :--- | :--- | :--- |
+| **Default** | Read files within project | Recommended starting mode for standard work |
+| **Accept Edits** | Read and edit files in project | Trusted editing sessions where you review changes with `/diff` |
+| **Plan** | Read files and research only; **no file modifications** | Initial planning, audits, and evaluating unknown code |
+
+Launch directly into Plan mode from PowerShell:
+```powershell
+PS C:\Work\TeamOps> claude --permission-mode plan
+```
+
+> [!CAUTION]
+> **Avoid `--dangerously-skip-permissions`:** This flag disables all human confirmation prompts and gives Claude unrestricted execution privileges. Never use this flag on production or confidential systems. Always follow the principle of least access ([Glossary: Least Access](glossary.md#least-access)).
+
+---
+
+## Keeping Claude Away from Sensitive Files (`settings.json`)
+
+On Windows, permission rules are stored in JSON configuration files (see [Glossary: settings.json](glossary.md#settingsjson)):
+
+| Settings File | Location | Applies To | Documentation |
+| :--- | :--- | :--- | :--- |
+| **Project Settings** | `.claude\settings.json` (in project root) | Shared across all team members in this project (committed to Git) | [Keeping Claude Away from Sensitive Files](#keeping-claude-away-from-sensitive-files-settingsjson) |
+| **Personal (Project)** | `.claude\settings.local.json` | Only you, for this specific project | [Command Cheat Sheet](index.md#inside-claude-code-session-commands) |
+| **Personal (Global)** | `C:\Users\<you>\.claude\settings.json` | Only you, across every project on your Windows machine | [Set up Claude Code on Windows](setup-windows.md) |
+
+### Asha's Project Settings File (`.claude\settings.json`)
 
 ```json
 {
   "permissions": {
+    "allow": [
+      "Read(./Reports/**)"
+    ],
+    "ask": [
+      "Edit(./Reports/**)"
+    ],
     "deny": [
       "Read(./.env)",
       "Read(./secrets/**)",
-      "Read(./payroll/**)"
+      "Read(./Payroll/**)"
     ]
   }
 }
 ```
 
-- `Read(./.env)` blocks Claude from opening the `.env` secret file.
-- `Read(./secrets/**)` recursively blocks access to everything inside the `secrets` folder.
-- In the Claude Code terminal, you can type `/permissions` at any time to inspect or modify these boundaries interactively.
+### Key Configuration Rules
+- **Forward Slashes:** Paths inside permission rules always use forward slashes (`/`), even on Windows (`./Reports/**`).
+- **Wildcards (`**`):** `Read(./secrets/**)` blocks every file and subfolder inside `secrets`.
+- **Natural Language Updates:** You can ask Claude to update rules for you:
+  ```text
+  > /update-config deny reading the Payroll folder
+  ```
 
 ---
 
-## Approval Prompts: Read Before You Click
+## Approval Prompts: Read Before You Approve
 
-When an action is set to **Ask**, Claude halts execution and presents an approval prompt explaining:
-1. What tool it wants to run.
-2. Which file it wants to edit or delete.
-3. The exact code or command it intends to execute.
+When an action triggers an **Ask** rule, Claude displays an approval dialogue detailing the exact command or file to be modified:
+
+```text
+Claude would like to run:
+  PowerShell: git push origin main
+
+[1] Yes
+[2] Yes, and don't ask again this session
+[3] No
+```
 
 > [!WARNING]
-> **Never blindly click "Approve All":**
-> Take 5 seconds to read what the agent is about to modify. If an agent offers to *"Remember this answer for future sessions"*, only select that option for safe read-only operations—never for file deletions or external network requests.
+> **Approval Caution:** Only choose *"Yes, and don't ask again"* for safe, repetitive, read-only actions (like opening markdown files). **Never** choose "don't ask again" for commands that delete files, commit/push code, or communicate with external servers.
 
 ---
 
-## Good Security Habits
+## Good Habits for Safe AI Terminal Work
 
-1. **Start Strict and Loosen Later:** It is far safer to start with strict Deny/Ask rules and relax them as needed than to recover from an accidental file deletion.
-2. **Deny Secrets Before Starting:** Add `.env` and credential files to your deny list on day one.
-3. **Work on Copies or Git Branches:** When running agents on important code or documents, work on a separate branch or duplicate folder so originals remain untouched.
-4. **Follow Corporate Policy:** Always adhere to your company's data governance standards.
+1. **Start Strict:** Begin with default or plan mode, and loosen permissions only as needed.
+2. **Deny Secrets Upfront:** Ensure `.env`, credentials, private SSH keys (`id_rsa`), and personal data folders are on the **Deny** list before your first session.
+3. **Always Check `/diff`:** Review the exact line-by-line diff before accepting edits.
+4. **Work on Clean Copies:** Keep backups or use Git version control so you can revert any unintended changes with `git checkout` or `/rewind`.
+5. **Never Paste Secrets:** Never type or paste passwords, tokens, or private customer records into prompts. See this demonstrated in the [Worked Example: Step 3](worked-example.md#step-3-enforce-security-boundaries).
 
 ---
 
 > [!TIP]
-> **Remember:** Permissions govern what Claude may do on its own. **Allow** what is safe, **Ask** for what has consequences, and **Deny** what is sensitive. You remain accountable for the final outcome.
+> **Remember:** Allow what is safe, ask for what matters, and deny what is sensitive. You remain fully responsible for everything Claude generates or changes.
+
+---
+
+## Practical Exercises
+
+1. **Inspect Active Permissions:** In Claude Code, run `/permissions` and view the currently configured allow, ask, and deny rules.
+2. **Test Deny Protection:** Create a folder called `secrets\`, add a dummy file `passwords.txt`, and configure a deny rule: `Read(./secrets/**)`. Try asking Claude to summarize `secrets\passwords.txt` and verify that access is blocked.
+3. **Use Plan Mode Safeguard:** Start a session with `claude --permission-mode plan`. Ask Claude to edit a file, and verify that Claude produces a plan but refuses to modify the file directly.
+
+---
+
+## Knowledge Check
+
+??? question "If an allow rule says `Read(./Reports/**)` and a deny rule says `Read(./Reports/confidential.pdf)`, what happens when Claude tries to read `confidential.pdf`?"
+    **Answer:** Access is denied. In Claude Code, Deny always overrides Allow.
+
+??? question "Which file stores project-level permission rules that should be shared across the entire team via Git?"
+    **Answer:** `.claude\settings.json` in the root of the project directory.
+
+??? question "Why should you avoid choosing 'Yes, and don't ask again' when Claude asks to run a shell command?"
+    **Answer:** Choosing 'don't ask again' removes human oversight for future commands in that session, creating risk if Claude attempts a destructive or unintended operation later.
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part A, Module 4: Privacy Basics](../part-a/module-04-strengths-limits-trust.md#privacy-basics)** — Corporate data protection principles and avoiding secret leakage.
-- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — How the software harness enforces permission checks before running tools.
-- **[Part B, Module 12: Agents](module-12-agents.md)** — Setting human-in-the-loop checkpoints during autonomous agent loops.
-- **[Part B Glossary: Permissions, Allow/Ask/Deny & Least Access](glossary.md#permissions)** — Plain-English vocabulary for permission models.
+- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — Understanding the tools being restricted.
+- **[Part B, Module 12: Agents](module-12-agents.md)** — Supervised vs. autonomous agent execution.
+- **[Part B Worked Example: Asha's Report](worked-example.md)** — Permissions in action during a weekly reporting cycle.
+- **[Part B Glossary: Least Access](glossary.md#least-access)** — Plain-English definition.
 
 ---
 
 <div class="hero-actions">
-  <a href="../module-12-agents/" class="md-button">← Module 12: Agents</a>
+  <a href="../module-12-agents/" class="md-button">← Previous: Module 12 — Agents</a>
   <a href="../worked-example/" class="md-button md-button--primary">Next: Putting It All Together (Worked Example) →</a>
 </div>

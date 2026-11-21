@@ -26,6 +26,10 @@
   </div>
 </div>
 
+---
+
+## What Is an LLM?
+
 An **LLM (Large Language Model)** is a program that was trained on a huge amount of text (books, articles, websites, and more) so that it learned how language works and how ideas connect.
 
 The core idea is simple: **given some text, an LLM predicts what text should come next.** Do this one small piece at a time, very well, and you get full answers, emails, summaries, and explanations.

@@ -1,58 +1,98 @@
 [
   {
-    "text": "Imagine a colleague who wakes up every morning with no memory of yesterday.",
+    "text": "Welcome to Module 9: Memory in Claude Code.",
     "startMs": 100,
-    "endMs": 4812,
-    "startSec": 0.1,
-    "endSec": 4.812
+    "endMs": 3975,
+    "durationMs": 3875
   },
   {
-    "text": "That is how Claude works: each conversation starts fresh, with no carry-over from earlier chats.",
-    "startMs": 4762,
-    "endMs": 11338,
-    "startSec": 4.763,
-    "endSec": 11.338
+    "text": "By default, every time you open Windows PowerShell and start a new Claude Code session, Claude begins with a completely blank slate.",
+    "startMs": 3925,
+    "endMs": 12162,
+    "durationMs": 8238
   },
   {
-    "text": "Short-term memory lives only in your current conversation.",
-    "startMs": 11338,
-    "endMs": 15250,
-    "startSec": 11.338,
-    "endSec": 15.25
+    "text": "It has no memory of past conversations, previous bug fixes, or your team's coding conventions.",
+    "startMs": 12162,
+    "endMs": 19112,
+    "durationMs": 6950
   },
   {
-    "text": "Saved, or persistent memory, consists of notes stored for Claude to read at the start of future chats\u2014such as project instructions or team conventions.",
-    "startMs": 15250,
-    "endMs": 24925,
-    "startSec": 15.25,
-    "endSec": 24.925
+    "text": "While this guarantees clean context, constantly repeating your build commands and stylistic rules wastes valuable engineering time.",
+    "startMs": 19112,
+    "endMs": 27300,
+    "durationMs": 8188
   },
   {
-    "text": "Memory is not Claude learning on its own; it is a notebook of saved notes that you control.",
-    "startMs": 24925,
-    "endMs": 30725,
-    "startSec": 24.925,
-    "endSec": 30.725
+    "text": "To solve this, Claude Code introduces persistent memory through a markdown file named CLAUDE.md.",
+    "startMs": 27300,
+    "endMs": 34188,
+    "durationMs": 6888
   },
   {
-    "text": "Store your role, guidelines, and formatting preferences.",
-    "startMs": 30725,
-    "endMs": 35262,
-    "startSec": 30.725,
-    "endSec": 35.263
+    "text": "Think of CLAUDE.md as an onboarding handbook for your project.",
+    "startMs": 34188,
+    "endMs": 38725,
+    "durationMs": 4538
   },
   {
-    "text": "Never store passwords, customer personal data, or confidential material.",
-    "startMs": 35262,
-    "endMs": 40712,
-    "startSec": 35.263,
-    "endSec": 40.712
+    "text": "Whenever Claude Code starts, it automatically reads this file and keeps its instructions active in memory.",
+    "startMs": 38725,
+    "endMs": 45488,
+    "durationMs": 6762
   },
   {
-    "text": "Keep your notes tidy and updated.",
-    "startMs": 40712,
-    "endMs": 43425,
-    "startSec": 40.712,
-    "endSec": 43.425
+    "text": "Claude Code supports a three-level memory hierarchy: Global memory in your user profile for machine-wide settings; Project memory in the repository root for team standards; and Directory memory inside subfolders for localized rules.",
+    "startMs": 45488,
+    "endMs": 59762,
+    "durationMs": 14275
+  },
+  {
+    "text": "Your project CLAUDE.md should document essential engineering workflows: exact test commands, linting rules, formatting requirements, and architectural boundaries.",
+    "startMs": 59762,
+    "endMs": 70538,
+    "durationMs": 10775
+  },
+  {
+    "text": "Explicitly state forbidden practices, such as libraries not to install or directories that must never be edited.",
+    "startMs": 70538,
+    "endMs": 77762,
+    "durationMs": 7225
+  },
+  {
+    "text": "Use clear bullet points and code snippets rather than lengthy narrative explanations.",
+    "startMs": 77762,
+    "endMs": 83325,
+    "durationMs": 5562
+  },
+  {
+    "text": "Every line in CLAUDE.md consumes context window space, so focus exclusively on high-value instructions that prevent recurring mistakes.",
+    "startMs": 83325,
+    "endMs": 92338,
+    "durationMs": 9012
+  },
+  {
+    "text": "Treat CLAUDE.md as living documentation that evolves alongside your software repository.",
+    "startMs": 92338,
+    "endMs": 98450,
+    "durationMs": 6112
+  },
+  {
+    "text": "When you correct Claude during a session, capture that lesson and add it to CLAUDE.md so the mistake is never repeated.",
+    "startMs": 98450,
+    "endMs": 105775,
+    "durationMs": 7325
+  },
+  {
+    "text": "Share the file with your team through version control so every engineer benefits from consistent AI behavior.",
+    "startMs": 105775,
+    "endMs": 112462,
+    "durationMs": 6688
+  },
+  {
+    "text": "Maintaining a concise, well-structured memory file ensures that Claude delivers production-grade results aligned with your team's standards from day one.",
+    "startMs": 112462,
+    "endMs": 121100,
+    "durationMs": 8638
   }
 ]

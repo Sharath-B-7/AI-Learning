@@ -26,112 +26,167 @@
   </div>
 </div>
 
-In Module 11, you saw that tools give Claude "hands" to perform tasks.
-
-An **agent** is what you get when Claude uses those tools autonomously in an iterative loop to finish a complete, multi-step job—not just to answer a single question.
-
 ---
 
-## Chat vs. Agent
+## Chat vs. Agent: The Shift from Conversation to Delegation
 
-Think about the difference between asking a coworker a quick factual question versus assigning that coworker an entire multi-day project:
+In a standard chat interface, you ask a question, the AI gives an answer, and you manually copy-paste files or carry out the next step.
 
-| Dimension | Standard Chat | Autonomous Agent |
+Claude Code operates as an **agent** by default: you give it a clear goal with boundaries, and it autonomously reads files, runs commands, evaluates outputs, corrects mistakes, and iterates until the goal is accomplished. Explore this complete flow in the [Worked Example: Asha\'s Report Workflow](worked-example.md).
+
+| Dimension | Chat (Web Interface) | Agent (Claude Code) |
 | :--- | :--- | :--- |
-| **What You Give** | A question or specific instruction | A high-level goal and boundaries |
-| **Who Decides Next Step** | **You** (you read the answer and decide what to ask next) | **Claude** (it plans and executes intermediate steps) |
-| **What Comes Back** | Text to read | Finished work (edited files, created reports, validated data) |
-| **Your Primary Role** | Guiding every single turn | Setting the goal and constraints, then reviewing the final output |
-
-Both utilize the same underlying Claude model. The difference is how much autonomy the harness grants Claude to run tools without asking you at every step.
+| **What You Provide** | A single question or prompt | A goal, target folders, and constraints |
+| **Who Determines the Next Step** | You decide after each turn | Claude decides autonomously based on tool outputs |
+| **What Is Delivered** | Text on a screen for you to read | Modified or newly created files, plus an executive summary |
+| **Your Supervisory Role** | Micro-manage every individual message | Authorize the plan, monitor tool execution, review changes with `/diff` |
 
 ---
 
-## The Agent Loop: Think, Act, Check
+## The Agent Loop on Screen
 
-When Claude operates as an agent, it executes a continuous three-phase loop:
+When you assign a goal to Claude Code, you can watch the agent loop unfold in real time:
 
-1. **Think:** Analyze the goal, inspect the current state, and plan the immediate next step.
-2. **Act:** Use a tool (read a document, run a calculation, edit a line of text).
-3. **Check:** Inspect the tool's result to confirm whether the step succeeded or failed.
-4. **Repeat:** Continue the cycle until the goal is achieved or it needs your approval.
+```text
+       ┌──────────────┐
+       │ 1. THINK     │  Formulate sub-goals and select tools
+       └──────┬───────┘
+              │
+              ▼
+       ┌──────────────┐
+       │ 2. ACT       │  Execute tools (Read, Edit, Bash, Grep)
+       └──────┬───────┘
+              │
+              ▼
+       ┌──────────────┐
+       │ 3. CHECK     │  Evaluate tool output and test results
+       └──────┬───────┘
+              │
+              ▼
+       ┌──────────────┐
+       │ 4. REPEAT    │  Continue loop until goal met or user input needed
+       └──────────────┘
+```
 
-![Figure 12: An agent repeats think, act, check until the job is done](../../assets/images/foundations/figure-12-agent-loop.png)
-*Figure 12: An agent repeats think, act, check until the job is done*
-
-> [!NOTE]
-> **Example (Asha's Customer Feedback Task):**
-> Asha instructs an agent: *"Identify the three most common complaints in this 500-line customer feedback CSV, calculate their percentage of total tickets, and write a summary memo."*
-> 
-> - **Step 1 (Act):** Claude opens the CSV file using a file reading tool.
-> - **Step 2 (Act):** Claude runs code to count occurrences and calculate percentages.
-> - **Step 3 (Check):** Claude verifies the percentages add up to 100%.
-> - **Step 4 (Act):** Claude writes the summary memo and presents it for Asha's review.
-
----
-
-## When to Use an Agent vs. a Normal Chat
-
-### Use an Agent For:
-- **Multi-step research and synthesis:** Gathering information across 10 documents, reconciling conflicting numbers, and generating a single report.
-- **Auditing across many files:** Reviewing 25 supplier contracts against a compliance checklist.
-- **Repetitive batch transformations:** Converting 50 meeting transcripts into structured action item summaries.
-
-### Use a Normal Chat For:
-- Quick questions, drafting an email, brainstorming ideas, or simple rewrites.
-- An agent takes longer and consumes more computational budget; save it for tasks that genuinely require multi-step tool execution.
+The loop halts automatically when:
+1. The objective is achieved.
+2. A tool action requires your explicit permission (under your [permission rules](module-13-permissions-and-safety.md)).
+3. You press **`Esc`** to pause or redirect execution.
 
 ---
 
-## Giving an Agent a Good Goal
+## Everyday Scenario: Asha's File Organization Goal
 
-A high-performing agent prompt requires four specific elements:
+**❌ Weak Goal:**
+```text
+> clean up the reports folder
+```
+*Why it fails:* "Clean up" is ambiguous. Claude might delete outdated drafts you needed to keep or rename files in an unexpected format.
 
-1. **Goal:** What the finished deliverable looks like.
-2. **Workspace:** Exactly which files or folders it is allowed to open.
-3. **Limits:** What it must **never** touch, change, or delete.
-4. **Check-ins:** Specific points where it must pause and ask for your sign-off before proceeding.
+**✅ Strong Goal:**
+```text
+> /plan In @Reports\ find every file with "draft" in its name and list
+  them in a table with the date each was last changed. Do not delete or
+  rename anything. Show me the list before you do anything else.
+```
 
-### Comparing Agent Requests
-
-> **Weak Request:**
-> *"Clean up the reports folder."*
-
-> **Better Request:**
-> *"In the Reports folder, find every file with 'draft' in its filename. Create a Markdown table listing each file name and its last modified date. Do not delete, move, or rename any files. Show me the table before taking any further action."*
+### The 4 Elements of a Reliable Agent Goal
+1. **Goal:** Exactly what "finished" looks like (a table of draft files with last-modified dates).
+2. **Where to Work:** The specific directory (`@Reports\`).
+3. **Limits:** Negative constraints ("Do not delete or rename anything").
+4. **Check-ins:** Milestones requiring human review ("Show me the list before you do anything else").
 
 ---
 
-## Subagents: Helpers for Large Jobs
+## Try It in Claude Code: Agent Controls & Safeguards
 
-When a task is massive, Claude can spawn **[subagents](glossary.md#subagent)**—independent helpers assigned to handle sub-tasks.
+The following commands give you precise control over the agent loop, as detailed in the [Command Cheat Sheet: Agents](index.md#inside-claude-code-session-commands):
 
-- Each subagent operates with its own clean, isolated [context desk (Module 7)](module-07-context.md).
-- Subagents can execute work in parallel without cluttering Claude's main desk.
-- Once finished, each subagent returns a concise summary back to the main agent.
+| Key or Command | When to Use It | Documentation Link |
+| :--- | :--- | :--- |
+| **`/plan <goal>`** | Claude researches the workspace and drafts an execution plan, but makes **no file modifications** until you explicitly approve. | [Glossary: Plan Mode](glossary.md#plan-mode) |
+| **`Shift + Tab`** | Cycles through permission modes: **Normal** (ask before edits), **Accept Edits** (auto-approve edits), and **Plan** (read-only). Active mode displays beneath the prompt. | [Module 13: Permission Modes](module-13-permissions-and-safety.md#permission-modes-cycle-with-shift-tab) |
+| **`Esc`** | Immediately pauses Claude. Progress so far is preserved, and you can redirect or refine the goal. | [FAQ Question 8: Stopping Claude](faq.md#8-how-do-i-stop-claude-immediately-if-it-starts-making-unexpected-changes) |
+| **`Esc Esc` or `/rewind`** | Rolls back conversation history and file modifications to an earlier checkpoint. | [Glossary: Checkpoint / Rewind](glossary.md#checkpoint-rewind-rewind) |
+| **`/diff`** | Displays a colored visual git diff of all file modifications before you accept or commit them. | [Worked Example: Step 8 Diff Review](worked-example.md#step-8-review-edits-with-diff) |
+| **`/goal <condition>`** | Sets an explicit completion condition for long-running workflows. | [Command Cheat Sheet](index.md#inside-claude-code-session-commands) |
+| **`/tasks`** | Shows background tasks and running helpers. | [Module 11: Inspecting the Harness](module-11-tools-and-harness.md#inspecting-and-diagnosing-the-harness) |
+| **`claude -p "..."`** | Non-interactive headless execution from PowerShell for automated batch tasks. | [Set up Claude Code on Windows: Sessions](setup-windows.md#8-starting-resuming-and-leaving-sessions) |
 
-> [!NOTE]
-> **Example (Asha's 15 Meeting Notes):**
-> Asha needs action items extracted from 15 separate meeting transcripts. Instead of crowding all 15 transcripts onto one desk, Claude starts a subagent for each transcript. Each subagent reads its single document and reports back 3 key bullets. Claude combines the 15 bullet lists into a single master dashboard for Asha.
+---
+
+## Subagents: Specialized Helpers for Big Jobs
+
+For large tasks—such as auditing 50 separate files or running independent research paths—Claude Code can spawn **subagents**. A subagent runs on its own isolated desk with its own context window, executes its assignment, and reports back a concise summary to the main agent. Learn more in the [Glossary: Subagent](glossary.md#subagent).
+
+You can request subagents directly in natural language:
+
+```text
+> Use a separate subagent for each file in @meeting-notes\ to extract its
+  action items, then combine them into one master table with owners and due dates.
+> /subtask check that every link in @handbook.md is valid and responsive
+```
+
+### Creating Reusable Subagents
+You can define persistent, specialized subagents by creating a Markdown file in `.claude\agents\` (project) or `C:\Users\<you>\.claude\agents\` (personal) to execute focused tasks with custom tools:
+
+```markdown
+---
+name: notes-reader
+description: Reads one set of meeting notes and returns action items in three lines.
+tools: Read, Grep
+---
+Read the notes file you are assigned. Return only action items: task, owner, and due date.
+```
+*Notice:* The `tools:` line enforces least-privilege security: this helper can only read and search files; it cannot edit, delete, or run terminal commands.
+
+---
+
+## Staying in Control
+
+1. **Start Small:** Test instructions on a single sample folder before running across an entire project.
+2. **Always Use `/plan` for Complex Tasks:** Review what Claude intends to do before approving file writes.
+3. **Keep Your Finger Near `Esc`:** If you see an unexpected tool call on screen, press `Esc` immediately.
+4. **Inspect Changes with `/diff`:** Never accept modifications blindly. Review the exact line-by-line diff. Follow Asha\'s complete execution in the [Worked Example](worked-example.md#step-6-the-autonomous-agent-loop-in-action).
 
 ---
 
 > [!TIP]
-> **Remember:** An agent turns a high-level goal into finished work by looping through **Think, Act, and Check**. Always provide clear limits, set mandatory check-ins, and review the final output before relying on it.
+> **Golden Habit:** Define clear goals with explicit limits. Start in `/plan` mode, monitor tool lines as they run, and know that `Esc` and `/rewind` are always available if you need to course-correct.
+
+---
+
+## Practical Exercises
+
+1. **Run a Plan-Only Task:** Execute `/plan analyze the file structure in this folder and suggest three improvements`. Notice how Claude explores files without altering any data.
+2. **Cycle Modes with `Shift + Tab`:** Press `Shift + Tab` repeatedly and observe the mode indicator switch between Normal, Accept Edits, and Plan.
+3. **Inspect Edits with `/diff`:** Ask Claude to add a short note to a file, then run `/diff` to inspect the visual git diff before keeping the change.
+
+---
+
+## Knowledge Check
+
+??? question "What is the primary difference between asking Claude a question in chat vs. giving Claude an agent goal?"
+    **Answer:** In chat, Claude only gives you an answer to read. As an agent, Claude autonomously selects tools, reads files, executes steps, tests results, and delivers finished file modifications.
+
+??? question "What key stops Claude immediately if you notice it executing an unintended command?"
+    **Answer:** Press `Esc` once to pause execution, or press `Esc` twice (or type `/rewind`) to roll back changes.
+
+??? question "Why are subagents useful for processing large batches of documents?"
+    **Answer:** Each subagent runs on its own independent desk with its own context window, preventing the main conversation context from being overwhelmed and allowing parallel progress.
 
 ---
 
 ## Related Concepts & Cross-References
 
-- **[Part A, Module 5: Chat vs. Agent](../part-a/module-05-meet-claude.md#chat-vs-agent)** — The initial distinction between single-turn chat and multi-step agents.
-- **[Part B, Module 7: Context](module-07-context.md)** — How subagents keep individual desks clean during complex jobs.
-- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — The tools and environment required for agent loops.
-- **[Part B, Module 13: Permissions & Safety](module-13-permissions-and-safety.md)** — Keeping agents safely bounded with Allow, Ask, and Deny rules.
-- **[Part B Glossary: Agent, Loop & Subagent](glossary.md#agent)** — Plain-English definitions of agentic building blocks.
+- **[Part B, Module 11: Tools & The Harness](module-11-tools-and-harness.md)** — Tools used within the agent loop.
+- **[Part B, Module 13: Permissions & Safety](module-13-permissions-and-safety.md)** — Controlling what agents are allowed to do.
+- **[Part B Worked Example: Asha's Report](worked-example.md)** — End-to-end demonstration of the agent loop.
+- **[Part B Glossary: Agent Loop](glossary.md#agent-loop)** — Plain-English explanation.
 
 ---
 
 <div class="hero-actions">
-  <a href="../module-11-tools-and-harness/" class="md-button">← Module 11: Tools and the Harness</a>
-  <a href="../module-13-permissions-and-safety/" class="md-button md-button--primary">Next: Module 13 — Permissions and Safety →</a>
+  <a href="../module-11-tools-and-harness/" class="md-button">← Previous: Module 11 — Tools & The Harness</a>
+  <a href="../module-13-permissions-and-safety/" class="md-button md-button--primary">Next: Module 13 — Permissions & Safety →</a>
 </div>
