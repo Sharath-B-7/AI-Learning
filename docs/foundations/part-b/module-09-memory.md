@@ -47,6 +47,25 @@ Claude Code supports different levels of memory depending on who needs the infor
 | **Personal (Global)** | `C:\Users\<you>\.claude\CLAUDE.md` | Only you, applied across every project on your Windows machine. | [Windows Setup Guide](setup-windows.md) |
 | **Auto Memory** | Managed automatically; view with `/memory` | Dynamic notes Claude records for itself as it works. You can view, edit, or toggle this. | [FAQ Question 6](faq.md#6-does-claude-code-automatically-remember-my-past-session-from-last-week) |
 
+```mermaid
+flowchart TD
+    Global["<b>Global Personal Memory</b><br/><code>C:\Users\&lt;you&gt;\.claude\CLAUDE.md</code><br/><i>Applies to every project on your Windows machine</i>"]
+    Project["<b>Shared Project Memory</b><br/><code>.\CLAUDE.md</code><br/><i>Team standards, tracked in Git, shared across repository</i>"]
+    Local["<b>Local Personal Overrides</b><br/><code>.\CLAUDE.local.md</code><br/><i>Personal preferences for this project only; ignored by Git</i>"]
+    Auto["<b>Auto Memory</b><br/><i>Managed dynamically by Claude Code; view with <code>/memory</code></i>"]
+
+    Global --> Project --> Local --> Auto
+
+    classDef gMem fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#0f172a;
+    classDef pMem fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
+    classDef lMem fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#064e3b;
+    classDef aMem fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#78350f;
+    class Global gMem;
+    class Project pMem;
+    class Local lMem;
+    class Auto aMem;
+```
+
 ---
 
 ## Everyday Scenario: Asha's Operations Notebook

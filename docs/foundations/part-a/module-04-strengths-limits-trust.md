@@ -80,6 +80,20 @@ The answer tells you how much verification is required.
 > - **Trusting too much** leads to costly factual mistakes slipping into production.
 > - **Trusting too little** means you never realize the speed and productivity benefits.
 
+???+ tip "Interactive Verification Guide: The 2×2 Trust Matrix"
+    === "High Stakes + Hard to Verify"
+        - **Examples:** Complex tax calculation, legal contract clause, medical advice, critical infrastructure code.
+        - **Action:** 🔴 **Mandatory Expert Review.** Do not rely solely on AI. Have a qualified human specialist verify every assertion.
+    === "High Stakes + Easy to Verify"
+        - **Examples:** Executive presentation date/time, customer invoice totals, public URL links.
+        - **Action:** 🟡 **Spot-Check Every Item.** Use the AI for fast drafting, but physically click every link and verify every number against source records.
+    === "Low Stakes + Hard to Verify"
+        - **Examples:** Personal trivia, background reading on a novel topic, speculative brainstorming.
+        - **Action:** 🔵 **Treat as Directional Guidance.** Enjoy the creative ideation without treating claims as settled facts.
+    === "Low Stakes + Easy to Verify"
+        - **Examples:** Grammar check on a quick internal Slack message, formatting bullet points, rephrasing a sentence.
+        - **Action:** 🟢 **Fast Skim & Go.** Quick read for clarity; minimal risk if a minor stylistic nuance is off.
+
 ---
 
 ## Privacy Basics

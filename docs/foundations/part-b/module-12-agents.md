@@ -73,6 +73,32 @@ The loop halts automatically when:
 2. A tool action requires your explicit permission (under your [permission rules](module-13-permissions-and-safety.md)).
 3. You press **`Esc`** to pause or redirect execution.
 
+```mermaid
+flowchart TD
+    Goal(["<b>User Assigns Goal</b><br/>e.g., '/plan Organize draft reports'"]) --> Think
+
+    subgraph Loop["The Autonomous Agent Execution Loop"]
+        Think["<b>1. THINK</b><br/>Analyze state, formulate sub-goal, pick tool"] --> Act["<b>2. ACT</b><br/>Execute tool (Read, Grep, Edit, PowerShell)"]
+        Act --> Check["<b>3. CHECK</b><br/>Evaluate tool output, check for errors"]
+        Check --> Eval{"Goal<br/>Accomplished?"}
+        Eval -- "No: Need more steps" --> Think
+    end
+
+    Eval -- "Yes: Finished" --> Done(["<b>Deliver Result</b><br/>Summary + /diff review"])
+    Act -.->|"Permission required"| Ask{"Ask User<br/>Approval"}
+    Ask -- "Approved" --> Check
+    Ask -- "Denied / Esc" --> Pause(["<b>Halt Loop</b><br/>Wait for user direction"])
+
+    classDef loopNode fill:#eff6ff,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a;
+    classDef startNode fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef endNode fill:#fdf4ff,stroke:#c026d3,stroke-width:2px,color:#701a75;
+    classDef gateNode fill:#fffbeb,stroke:#d97706,stroke-width:1.5px,color:#78350f;
+    class Think,Act,Check loopNode;
+    class Goal,Done startNode;
+    class Pause endNode;
+    class Eval,Ask gateNode;
+```
+
 ---
 
 ## Everyday Scenario: Asha's File Organization Goal

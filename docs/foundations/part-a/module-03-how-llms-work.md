@@ -31,6 +31,30 @@ Here is the simple picture of how an LLM works in four steps. The first two happ
 ![Figure 3: From training to your reply](../../assets/images/foundations/figure-03-pretraining-to-reply.png)
 *Figure 3: From training to your reply*
 
+```mermaid
+flowchart LR
+    subgraph Offline["Offline Phase (Done Once by Anthropic)"]
+        direction TB
+        S1["<b>Step 1: Pretraining</b><br/>Read billions of words<br/>Learn grammar, facts, & patterns"]
+        S2["<b>Step 2: Fine-Tuning</b><br/>RLHF & Constitutional AI<br/>Learn helpfulness & safety"]
+        S1 --> S2
+    end
+
+    subgraph Runtime["Runtime Phase (Every Prompt You Send)"]
+        direction TB
+        S3["<b>Step 3: User Prompt</b><br/>Prompt tokenized<br/>Context window evaluated"]
+        S4["<b>Step 4: Inference</b><br/>Next-token prediction<br/>Streamed piece-by-piece"]
+        S3 --> S4
+    end
+
+    Offline ==> Runtime
+
+    classDef off fill:#e0e7ff,stroke:#6366f1,stroke-width:1.5px,color:#1e1b4b;
+    classDef run fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#064e3b;
+    class S1,S2 off;
+    class S3,S4 run;
+```
+
 ---
 
 ## The Four Steps

@@ -47,6 +47,29 @@ Skills can be scoped locally to a single project or globally across all projects
 
 A skill folder can also contain companion assets, such as Markdown templates (`template.md`), schema examples, or helper scripts that the skill references.
 
+```mermaid
+flowchart TD
+    UserReq(["User prompt at terminal<br/><i>'Create the weekly Friday report'</i>"]) --> Match{"Matches skill<br/>description in YAML?"}
+    
+    Match -- "Yes" --> Load["Load <code>SKILL.md</code> instructions<br/>into context desk"]
+    Match -- "No" --> Standard["Standard Claude Code reasoning"]
+    
+    Load --> Step1["1. Read source data (e.g., <code>tasks.xlsx</code>)"]
+    Step1 --> Step2["2. Apply template (<code>template.md</code>)"]
+    Step2 --> Step3["3. Enforce constraints & formatting"]
+    Step3 --> Step4["4. Write deliverable (<code>reports\\weekly-*.md</code>)"]
+    Step4 --> Deliver(["Present summary to user for review"])
+
+    classDef startNode fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a;
+    classDef loadNode fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
+    classDef execNode fill:#eff6ff,stroke:#2563eb,stroke-width:1px,color:#1e3a8a;
+    classDef doneNode fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    class UserReq,Match,Standard startNode;
+    class Load loadNode;
+    class Step1,Step2,Step3,Step4 execNode;
+    class Deliver doneNode;
+```
+
 ---
 
 ## Step-by-Step: Building Asha's Weekly Report Skill

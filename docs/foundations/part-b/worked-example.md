@@ -32,6 +32,20 @@
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
+```mermaid
+flowchart LR
+    S1["<b>1. Plan Mode</b><br/><code>--permission-mode plan</code>"] --> S2["<b>2. Memory Check</b><br/><code>/memory (CLAUDE.md)</code>"]
+    S2 --> S3["<b>3. Security Rules</b><br/><code>/permissions</code>"]
+    S3 --> S4["<b>4. Model Tier</b><br/><code>/model sonnet</code>"]
+    S4 --> S5["<b>5. Trigger Skill</b><br/><code>/weekly-report</code>"]
+    S5 --> S6["<b>6. Plan & Diff Review</b><br/><code>/diff</code>"]
+    S6 --> S7["<b>7. High Effort Check</b><br/><code>/effort high</code>"]
+    S7 --> S8["<b>8. Clean Desk</b><br/><code>/clear</code>"]
+
+    classDef stepNode fill:#eff6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e3a8a;
+    class S1,S2,S3,S4,S5,S6,S7,S8 stepNode;
+```
+
 ---
 
 ### Step 1: Safe Launch from PowerShell

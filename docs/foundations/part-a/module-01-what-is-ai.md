@@ -50,6 +50,39 @@ The AI in this course is different from those. Those tools do one narrow job. Th
 ![Figure 1: Each term sits inside the one before it](../../assets/images/foundations/figure-01-ai-terms-hierarchy.png)
 *Figure 1: Each term sits inside the one before it*
 
+```mermaid
+flowchart TD
+    AI["<b>Artificial Intelligence (AI)</b><br/><i>The big umbrella: computers performing smart tasks</i>"]
+    ML["<b>Machine Learning (ML)</b><br/><i>Systems that learn patterns from data rather than hardcoded rules</i>"]
+    DL["<b>Deep Learning & Neural Networks</b><br/><i>Multi-layered models capable of processing unstructured data</i>"]
+    LLM["<b>Large Language Models (LLMs)</b><br/><i>e.g., Claude: trained on vast text to understand and generate language</i>"]
+
+    AI --> ML
+    ML --> DL
+    DL --> LLM
+
+    classDef aiNode fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#0c4a6e;
+    classDef mlNode fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef dlNode fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95;
+    classDef llmNode fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b;
+    class AI aiNode;
+    class ML mlNode;
+    class DL dlNode;
+    class LLM llmNode;
+```
+
+??? info "Traditional Rules vs. Machine Learning"
+    === "Traditional Software (Rules-Based)"
+        **Inputs + Explicit Rules = Output**
+        - Programmers write explicit `if/else` logic for every condition.
+        - Reliable for arithmetic, database queries, and rigid workflows.
+        - Struggles with nuanced human language, ambiguity, and complex pattern matching.
+    === "Machine Learning (Example-Based)"
+        **Inputs + Observed Examples = Learned Rules**
+        - The model analyzes millions of sample texts to identify statistical relationships.
+        - Excels at translation, summarization, nuance, and conceptual reasoning.
+        - Operates probabilistically rather than deterministically.
+
 ---
 
 ## Why Is This Happening Now?

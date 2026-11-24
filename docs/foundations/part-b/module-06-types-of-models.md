@@ -40,6 +40,26 @@ For a comprehensive comparison of model capabilities and benchmark scores, see t
 | **Balanced** | `sonnet` | Most everyday work: drafting, analysis, spreadsheets | Sensible middle ground for daily productivity |
 | **Most capable** | `opus` | Hard, multi-step, or high-stakes reasoning jobs | Slower and consumes more of your token allowance |
 
+```mermaid
+flowchart TD
+    Start["What kind of task are you tackling?"] --> Q1{"Is it high-stakes, highly complex,<br/>or architectural reasoning?"}
+    
+    Q1 -- "Yes (Hard reasoning / audit)" --> Opus["<b>Claude 3 Opus</b><br/><code>/model opus</code><br/><i>Deepest reasoning & multi-step synthesis</i>"]
+    Q1 -- "No" --> Q2{"Is it a quick, high-volume,<br/>or simple mechanical edit?"}
+    
+    Q2 -- "Yes (Typo / reformat / rename)" --> Haiku["<b>Claude 3.5 Haiku</b><br/><code>/model haiku</code><br/><i>Ultra-fast turnaround & minimal cost</i>"]
+    Q2 -- "No (Everyday work)" --> Sonnet["<b>Claude 3.5 Sonnet</b><br/><code>/model sonnet</code><br/><i>Recommended default: balanced speed & intelligence</i>"]
+
+    classDef defNode fill:#f8fafc,stroke:#64748b,stroke-width:1px,color:#0f172a;
+    classDef sonnetNode fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
+    classDef haikuNode fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b;
+    classDef opusNode fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+    class Start,Q1,Q2 defNode;
+    class Sonnet sonnetNode;
+    class Haiku haikuNode;
+    class Opus opusNode;
+```
+
 A **thinking model** works the problem through step by step before generating an answer. In Claude Code, you control this behavior via the **effort level** setting: low effort responds quickly, while high effort engages deeper reasoning cycles. For more details on reasoning mechanisms, explore the [Glossary: Thinking Model](glossary.md#thinking-model-extended-thinking). Note that extended thinking helps solve intricate logic puzzles, but human verification is always required.
 
 ---

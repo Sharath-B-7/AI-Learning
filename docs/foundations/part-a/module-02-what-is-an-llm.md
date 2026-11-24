@@ -41,6 +41,26 @@ Think of the way your phone suggests the next word, but vastly more powerful. It
 
 *(The percentages in Figure 2 are examples only, to show the concept.)*
 
+???+ example "Interactive Demonstration: How Next-Token Prediction Works"
+    === "Prompt: 'The cat sat on the...'"
+        | Candidate Token | Likelihood | Why It's Considered |
+        | :--- | :---: | :--- |
+        | **`mat`** | 🟩 72% | Most common collocated idiom in training text |
+        | **`rug`** | 🟨 15% | Semantically synonymous, plausible furniture surface |
+        | **`floor`** | 🟧 8% | Natural fallback physical surface |
+        | **`windowsill`** | 🟦 4% | Descriptive, creative context |
+        | **`moon`** | ⬜ 1% | Poetic, fictional context |
+
+        > **Why this matters:** The model evaluates this probability distribution token-by-token. Even with identical prompts, slight variations in sampling can produce equally valid, natural phrasings.
+    === "Prompt: '2 + 2 = '"
+        | Candidate Token | Likelihood | Why It's Considered |
+        | :--- | :---: | :--- |
+        | **`4`** | 🟩 99.8% | Overwhelming statistical regularity across mathematical literature |
+        | **` four`** | 🟨 0.1% | Word-form alternative |
+        | *others* | ⬜ < 0.1% | Highly improbable |
+
+        > **Notice the difference:** Factual and mathematical constraints produce near-certain distributions, whereas open creative sentences offer wide distributions.
+
 ---
 
 ## Tokens

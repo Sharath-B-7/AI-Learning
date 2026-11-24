@@ -50,6 +50,30 @@ $$\text{Deny} > \text{Ask} > \text{Allow}$$
 
 By default, Claude Code allows safe read-only operations within the current project folder, but asks for explicit confirmation before editing files or executing terminal commands.
 
+```mermaid
+flowchart TD
+    Action["<b>Requested Tool Action</b><br/>(e.g., Read file, Edit file, Shell command)"] --> CheckDeny{"Does it match any<br/><b>DENY</b> rule?"}
+    
+    CheckDeny -- "YES" --> Blocked["⛔ <b>DENIED IMMEDIATELY</b><br/>Action aborted without prompting user"]
+    CheckDeny -- "NO" --> CheckAllow{"Does it match an<br/><b>ALLOW</b> rule?"}
+    
+    CheckAllow -- "YES" --> Exec["✅ <b>AUTO-EXECUTE</b><br/>Performs tool action seamlessly"]
+    CheckAllow -- "NO" --> Prompt["⚠️ <b>ASK USER (Approval Prompt)</b><br/>Pauses and displays exact action on screen"]
+    
+    Prompt --> Decision{"User Decision"}
+    Decision -- "Approved (y)" --> Exec
+    Decision -- "Rejected (n) / Esc" --> Blocked
+
+    classDef actionNode fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a;
+    classDef denyNode fill:#fef2f2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d;
+    classDef allowNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d;
+    classDef askNode fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f;
+    class Action actionNode;
+    class Blocked denyNode;
+    class Exec allowNode;
+    class Prompt,Decision askNode;
+```
+
 ---
 
 ## Everyday Scenario: Asha's Safety Boundaries

@@ -44,6 +44,21 @@ A reliable request contains four core building blocks: **Situation**, **Goal**, 
 | **Background** | Specific facts, input files, constraints, or decisions | Use `@file` mentions instead of copy-pasting text |
 | **Format** | Desired structure, length, tone, and audience | Specify in prompt, or set permanently in `CLAUDE.md` |
 
+```mermaid
+flowchart TD
+    subgraph Blueprint["The 4-Part Request Blueprint"]
+        direction LR
+        P1["<b>1. Situation</b><br/>Who you are & the context<br/><i>'I am preparing for a client meeting...'</i>"]
+        P2["<b>2. Goal</b><br/>Specific output desired<br/><i>'Summarize key risks and costs...'</i>"]
+        P3["<b>3. Background</b><br/>Inputs & referenced files<br/><i>'Using @Q3-report.pdf...'</i>"]
+        P4["<b>4. Format</b><br/>Constraints, style, & length<br/><i>'Five bullets, under 20 words each'</i>"]
+        P1 --> P2 --> P3 --> P4
+    end
+
+    classDef blue fill:#eff6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e3a8a;
+    class P1,P2,P3,P4 blue;
+```
+
 ---
 
 ## Comparison: Weak vs. Strong Requests

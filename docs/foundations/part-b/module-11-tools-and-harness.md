@@ -36,6 +36,34 @@ Claude Code acts as a **harness**: specialized software built around the model t
 
 Every time Claude uses a tool, you see an execution line on your screen, such as `Read(report.md)` or `PowerShell(dir)`.
 
+```mermaid
+flowchart LR
+    User(["<b>Human User</b><br/>PowerShell / Terminal"]) <-->|"Commands & Approvals"| Harness
+
+    subgraph ClaudeCode["Claude Code Environment"]
+        Harness["<b>Claude Code Harness</b><br/>Enforces permissions, runs tools, formats output"]
+        Brain["<b>Claude 3.5 Sonnet</b><br/>Reasoning, planning, token prediction"]
+        Harness <-->|"Tool Requests & Reasoning"| Brain
+    end
+
+    subgraph Tools["System Tools & Integrations"]
+        FS["<b>File System</b><br/>Read, Edit, Write, Grep"]
+        CLI["<b>Terminal Engine</b><br/>PowerShell / Git Bash"]
+        MCP["<b>MCP Connectors</b><br/>Databases, GitHub, Jira, Slack"]
+    end
+
+    Harness <-->|"Executes (if allowed)"| Tools
+
+    classDef user fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#0f172a;
+    classDef harness fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
+    classDef brain fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+    classDef tools fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#064e3b;
+    class User user;
+    class Harness harness;
+    class Brain brain;
+    class FS,CLI,MCP tools;
+```
+
 ---
 
 <a id="tools-the-models-hands"></a>

@@ -43,6 +43,31 @@ Claude can read files in your project directory when it needs them, but it works
 4. **Tool results:** Terminal command outputs, files Claude opened, and web pages fetched.
 5. **Memory files:** `CLAUDE.md`, automatically loaded at the start of every session (detailed in [Module 9](module-09-memory.md) and [Module 9: Memory](module-09-memory.md#persistent-memory-in-claude-code-claudemd)).
 
+```mermaid
+flowchart LR
+    subgraph Window["Context Desk Window (Capacity Limit)"]
+        direction TB
+        M1["<b>System Rules & CLAUDE.md</b><br/><i>Loaded automatically at session start</i>"]
+        M2["<b>Active Conversation History</b><br/><i>Your instructions & Claude's replies</i>"]
+        M3["<b>Attached Files & Folders (@file)</b><br/><i>Directly loaded documents & code</i>"]
+        M4["<b>Tool Outputs & Terminal Results</b><br/><i>Command outputs, search results, diffs</i>"]
+        M1 --- M2 --- M3 --- M4
+    end
+
+    subgraph Actions["Context Management Actions"]
+        direction TB
+        C1["<b>/compact</b><br/>Summarizes older chat history<br/><i>Frees 50–70% of desk space</i>"]
+        C2["<b>/clear</b><br/>Wipes desk fresh<br/><i>Preserves memory in CLAUDE.md</i>"]
+    end
+
+    Window -.->|When desk fills up| Actions
+
+    classDef mem fill:#ede9fe,stroke:#7c3aed,stroke-width:1px,color:#3b0764;
+    classDef act fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,color:#14532d;
+    class M1,M2,M3,M4 mem;
+    class C1,C2 act;
+```
+
 ---
 
 ## Everyday Scenario: Asha's Missing Meeting Notes

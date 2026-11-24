@@ -61,6 +61,37 @@ Understanding this distinction is critical as you advance:
 ![Figure 5: Chat compared with an agent](../../assets/images/foundations/figure-05-chat-vs-agent.png)
 *Figure 5: Chat compared with an agent*
 
+=== "Chat Workflow (Turn-by-Turn Human Coordination)"
+    ```mermaid
+    sequenceDiagram
+        autonumber
+        actor User as Human User
+        participant Claude as Claude (Chat)
+        User->>Claude: "Draft an email about Q3 budget"
+        Claude-->>User: Returns drafted text
+        Note over User: Human copies draft, checks spreadsheet, spots missing metric
+        User->>Claude: "Include total OPEX of $1.2M"
+        Claude-->>User: Returns updated draft
+        Note over User: Human manually copies into Outlook and sends
+    ```
+
+=== "Agent Workflow (Autonomous Delegation via Claude Code)"
+    ```mermaid
+    sequenceDiagram
+        autonumber
+        actor User as Human User
+        participant Agent as Claude Code (Agent)
+        participant Tools as System Tools & Files
+        User->>Agent: "Summarize Q3 budget in budget-summary.md"
+        loop Autonomous Agent Loop
+            Agent->>Tools: Read(Q3-budget.xlsx)
+            Tools-->>Agent: Raw table data
+            Agent->>Tools: Write(budget-summary.md)
+            Tools-->>Agent: File written
+        end
+        Agent-->>User: "Summary generated with OPEX $1.2M. View with /diff."
+    ```
+
 ---
 
 ## Three Habits for Good Results
