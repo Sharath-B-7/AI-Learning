@@ -1,5 +1,5 @@
 """
-Automated unit, integration, and general-purpose tests for the AI MASTERCLASS FastAPI backend.
+Automated unit, integration, and general-purpose tests for the Claude Learning Hub FastAPI backend.
 
 Tests:
 1. Health endpoint (/api/health) reporting general-purpose Gemini provider

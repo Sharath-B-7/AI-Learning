@@ -3,7 +3,7 @@
 **Module Number:** Module 9
 **Module Title:** Memory
 **Top-Left Label:** `Part B • Module 9`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 2m 1.2s (121.15s)
 **Total Frames (30fps):** 3635
 **Word Count:** 269 words

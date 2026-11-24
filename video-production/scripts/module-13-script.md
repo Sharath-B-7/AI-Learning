@@ -3,7 +3,7 @@
 **Module Number:** Module 13
 **Module Title:** Permissions and Safety
 **Top-Left Label:** `Part B • Module 13`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 1m 57.6s (117.62s)
 **Total Frames (30fps):** 3529
 **Word Count:** 257 words

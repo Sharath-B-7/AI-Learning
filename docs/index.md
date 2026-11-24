@@ -1,4 +1,4 @@
-# AI MASTERCLASS
+# Claude Learning Hub
 ## Internal AI Learning Documentation Portal
 
 <div class="doc-header-badges">
@@ -10,11 +10,11 @@
 <div class="hero-section">
   <div class="hero-content">
     <p class="hero-lead">
-      Welcome to <strong>AI MASTERCLASS</strong>, our company's internal documentation and learning portal for artificial intelligence. Sourced strictly from our foundational training curriculum, this portal provides a structured, plain-English roadmap to understanding AI assistants, mastering Large Language Models, and safely applying AI systems in your daily work.
+      Welcome to <strong>Claude Learning Hub</strong>, our company's internal documentation and learning portal for artificial intelligence. Sourced strictly from our foundational training curriculum, this portal provides a structured, plain-English roadmap to understanding AI assistants, mastering Large Language Models, and safely applying AI systems in your daily work.
     </p>
     <div class="hero-actions">
       <a href="foundations/part-a/" class="md-button md-button--primary">Explore Part A: Fundamentals (Modules 1–5) →</a>
-      <a href="foundations/part-b/" class="md-button">Explore Part B: Systems Concepts (Modules 6–13) →</a>
+      <a href="foundations/part-b/" class="md-button">Explore Part B: Claude Code & Agentic Systems (Modules 6–13) →</a>
     </div>
   </div>
 </div>
@@ -34,7 +34,7 @@ flowchart LR
         A5["Module 5: Meet Claude"]
     end
 
-    subgraph TrackB["Part B: AI Concepts for Working with Systems"]
+    subgraph TrackB["Part B — Claude Code & Agentic Systems"]
         direction TB
         B1["Module 6: Types of Models"]
         B2["Module 7: Context"]
@@ -70,7 +70,7 @@ flowchart LR
 
   <div class="role-card">
     <div class="role-icon">⚙️</div>
-    <h3>Part B: AI Concepts for Working with Systems</h3>
+    <h3>Part B — Claude Code & Agentic Systems</h3>
     <p>The eight core architectural building blocks: model tiers, context desks, memory, skills, harnesses, autonomous agents, and permission safety.</p>
     <ul>
       <li><strong><a href="foundations/part-b/module-06-types-of-models/">Module 6: Types of Models</a></strong> — Small, medium, large tiers; reasoning models; multimodal vision.</li>
@@ -83,7 +83,7 @@ flowchart LR
       <li><strong><a href="foundations/part-b/module-13-permissions-and-safety/">Module 13: Permissions & Safety</a></strong> — Allow, ask, deny; protecting sensitive files and .env; least access.</li>
     </ul>
     <p><strong>Capstone & Reference:</strong> <a href="foundations/part-b/worked-example/">Asha's Worked Example</a> · <a href="foundations/part-b/glossary/">Glossary</a> · <a href="foundations/part-b/faq/">Part B FAQ</a> · <a href="foundations/part-b/learning-checklist/">Part B Checklist</a></p>
-    <a href="foundations/part-b/" class="role-link">Start Part B: Concepts →</a>
+    <a href="foundations/part-b/" class="role-link">Start Part B: Claude Code & Agentic Systems →</a>
   </div>
 </div>
 
@@ -96,7 +96,7 @@ Navigate our complete internal AI curriculum radially through this interactive k
 <div id="sunburst-interactive-wrapper" class="sunburst-interactive-wrapper">
   <div class="sunburst-toolbar">
     <div id="sunburst-breadcrumbs" class="sunburst-breadcrumbs" aria-label="Curriculum Breadcrumb">
-      <span class="breadcrumb-item active" data-id="root">AI MASTERCLASS</span>
+      <span class="breadcrumb-item active" data-id="root">Claude Learning Hub</span>
     </div>
     <div class="sunburst-actions">
       <button type="button" id="sunburst-btn-zoomout" class="map-btn map-btn--secondary" title="Zoom out one level" disabled>
@@ -119,7 +119,7 @@ Navigate our complete internal AI curriculum radially through this interactive k
       <div id="sunburst-tooltip" class="sunburst-tooltip" role="tooltip" aria-hidden="true"></div>
       <div class="sunburst-chart-legend">
         <div class="legend-item"><span class="legend-color-dot part-a-dot"></span> Part A — Fundamentals (Modules 1–5)</div>
-        <div class="legend-item"><span class="legend-color-dot part-b-dot"></span> Part B — Systems Concepts (Modules 6–13)</div>
+        <div class="legend-item"><span class="legend-color-dot part-b-dot"></span> Part B — Claude Code & Agentic Systems (Modules 6–13)</div>
       </div>
       <div class="sunburst-interaction-hint">
         <span>💡 <strong>Tip:</strong> Click any wedge to zoom into that topic branch. Click the center circle or <em>Zoom Out</em> to return.</span>
@@ -130,7 +130,7 @@ Navigate our complete internal AI curriculum radially through this interactive k
       <div class="panel-header">
         <span id="panel-category-badge" class="panel-badge">Portal Overview</span>
       </div>
-      <h3 id="panel-title" class="panel-title">AI MASTERCLASS</h3>
+      <h3 id="panel-title" class="panel-title">Claude Learning Hub</h3>
       <p id="panel-description" class="panel-desc">
         Internal AI Learning Documentation Portal — From Core Fundamentals to Advanced Systems. Select any topic ring to explore modules, subtopics, and key workplace practices.
       </p>

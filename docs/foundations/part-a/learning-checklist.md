@@ -31,9 +31,9 @@ Use this checklist to confirm your readiness:
 
 ## Where to Go Next
 
-Now that you understand how Claude works in conversation, you are ready for **[Part B: AI Concepts for Working with AI Systems](../part-b/index.md)**. In Part B, you will learn the eight architectural ideas that unlock advanced workflows: model tiers, context desks, memory, skills, harnesses, and safety permissions.
+Now that you understand how Claude works in conversation, you are ready for **[Part B — Claude Code & Agentic Systems](../part-b/index.md)**. In Part B, you will learn the eight architectural ideas that unlock advanced workflows: model tiers, context desks, memory, skills, harnesses, and safety permissions.
 
 <div class="hero-actions">
   <a href="../faq/" class="md-button">← Part A FAQ</a>
-  <a href="../../part-b/" class="md-button md-button--primary">Continue to Part B: Concepts →</a>
+  <a href="../../part-b/" class="md-button md-button--primary">Continue to Part B: Claude Code & Agentic Systems →</a>
 </div>

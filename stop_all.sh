@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECT_DIR="/home/sharath/Documentation_Claude"
 
-echo "=== Stopping AI MASTERCLASS Portal & Assistant ==="
+echo "=== Stopping Claude Learning Hub Portal & Assistant ==="
 
 # Stop MkDocs on port 8008
 PID_MKDOCS=$(lsof -ti:8008)

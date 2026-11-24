@@ -1,7 +1,7 @@
 # Module 11: Tools and the Harness
 
 <div class="doc-header-badges">
-  <span class="badge badge-surface">Part B: AI Concepts</span>
+  <span class="badge badge-surface">Part B: Claude Code & Agentic Systems</span>
   <span class="badge badge-level">Module 11 of 8</span>
   <span class="badge badge-verified">Attribution: Tactive AI Team</span>
 </div>

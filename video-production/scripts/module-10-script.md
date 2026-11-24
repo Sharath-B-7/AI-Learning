@@ -3,7 +3,7 @@
 **Module Number:** Module 10
 **Module Title:** Skills
 **Top-Left Label:** `Part B • Module 10`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 2m 0.2s (120.24s)
 **Total Frames (30fps):** 3607
 **Word Count:** 262 words

@@ -1,5 +1,5 @@
 /**
- * AI MASTERCLASS — Educational Video Mapping Configuration
+ * Claude Learning Hub — Educational Video Mapping Configuration
  * 
  * INSTRUCTIONS:
  * 1. Place your MP4 video files into the folder: docs/assets/videos/
@@ -17,7 +17,7 @@ window.AI_MASTERCLASS_VIDEOS = {
   "module-04": "module-04.mp4", // Module 04: Strengths, Limits, and Trust (1920x1080 30fps)
   "module-05": "module-05.mp4", // Module 05: Meet Claude (1920x1080 30fps)
 
-  // Part B: AI Concepts for Working with Systems
+  // Part B — Claude Code & Agentic Systems
   "module-06": "module-06.mp4", // Module 06: Types of Models (1920x1080 30fps)
   "module-07": "module-07.mp4", // Module 07: Context (1920x1080 30fps)
   "module-08": "module-08.mp4", // Module 08: Prompting and Instructions (1920x1080 30fps)

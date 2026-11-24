@@ -1,4 +1,4 @@
-# Part B: AI Concepts for Working with AI Systems
+# Part B — Claude Code & Agentic Systems
 <p class="hero-lead">Core Building Blocks Behind Claude Code & Windows CLI Workflows</p>
 
 <div class="doc-header-badges">

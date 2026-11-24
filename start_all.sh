@@ -4,7 +4,7 @@ set -e
 PROJECT_DIR="/home/sharath/Documentation_Claude"
 cd "$PROJECT_DIR"
 
-echo "=== Starting AI MASTERCLASS Portal & Assistant ==="
+echo "=== Starting Claude Learning Hub Portal & Assistant ==="
 
 # 1. Verify/Start Ollama
 if ! curl -s http://127.0.0.1:11434/api/tags > /dev/null; then
@@ -37,7 +37,7 @@ fi
 
 echo ""
 echo "=================================================="
-echo "AI MASTERCLASS is ready!"
+echo "Claude Learning Hub is ready!"
 echo "Open in your browser: http://127.0.0.1:8008/"
 echo "To stop everything, run: ./stop_all.sh"
 echo "=================================================="

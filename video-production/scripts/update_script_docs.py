@@ -102,7 +102,7 @@ for mod, meta in METADATA.items():
 **Module Number:** Module {int(mod)}
 **Module Title:** {meta['title']}
 **Top-Left Label:** `{meta['badge']}`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** {dur_str}
 **Total Frames (30fps):** {data['total_frames']}
 **Word Count:** {data['words']} words

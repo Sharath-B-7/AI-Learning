@@ -34,5 +34,5 @@
 
 <div class="hero-actions">
   <a href="module-01-what-is-ai/" class="md-button md-button--primary">Start Module 1: What Is AI? →</a>
-  <a href="../part-b/" class="md-button">Preview Part B: Concepts →</a>
+  <a href="../part-b/" class="md-button">Preview Part B: Claude Code & Agentic Systems →</a>
 </div>

@@ -3,7 +3,7 @@
 **Module Number:** Module 7
 **Module Title:** Context
 **Top-Left Label:** `Part B • Module 7`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 1m 59.1s (119.14s)
 **Total Frames (30fps):** 3574
 **Word Count:** 275 words

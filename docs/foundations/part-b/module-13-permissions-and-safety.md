@@ -1,7 +1,7 @@
 # Module 13: Permissions and Safety
 
 <div class="doc-header-badges">
-  <span class="badge badge-surface">Part B: AI Concepts</span>
+  <span class="badge badge-surface">Part B: Claude Code & Agentic Systems</span>
   <span class="badge badge-level">Module 13 of 8</span>
   <span class="badge badge-verified">Attribution: Tactive AI Team</span>
 </div>

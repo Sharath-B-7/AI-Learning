@@ -1,9 +1,9 @@
-site_name: AI MASTERCLASS
+site_name: Claude Learning Hub
 site_description: Internal AI Learning Documentation Portal — AI Fundamentals & Systems Concepts
 site_author: Tactive AI Team
 site_url: https://ai-masterclass.internal
 
-repo_name: AI MASTERCLASS
+repo_name: Claude Learning Hub
 edit_uri: ""
 
 theme:
@@ -89,7 +89,7 @@ nav:
       - Glossary (Plain English): foundations/part-a/glossary.md
       - Commonly Asked Questions: foundations/part-a/faq.md
       - What You Should Be Able to Do: foundations/part-a/learning-checklist.md
-  - Part B — AI Concepts for Systems:
+  - Part B — Claude Code & Agentic Systems:
       - Overview: foundations/part-b/index.md
       - Set up Claude Code on Windows: foundations/part-b/setup-windows.md
       - Module 6 - Types of Models: foundations/part-b/module-06-types-of-models.md

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Master Render & Validation Script for AI MASTERCLASS (Modules 01–13)
+Master Render & Validation Script for Claude Learning Hub (Modules 01–13)
 - Renders all 13 modules using Remotion
 - Validates 1920x1080 @ 30fps, h264/aac
 - Captures frame 100 screenshot for visual verification

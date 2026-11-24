@@ -1,5 +1,5 @@
 """
-BM25 Search Index and Retrieval Engine for AI MASTERCLASS Assistant.
+BM25 Search Index and Retrieval Engine for Claude Learning Hub Assistant.
 
 Uses rank-bm25 (BM25Okapi) for fast, in-memory, zero-external-dependency retrieval
 over structured chunks extracted from:

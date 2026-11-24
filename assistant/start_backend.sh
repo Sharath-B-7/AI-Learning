@@ -1,11 +1,11 @@
 #!/bin/bash
-# Startup script for AI MASTERCLASS Assistant Backend
+# Startup script for Claude Learning Hub Assistant Backend
 
 PROJECT_DIR="/home/sharath/Documentation_Claude"
 ASSISTANT_DIR="$PROJECT_DIR/assistant"
 VENV_DIR="$ASSISTANT_DIR/.venv"
 
-echo "=== Starting AI MASTERCLASS Assistant Backend ==="
+echo "=== Starting Claude Learning Hub Assistant Backend ==="
 
 # 1. Verify / Start Ollama
 if ! curl -s http://127.0.0.1:11434/api/tags > /dev/null; then

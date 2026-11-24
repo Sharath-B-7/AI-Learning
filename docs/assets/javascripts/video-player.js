@@ -1,5 +1,5 @@
 /**
- * AI MASTERCLASS — Video-First HTML5 Player & Empty State Handler
+ * Claude Learning Hub — Video-First HTML5 Player & Empty State Handler
  * Compatible with Material for MkDocs instant navigation
  */
 
@@ -170,7 +170,7 @@
     }
 
     function handleVideoError(evt) {
-      console.warn('AI MASTERCLASS: Failed to load video at ' + videoSrc, evt);
+      console.warn('Claude Learning Hub: Failed to load video at ' + videoSrc, evt);
       renderPlaceholder(
         wrapper,
         moduleId,
@@ -201,7 +201,7 @@
       try {
         videoEl.load();
       } catch (e) {
-        console.warn('AI MASTERCLASS: video load error', e);
+        console.warn('Claude Learning Hub: video load error', e);
       }
       updateAudioUI();
     }

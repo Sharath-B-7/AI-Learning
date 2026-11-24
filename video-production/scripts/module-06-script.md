@@ -3,7 +3,7 @@
 **Module Number:** Module 6
 **Module Title:** Types of Models
 **Top-Left Label:** `Part B • Module 6`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 2m 3.0s (123.05s)
 **Total Frames (30fps):** 3691
 **Word Count:** 283 words

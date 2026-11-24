@@ -3,7 +3,7 @@
 **Module Number:** Module 12
 **Module Title:** Agents
 **Top-Left Label:** `Part B • Module 12`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 1m 58.4s (118.37s)
 **Total Frames (30fps):** 3551
 **Word Count:** 259 words

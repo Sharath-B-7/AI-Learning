@@ -1,7 +1,7 @@
 #!/bin/bash
-# Stop script for AI MASTERCLASS Assistant Backend
+# Stop script for Claude Learning Hub Assistant Backend
 
-echo "Stopping AI MASTERCLASS Assistant Backend on port 8000..."
+echo "Stopping Claude Learning Hub Assistant Backend on port 8000..."
 PID=$(lsof -ti:8000)
 if [ -n "$PID" ]; then
     kill -15 "$PID" 2>/dev/null || kill -9 "$PID" 2>/dev/null

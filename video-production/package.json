@@ -1,7 +1,7 @@
 {
   "name": "ai-masterclass-video-production",
   "version": "1.0.0",
-  "description": "Remotion video production for AI MASTERCLASS educational modules",
+  "description": "Remotion video production for Claude Learning Hub educational modules",
   "scripts": {
     "start": "remotion preview src/index.ts",
     "build": "remotion render src/index.ts Module01 renders/module-01-what-is-ai.mp4",

@@ -1,5 +1,5 @@
 """
-DOCX Ingestion and Intelligent Chunking for AI MASTERCLASS Assistant.
+DOCX Ingestion and Intelligent Chunking for Claude Learning Hub Assistant.
 
 Ingests ONLY:
 - AI_Training_Part_A_Fundamentals.docx

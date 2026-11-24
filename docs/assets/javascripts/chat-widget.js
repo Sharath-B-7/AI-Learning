@@ -1,5 +1,5 @@
 /**
- * AI MASTERCLASS — Intelligent Document-Grounded Chatbot Widget
+ * Claude Learning Hub — Intelligent Document-Grounded Chatbot Widget
  * Integrates with FastAPI backend (http://127.0.0.1:8000)
  * Fully compatible with Material for MkDocs instant navigation (document$)
  */
@@ -283,7 +283,7 @@
               <span class="chat-header-title">TAVI</span>
               <span class="chat-header-badge">AI Assistant</span>
             </div>
-            <div class="chat-header-sub">Official AI MASTERCLASS Assistant</div>
+            <div class="chat-header-sub">Official Claude Learning Hub Assistant</div>
           </div>
           <div class="chat-header-actions">
             <div class="chat-status-indicator" id="chat-status-pill">

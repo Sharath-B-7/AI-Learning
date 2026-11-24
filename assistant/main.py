@@ -1,5 +1,5 @@
 """
-FastAPI Backend for AI MASTERCLASS Assistant (TAVI).
+FastAPI Backend for Claude Learning Hub Assistant (TAVI).
 
 Connects:
 - User questions

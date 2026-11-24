@@ -1,5 +1,5 @@
 /**
- * AI MASTERCLASS — Interactive Sunburst Knowledge Map
+ * Claude Learning Hub — Interactive Sunburst Knowledge Map
  * Powered by local D3.js (v7.9.2)
  * Sourced strictly from Part A (Fundamentals) and Part B (Systems Concepts)
  */
@@ -9,8 +9,8 @@
 
   // 88-node curriculum hierarchy matching Part A & Part B documentation
   const curriculumData = {
-  "name": "AI MASTERCLASS",
-  "shortName": "AI MASTERCLASS",
+  "name": "Claude Learning Hub",
+  "shortName": "Claude Learning Hub",
   "id": "root",
   "category": "Portal Overview",
   "url": "index.md",
@@ -356,8 +356,8 @@
       ]
     },
     {
-      "name": "Part B \u2014 AI Concepts for Systems",
-      "shortName": "Part B: Concepts",
+      "name": "Part B \u2014 Claude Code & Agentic Systems",
+      "shortName": "Part B: Claude Code & Agents",
       "id": "part-b",
       "category": "Systems Track",
       "url": "foundations/part-b/index.md",
@@ -869,7 +869,7 @@
     if (!container) return; // Exit if not on page with sunburst container
 
     if (typeof d3 === 'undefined') {
-      console.error('AI MASTERCLASS: D3.js is required for Sunburst Knowledge Map.');
+      console.error('Claude Learning Hub: D3.js is required for Sunburst Knowledge Map.');
       container.innerHTML = '<p class="error-msg">Interactive Knowledge Map visualization requires D3.js.</p>';
       return;
     }
@@ -945,7 +945,7 @@
       .attr('preserveAspectRatio', 'xMidYMid meet')
       .attr('class', 'sunburst-svg')
       .attr('role', 'img')
-      .attr('aria-label', 'Interactive AI Masterclass Sunburst Knowledge Map');
+      .attr('aria-label', 'Interactive Claude Learning Hub Sunburst Knowledge Map');
 
     const g = svg.append('g');
 
@@ -970,7 +970,7 @@
 
     function updateCenterLabel(node) {
       if (node === root) {
-        centerTitle.text('AI MASTERCLASS');
+        centerTitle.text('Claude Learning Hub');
         centerSubtitle.text('All Tracks');
         centerCircle.attr('class', 'sunburst-center-circle is-root');
       } else {

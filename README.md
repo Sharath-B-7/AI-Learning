@@ -1,7 +1,7 @@
-# AI MASTERCLASS
+# Claude Learning Hub
 ## Internal AI Learning Documentation Portal
 
-**AI MASTERCLASS** is the official company internal documentation and learning portal for artificial intelligence. Sourced strictly from the company's approved foundational curriculum (**Part A — AI Fundamentals** and **Part B — AI Concepts for Working with Systems**), this portal provides a structured, plain-English roadmap to understanding AI assistants, mastering Large Language Models, and safely deploying AI systems in workplace operations.
+**Claude Learning Hub** is the official company internal documentation and learning portal for artificial intelligence. Sourced strictly from the company's approved foundational curriculum (**Part A — AI Fundamentals** and **Part B — Claude Code & Agentic Systems**), this portal provides a structured, plain-English roadmap to understanding AI assistants, mastering Large Language Models, and safely deploying AI systems in workplace operations.
 
 ---
 
@@ -74,7 +74,7 @@ mkdocs build --strict
 
 ```
 docs/
-├── index.md                                      # AI Masterclass Homepage & Sunburst Map
+├── index.md                                      # Claude Learning Hub Homepage & Sunburst Map
 ├── assets/
 │   ├── javascripts/
 │   │   ├── d3.v7.min.js                          # Local standalone D3.js bundle (v7.9.2)
@@ -95,7 +95,7 @@ docs/
     │   ├── glossary.md                           # Plain English Vocabulary
     │   ├── faq.md                                # Common Questions
     │   └── learning-checklist.md                 # Competency Self-Assessment
-    └── part-b/                                   # Part B — AI Concepts for Systems
+    └── part-b/                                   # Part B — Claude Code & Agentic Systems
         ├── index.md                              # Track Overview
         ├── module-06-types-of-models.md          # Module 6 + Video Section
         ├── module-07-context.md                  # Module 7 + Video Section

@@ -3,7 +3,7 @@
 **Module Number:** Module 8
 **Module Title:** Prompting and Instructions
 **Top-Left Label:** `Part B • Module 8`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 1m 59.0s (118.97s)
 **Total Frames (30fps):** 3569
 **Word Count:** 271 words

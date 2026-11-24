@@ -3,7 +3,7 @@
 **Module Number:** Module 11
 **Module Title:** Tools and the Harness (MCP)
 **Top-Left Label:** `Part B • Module 11`
-**Course Section:** Part B: AI Concepts for Working with Systems
+**Course Section:** Part B: Claude Code & Agentic Systems
 **Audio Duration:** 2m 5.6s (125.62s)
 **Total Frames (30fps):** 3768
 **Word Count:** 268 words
