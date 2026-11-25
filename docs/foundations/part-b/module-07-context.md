@@ -62,8 +62,8 @@ flowchart LR
 
     Window -.->|When desk fills up| Actions
 
-    classDef mem fill:#ede9fe,stroke:#7c3aed,stroke-width:1px,color:#3b0764;
-    classDef act fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,color:#14532d;
+    classDef mem fill:#8b5cf626,stroke:#8b5cf6,stroke-width:1.5px;
+    classDef act fill:#10b98126,stroke:#10b981,stroke-width:1.5px;
     class M1,M2,M3,M4 mem;
     class C1,C2 act;
 ```

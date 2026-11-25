@@ -55,7 +55,7 @@ flowchart TD
         P1 --> P2 --> P3 --> P4
     end
 
-    classDef blue fill:#eff6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e3a8a;
+    classDef blue fill:#3b82f626,stroke:#3b82f6,stroke-width:1.5px;
     class P1,P2,P3,P4 blue;
 ```
 

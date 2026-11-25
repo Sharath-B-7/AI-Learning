@@ -64,10 +64,10 @@ flowchart TD
     Decision -- "Approved (y)" --> Exec
     Decision -- "Rejected (n) / Esc" --> Blocked
 
-    classDef actionNode fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a;
-    classDef denyNode fill:#fef2f2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d;
-    classDef allowNode fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d;
-    classDef askNode fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f;
+    classDef actionNode fill:#64748b26,stroke:#64748b,stroke-width:1.5px;
+    classDef denyNode fill:#ef444426,stroke:#ef4444,stroke-width:2px;
+    classDef allowNode fill:#10b98126,stroke:#10b981,stroke-width:2px;
+    classDef askNode fill:#f59e0b26,stroke:#f59e0b,stroke-width:2px;
     class Action actionNode;
     class Blocked denyNode;
     class Exec allowNode;

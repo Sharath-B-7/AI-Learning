@@ -56,10 +56,10 @@ flowchart TD
 
     Global --> Project --> Local --> Auto
 
-    classDef gMem fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#0f172a;
-    classDef pMem fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
-    classDef lMem fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#064e3b;
-    classDef aMem fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#78350f;
+    classDef gMem fill:#64748b26,stroke:#64748b,stroke-width:1.5px;
+    classDef pMem fill:#6366f126,stroke:#6366f1,stroke-width:2px;
+    classDef lMem fill:#10b98126,stroke:#10b981,stroke-width:1.5px;
+    classDef aMem fill:#f59e0b26,stroke:#f59e0b,stroke-width:1.5px;
     class Global gMem;
     class Project pMem;
     class Local lMem;

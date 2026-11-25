@@ -61,10 +61,10 @@ flowchart TD
     ML --> DL
     DL --> LLM
 
-    classDef aiNode fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#0c4a6e;
-    classDef mlNode fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef dlNode fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95;
-    classDef llmNode fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b;
+    classDef aiNode fill:#0ea5e926,stroke:#0ea5e9,stroke-width:2px;
+    classDef mlNode fill:#6366f126,stroke:#6366f1,stroke-width:2px;
+    classDef dlNode fill:#8b5cf626,stroke:#8b5cf6,stroke-width:2px;
+    classDef llmNode fill:#10b98126,stroke:#10b981,stroke-width:2px;
     class AI aiNode;
     class ML mlNode;
     class DL dlNode;

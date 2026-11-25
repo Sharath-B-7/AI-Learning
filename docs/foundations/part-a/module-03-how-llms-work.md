@@ -49,8 +49,8 @@ flowchart LR
 
     Offline ==> Runtime
 
-    classDef off fill:#e0e7ff,stroke:#6366f1,stroke-width:1.5px,color:#1e1b4b;
-    classDef run fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#064e3b;
+    classDef off fill:#6366f126,stroke:#6366f1,stroke-width:1.5px;
+    classDef run fill:#10b98126,stroke:#10b981,stroke-width:1.5px;
     class S1,S2 off;
     class S3,S4 run;
 ```

@@ -60,10 +60,10 @@ flowchart TD
     Step3 --> Step4["4. Write deliverable (<code>reports\\weekly-*.md</code>)"]
     Step4 --> Deliver(["Present summary to user for review"])
 
-    classDef startNode fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a;
-    classDef loadNode fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
-    classDef execNode fill:#eff6ff,stroke:#2563eb,stroke-width:1px,color:#1e3a8a;
-    classDef doneNode fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    classDef startNode fill:#64748b26,stroke:#64748b,stroke-width:1.5px;
+    classDef loadNode fill:#6366f126,stroke:#6366f1,stroke-width:2px;
+    classDef execNode fill:#3b82f626,stroke:#3b82f6,stroke-width:1.5px;
+    classDef doneNode fill:#10b98126,stroke:#10b981,stroke-width:2px;
     class UserReq,Match,Standard startNode;
     class Load loadNode;
     class Step1,Step2,Step3,Step4 execNode;

@@ -42,7 +42,7 @@ flowchart LR
     S6 --> S7["<b>7. High Effort Check</b><br/><code>/effort high</code>"]
     S7 --> S8["<b>8. Clean Desk</b><br/><code>/clear</code>"]
 
-    classDef stepNode fill:#eff6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e3a8a;
+    classDef stepNode fill:#3b82f626,stroke:#3b82f6,stroke-width:1.5px;
     class S1,S2,S3,S4,S5,S6,S7,S8 stepNode;
 ```
 

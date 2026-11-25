@@ -50,10 +50,10 @@ flowchart TD
     Q2 -- "Yes (Typo / reformat / rename)" --> Haiku["<b>Claude 3.5 Haiku</b><br/><code>/model haiku</code><br/><i>Ultra-fast turnaround & minimal cost</i>"]
     Q2 -- "No (Everyday work)" --> Sonnet["<b>Claude 3.5 Sonnet</b><br/><code>/model sonnet</code><br/><i>Recommended default: balanced speed & intelligence</i>"]
 
-    classDef defNode fill:#f8fafc,stroke:#64748b,stroke-width:1px,color:#0f172a;
-    classDef sonnetNode fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
-    classDef haikuNode fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b;
-    classDef opusNode fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+    classDef defNode fill:#64748b26,stroke:#64748b,stroke-width:1.5px;
+    classDef sonnetNode fill:#6366f126,stroke:#6366f1,stroke-width:2px;
+    classDef haikuNode fill:#10b98126,stroke:#10b981,stroke-width:2px;
+    classDef opusNode fill:#f59e0b26,stroke:#f59e0b,stroke-width:2px;
     class Start,Q1,Q2 defNode;
     class Sonnet sonnetNode;
     class Haiku haikuNode;

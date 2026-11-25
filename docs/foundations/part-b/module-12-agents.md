@@ -89,10 +89,10 @@ flowchart TD
     Ask -- "Approved" --> Check
     Ask -- "Denied / Esc" --> Pause(["<b>Halt Loop</b><br/>Wait for user direction"])
 
-    classDef loopNode fill:#eff6ff,stroke:#2563eb,stroke-width:1.5px,color:#1e3a8a;
-    classDef startNode fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d;
-    classDef endNode fill:#fdf4ff,stroke:#c026d3,stroke-width:2px,color:#701a75;
-    classDef gateNode fill:#fffbeb,stroke:#d97706,stroke-width:1.5px,color:#78350f;
+    classDef loopNode fill:#3b82f626,stroke:#3b82f6,stroke-width:1.5px;
+    classDef startNode fill:#10b98126,stroke:#10b981,stroke-width:2px;
+    classDef endNode fill:#d946ef26,stroke:#d946ef,stroke-width:2px;
+    classDef gateNode fill:#f59e0b26,stroke:#f59e0b,stroke-width:1.5px;
     class Think,Act,Check loopNode;
     class Goal,Done startNode;
     class Pause endNode;

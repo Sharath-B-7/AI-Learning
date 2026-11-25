@@ -54,10 +54,10 @@ flowchart LR
 
     Harness <-->|"Executes (if allowed)"| Tools
 
-    classDef user fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#0f172a;
-    classDef harness fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b;
-    classDef brain fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
-    classDef tools fill:#ecfdf5,stroke:#059669,stroke-width:1.5px,color:#064e3b;
+    classDef user fill:#64748b26,stroke:#64748b,stroke-width:2px;
+    classDef harness fill:#6366f126,stroke:#6366f1,stroke-width:2px;
+    classDef brain fill:#f59e0b26,stroke:#f59e0b,stroke-width:2px;
+    classDef tools fill:#10b98126,stroke:#10b981,stroke-width:1.5px;
     class User user;
     class Harness harness;
     class Brain brain;
