@@ -1116,3 +1116,8 @@
   }
 }
 
+/* Hide footer attribution bar on all pages */
+.md-footer-meta {
+  display: none;
+}
+

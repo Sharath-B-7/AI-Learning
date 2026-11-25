@@ -51,6 +51,9 @@ extra_javascript:
   - assets/javascripts/video-config.js
   - assets/javascripts/video-player.js
 
+extra:
+  generator: false
+
 markdown_extensions:
   - admonition
   - attr_list
