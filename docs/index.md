@@ -10,7 +10,7 @@
 <div class="hero-section">
   <div class="hero-content">
     <p class="hero-lead">
-      Welcome to <strong>Claude Learning Hub</strong>, our company's internal documentation and learning portal for artificial intelligence. Sourced strictly from our foundational training curriculum, this portal provides a structured, plain-English roadmap to understanding AI assistants, mastering Large Language Models, and safely applying AI systems in your daily work.
+      Welcome to <strong>Claude Learning Hub</strong>, your comprehensive documentation and learning website for mastering Claude and Claude Code. This website provides a structured, plain-English guide to understanding AI fundamentals, navigating model capabilities, building agentic workflows, and safely applying AI systems in your daily work.
     </p>
     <div class="hero-actions">
       <a href="foundations/part-a/" class="md-button md-button--primary">Explore Part A: Fundamentals (Modules 1–5) →</a>
@@ -183,12 +183,3 @@ Navigate our complete internal AI curriculum radially through this interactive k
 | **[Module 12](foundations/part-b/module-12-agents.md)** | Agents | The Think-Act-Check loop & subagents | Set clear finish lines, limits, and checkpoints for agents |
 | **[Module 13](foundations/part-b/module-13-permissions-and-safety.md)** | Permissions & Safety | Allow, Ask, Deny & least access | Block sensitive files (`.env`) and review tool approvals |
 | **[Capstone](foundations/part-b/worked-example.md)** | Putting It All Together | End-to-end integration across all 8 ideas | Follow Asha's weekly status report assistant workflow |
-
----
-
-## Attribution & Internal Governance
-
-This documentation portal is authored and maintained by the **Tactive AI Team** as part of our internal workforce AI enablement program. It contains only content derived from the company's approved training curriculum:
-
-1. `AI_Training_Part_A_Fundamentals.docx`
-2. `AI_Training_Part_B_Concepts.docx`

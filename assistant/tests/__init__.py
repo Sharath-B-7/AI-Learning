@@ -1,1 +1,0 @@
-# assistant tests package

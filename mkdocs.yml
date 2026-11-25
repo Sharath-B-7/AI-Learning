@@ -50,7 +50,6 @@ extra_javascript:
   - assets/javascripts/map.js
   - assets/javascripts/video-config.js
   - assets/javascripts/video-player.js
-  - assets/javascripts/chat-widget.js
 
 markdown_extensions:
   - admonition

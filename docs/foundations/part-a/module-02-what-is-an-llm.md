@@ -41,7 +41,7 @@ Think of the way your phone suggests the next word, but vastly more powerful. It
 
 *(The percentages in Figure 2 are examples only, to show the concept.)*
 
-???+ example "Interactive Demonstration: How Next-Token Prediction Works"
+???+ example "How Next-Token Prediction Works"
     === "Prompt: 'The cat sat on the...'"
         | Candidate Token | Likelihood | Why It's Considered |
         | :--- | :---: | :--- |

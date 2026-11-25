@@ -80,7 +80,7 @@ The answer tells you how much verification is required.
 > - **Trusting too much** leads to costly factual mistakes slipping into production.
 > - **Trusting too little** means you never realize the speed and productivity benefits.
 
-???+ tip "Interactive Verification Guide: The 2×2 Trust Matrix"
+???+ tip "The 2×2 Trust Matrix"
     === "High Stakes + Hard to Verify"
         - **Examples:** Complex tax calculation, legal contract clause, medical advice, critical infrastructure code.
         - **Action:** 🔴 **Mandatory Expert Review.** Do not rely solely on AI. Have a qualified human specialist verify every assertion.
